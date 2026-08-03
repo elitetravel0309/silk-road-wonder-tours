@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "yunnan-tea-horse-road",
+  "title": "Yunnan Tea Horse Road",
+  "duration": "10 Days",
+  "route": "Pu'er → Dali → Shaxi → Lijiang → Shangri-La",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$1,680",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Follow the ancient Tea Horse Road through Yunnan. From the tea plantations of Pu'er to the Tibetan town of Shangri-La, this journey traces one of history's great trade routes.",
+  "highlights": [
+    "Pu'er tea plantation experience",
+    "Shaxi — last surviving tea horse town",
+    "Dali Old Town",
+    "Lijiang Old Town",
+    "Shangri-La"
+  ],
+  "category": "yunnan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'yunnan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

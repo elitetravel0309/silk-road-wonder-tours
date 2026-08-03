@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Qinghai Tours — Qinghai Lake, Chaka Salt Lake & Amdo Tibetan Culture" description="Explore Qinghai's stunning landscapes — China's largest lake, the Mirror of the Sky salt flats, Tibetan monasteries on the grasslands. 5–10 day tours." ogImage="/assets/images/desert-dunes.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Qinghai" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Qinghai Tours",
+    "description": "Expert-guided tours to Qinghai's most spectacular natural wonders and Tibetan cultural sites.",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Qinghai Lake & Chaka", "url": "https://silkroadwondertours.com/tour/qinghai-lake-chaka.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Qinghai Photography Tour", "url": "https://silkroadwondertours.com/tour/qinghai-photography-tour.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Amdo Tibetan Culture", "url": "https://silkroadwondertours.com/tour/amdo-tibetan-culture.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Qinghai & Gansu Silk Road", "url": "https://silkroadwondertours.com/tour/qinghai-gansu-silk-road.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Qinghai Lake Cycling", "url": "https://silkroadwondertours.com/tour/qinghai-lake-cycling.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Source of Yellow River", "url": "https://silkroadwondertours.com/tour/source-of-yellow-river.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/hero-mountains.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="qin-hero">Qinghai Tours</h1><p data-i18n="qin-hero-sub">Qinghai Lake · Chaka Salt Lake · Amdo Tibetan Culture — The Mirror of the Sky</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Qinghai</span></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="qin-intro-title">Welcome to Qinghai — Land of Sapphire Lakes & Sacred Mountains</h2>
+        <div class="divider"></div>
+        <p data-i18n="qin-intro-desc">Qinghai sits at the crossroads of cultures — where the Tibetan Plateau meets the Silk Road, where monasteries rise from emerald grasslands, and where China's largest inland lake shimmers in shades of turquoise that seem too vivid to be real. This is the source of the Yellow River, the home of the Amdo Tibetan people, and one of China's most underrated travel destinations.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="qin-intro-desc2">Our Qinghai tours showcase the province's extraordinary diversity — from the mirror-like surface of Chaka Salt Lake reflecting the sky at sunrise to the spiritual grandeur of Labrang Monastery, from cycling around Qinghai Lake to tracking the source of the Yellow River on the high plateau. Each tour includes English-speaking guides, comfortable accommodation, and expert knowledge of local Tibetan culture and the best photography spots.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="qin-wonders">Qinghai's Natural & Cultural Wonders</h2><div class="divider"></div></div>
+      <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="qin-w1-title">Qinghai Lake</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="qin-w1-desc">China's largest inland lake at 3,200m elevation — a vast sapphire expanse surrounded by snow-capped mountains, golden rape flower fields in summer, and Tibetan nomad camps along the shore.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="qin-w2-title">Chaka Salt Lake — Mirror of the Sky</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="qin-w2-desc">Walk on water at this surreal salt flat where the sky merges with the earth. The shallow brine creates a perfect mirror reflection — one of China's most photographed landscapes, especially magical at sunrise and sunset.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="qin-w3-title">Labrang Monastery</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="qin-w3-desc">One of Tibetan Buddhism's six great monasteries, home to over 1,500 monks. Walk the 3km kora path lined with prayer wheels at dawn, and witness the mesmerizing monk debate sessions in the afternoon.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="qin-w4-title">Dachaidan Emerald Lake</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="qin-w4-desc">A hidden gem of the Qaidam Basin — small emerald-green salt lakes scattered across a barren landscape, their brilliant colors shifting from jade to turquoise depending on the light and mineral concentration.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="qin-tour-title">Qinghai Tours</h2><div class="divider"></div><p data-i18n="qin-tour-sub">From the Mirror of the Sky to Tibetan monasteries — discover Qinghai's breathtaking beauty</p></div>
+    <div class="tour-grid">
+      {allTours.qinghai.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="qin-tips-title">Qinghai Travel Tips</h2><div class="divider"></div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="qin-t1-title">&#127754; High Altitude Awareness</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="qin-t1-desc">Most of Qinghai sits above 3,000m. Xining (2,200m) is an ideal first stop for acclimatization. Take it easy the first day, stay hydrated, and avoid alcohol. Our tours are paced to allow your body to adjust naturally.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="qin-t2-title">&#128247; Photography Season</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="qin-t2-desc">July–August: rape flower fields bloom around Qinghai Lake. June & September: clearest skies for Chaka Salt Lake reflections. October: golden grasslands. Our photography tours are timed for the best natural light.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="qin-t3-title">&#128065; Cultural Etiquette</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="qin-t3-desc">When visiting Tibetan monasteries, walk clockwise around stupas and prayer wheels. Ask permission before photographing monks or locals. Dress modestly — shoulders and knees covered. Remove hats inside temple halls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

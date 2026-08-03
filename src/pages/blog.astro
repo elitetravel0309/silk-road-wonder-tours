@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="Silk Road Wonders Blog — Tips, Guides & News" description="Latest Silk Road travel information, tips, cultural insights, and destination guides for China and Central Asia." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Travel Blog</h1><p>Insights, tips, and stories from the Silk Road</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/index.html">Home</a> <span class="sep">/</span> <span>Blog</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal"><h2>Latest Silk Road Travel Information</h2><div class="divider"></div></div>
+
+<div class="blog-filters" id="blogFilters">
+  <button class="blog-filter active" data-cat="all">All Posts</button>
+  <button class="blog-filter" data-cat="heritage">Heritage & Culture</button>
+  <button class="blog-filter" data-cat="guide">Travel Guides</button>
+  <button class="blog-filter" data-cat="food">Food & Cuisine</button>
+  <button class="blog-filter" data-cat="adventure">Adventure</button>
+</div>
+
+<div class="blog-grid">
+  <a href="blog/gansu-heritage.html" class="blog-card reveal" data-cat="heritage"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Gansu Heritage" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--heritage">Heritage & Culture</span><h3>Top 10 Famous National Intangible Cultural Heritage in Gansu</h3><p class="excerpt">Discover Gansu's living traditions — from shadow puppetry to Tibetan Thangka painting.</p><span class="date">February 24, 2026</span></div></a>
+  <a href="blog/china-diverse-destinations.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="China Travel" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>Why China Is One of the World's Most Diverse Travel Destinations</h3><p class="excerpt">From tropical Hainan to the Gobi Desert — China's staggering diversity explained.</p><span class="date">January 29, 2026</span></div></a>
+  <a href="blog/sven-hedin-xinjiang.html" class="blog-card reveal" data-cat="heritage"><div class="blog-card-img"><img loading="lazy" src="/assets/images/central-asia-architecture.jpg" alt="Sven Hedin" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--heritage">Heritage & Culture</span><h3>Sven Hedin in Xinjiang — 130 Years Ago</h3><p class="excerpt">The legendary Swedish explorer's first expedition into the Taklamakan Desert.</p><span class="date">March 17, 2022</span></div></a>
+  <a href="blog/gansu-may-travel.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Gansu May" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>Gansu May Travel — Best Season to Visit the Hexi Corridor</h3><p class="excerpt">Why May is the perfect month for exploring Gansu's Silk Road treasures.</p><span class="date">October 22, 2021</span></div></a>
+  <a href="blog/silk-road-monthly-guide.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Silk Road Monthly Guide" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>Best Time to Visit the Silk Road: A Month-by-Month Guide</h3><p class="excerpt">Everything you need to know about Silk Road weather, festivals, and seasonal highlights.</p><span class="date">May 31, 2026</span></div></a>
+  <a href="blog/silk-road-food-guide.html" class="blog-card reveal" data-cat="food"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Silk Road Food Guide" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--food">Food & Cuisine</span><h3>Silk Road Food Guide: 15 Dishes You Must Try</h3><p class="excerpt">From Uyghur lamb kebabs to Lanzhou hand-pulled noodles — the ultimate food trail.</p><span class="date">May 31, 2026</span></div></a>
+  <a href="blog/karakoram-highway.html" class="blog-card reveal" data-cat="adventure"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Karakoram Highway" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--adventure">Adventure</span><h3>Karakoram Highway: The World's Highest Paved Road</h3><p class="excerpt">Journey along the legendary KKH from Kashgar through the Karakoram to Pakistan.</p><span class="date">May 31, 2026</span></div></a>
+  <a href="blog/silk-road-photography-tips.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Photography Tips" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>Silk Road Photography Guide: 10 Tips for Stunning Photos</h3><p class="excerpt">Master Silk Road photography — best spots, golden hours, gear, and composition tips.</p><span class="date">May 31, 2026</span></div></a>
+  <a href="blog/central-asia-travel-guide.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Central Asia Guide" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>Central Asia Travel Guide: Visas, Safety & What to Know</h3><p class="excerpt">Everything you need before traveling the Silk Road in Central Asia — visas, money, safety &amp; culture.</p><span class="date">May 31, 2026</span></div></a>
+  <a href="blog/china-train-travel-guide.html" class="blog-card reveal" data-cat="guide"><div class="blog-card-img"><img loading="lazy" src="/assets/images/hero-silkroad.jpg" alt="Train Travel Guide" class="img-fill"></div><div class="blog-card-body"><span class="cat-tag cat-tag--guide">Travel Guide</span><h3>China Train Travel Guide: High-Speed Rail &amp; Silk Road Routes</h3><p class="excerpt">Master China's trains — high-speed rail, overnight sleepers, and the classic Xi'an-to-Kashgar route.</p><span class="date">May 31, 2026</span></div></a>
+</div>
+
+<div class="no-results" id="noBlogResults" style="display:none;">
+  <p>No posts in this category yet — check back soon!</p>
+</div></div></section>
+
+<section class="section section-alt">
+  <div class="container" style="max-width:640px;">
+    <div class="newsletter-box">
+      <div class="newsletter-icon">&#128231;</div>
+      <h2>Get Travel Inspiration</h2>
+      <p>Seasonal Silk Road travel tips, festival guides, and exclusive tour offers — delivered to your inbox.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address" class="newsletter-input">
+        <button class="newsletter-btn">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam, unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const filters = document.querySelectorAll('.blog-filter');
+  const cards = document.querySelectorAll('.blog-card[data-cat]');
+  const noResults = document.getElementById('noBlogResults');
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filters.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const cat = this.dataset.cat;
+      let visible = 0;
+      cards.forEach(c => {
+        const show = cat === 'all' || c.dataset.cat === cat;
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.style.display = visible ? 'none' : '';
+    });
+  });
+})();
+</script>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Inspired to Travel?</h2><p>Let us turn your Silk Road dreams into reality. Start planning your journey today.</p><a href="/contact.html" class="btn btn-gold">Start Planning</a></div>
+</div></div></section>
+</BaseLayout>

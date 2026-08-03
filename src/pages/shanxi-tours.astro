@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = "Shanxi Tours - Ancient Capitals & Buddhist Caves";
+---
+<BaseLayout title={title} description="Explore Shanxi - Yungang Grottoes, Pingyao Ancient City, Mount Wutai. Private tours through China's ancient heart with 3,000 years of history." ogImage="/assets/images/hero-mountains.jpg">
+
+
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>Shanxi</h1><p>The ancient heart of China - Buddhist cave temples, Ming Dynasty cities, and sacred mountains</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Shanxi Tours" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Shanxi Tours</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>Shanxi: Cradle of Chinese Civilization</h2>
+  <div class="divider"></div>
+  <p>Shanxi province is the ancient heart of China - a land where 3,000 years of history are carved into cliff faces, preserved in Ming Dynasty walled cities, and enshrined in Buddhist temples atop sacred peaks. The Yungang Grottoes near Datong, a UNESCO World Heritage site, contain 51,000 Buddhist statues carved into sandstone cliffs 1,500 years ago, while the perfectly preserved city of Pingyao offers a time-capsule glimpse of Ming and Qing Dynasty China with its intact city walls, courtyard mansions, and China's first bank.</p>
+  <p style="margin-top:12px;">Shanxi is also home to Mount Wutai, one of China's Four Sacred Buddhist Mountains, where over 50 temples cluster around five flat peaks. Best seasons are May to October when mountain roads are open and the weather is pleasant. Our private tours cover all major sites with comfortable transport and knowledgeable guides who bring Shanxi's deep history to life.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Datong: Yungang Grottoes" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$480</span></div>
+      <h3>Datong: Yungang Grottoes</h3>
+      <p class="tour-route">Datong → Yungang Grottoes → Hanging Temple → Huayan Monastery</p>
+      <p class="tour-desc">Marvel at 51,000 Buddhist statues carved into sandstone cliffs, visit the gravity-defying Hanging Temple on a cliff face, and explore the wooden pagoda of Yingxian.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Pingyao Ancient City" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$420</span></div>
+      <h3>Pingyao Ancient City</h3>
+      <p class="tour-route">Pingyao → City Wall → Rishengchang Bank → Wang Family Courtyard</p>
+      <p class="tour-desc">Step back into Ming Dynasty China in the perfectly preserved walled city of Pingyao. Walk the ancient walls, visit China's first bank, and explore grand merchant courtyards.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Mount Wutai Pilgrimage" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$580</span></div>
+      <h3>Mount Wutai Pilgrimage</h3>
+      <p class="tour-route">Taiyuan → Mount Wutai → Tayuan Temple → Pusading</p>
+      <p class="tour-desc">Climb one of China's Four Sacred Buddhist Mountains. Visit ancient lamaseries, spin prayer wheels, and experience the timeless spiritual atmosphere at 3,000 meters.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Taiyuan-Datong Heritage Trail" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$720</span></div>
+      <h3>Taiyuan-Datong Heritage Trail</h3>
+      <p class="tour-route">Taiyuan → Jinci Temple → Datong → Yungang Grottoes → Hanging Temple</p>
+      <p class="tour-desc">The classic Shanxi route - from the 3,000-year-old Jinci Temple in Taiyuan to the Buddhist cave art of Yungang and the engineering marvel of the Hanging Temple.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card" alt="Shanxi Courtyard Mansions" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$560</span></div>
+      <h3>Shanxi Courtyard Mansions</h3>
+      <p class="tour-route">Pingyao → Qiao Family Courtyard → Wang Family Courtyard → Zhangbi Ancient Fortress</p>
+      <p class="tour-desc">Explore the grand courtyard mansions of Shanxi's merchant dynasties - the Qiao Family (featured in Raise the Red Lantern) and the Wang Family, China's largest private residence.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+<img src="/assets/images/hero-silkroad.jpg" alt="Hukou Waterfall" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$450</span></div>
+      <h3>Hukou Waterfall</h3>
+      <p class="tour-route">Taiyuan → Linfen → Hukou Waterfall</p>
+      <p class="tour-desc">Witness the thunderous Hukou Waterfall on the Yellow River - China's second-largest waterfall where the mighty river plunges into a narrow gorge in spectacular fashion.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Shanxi Culture Deep Dive" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">7 Days</span><span class="tour-price">$1,080</span></div>
+      <h3>Shanxi Culture Deep Dive</h3>
+      <p class="tour-route">Taiyuan → Pingyao → Datong → Mount Wutai</p>
+      <p class="tour-desc">The complete Shanxi journey - ancient temples, UNESCO caves, sacred mountains, and preserved Ming Dynasty cities. Three millennia of Chinese civilization in one week.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-header reveal"><h2>Why Choose Shanxi</h2><div class="divider"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">3,000 Years of History</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Walk through China's most complete ancient city walls in Pingyao, stand beneath the 1,500-year-old Yungang Grottoes' colossal Buddhas, and climb sacred Mount Wutai — one of Buddhism's four holy mountains.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Architectural Marvels</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">The gravity-defying Hanging Temple clings to a sheer cliff face, while the 67-meter Yingxian Wooden Pagoda — built entirely without nails — has survived earthquakes for nearly a millennium.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Noodle Heaven</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Shanxi is the birthplace of Chinese noodles \x{2014} taste over 280 varieties from knife-cut dao xiao mian to hand-pulled cat ear noodles, all served with aged Shanxi vinegar that has been fermented for decades.</p>
+  </div>
+</div>
+<div style="margin-top:32px;padding:24px;background:var(--cream);border-radius:8px;text-align:center;">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:8px;">Best Time to Visit: April &ndash; October</p>
+  <p style="color:var(--text-light);font-size:0.95rem;">Spring and autumn offer comfortable temperatures for climbing Mount Wutai and exploring the grottoes. July-August sees Pingyao's ancient streets come alive, while September's golden light is ideal for photography.</p>
+</div>
+</div></section>
+
+<section class="cta-section">
+<div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Discover Ancient Shanxi</h2><p>Let our expert team craft your perfect itinerary -- free consultation, no obligation.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+
+
+<CtaSection />
+</BaseLayout>

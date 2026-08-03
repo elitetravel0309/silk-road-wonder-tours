@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "xishuangbanna-tropical",
+  "title": "Xishuangbanna Tropical",
+  "duration": "5 Days",
+  "route": "Jinghong → Tropical Botanical Garden → Dai Villages",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$780",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Escape to China's tropical south. Xishuangbanna offers a completely different China — palm trees, tropical gardens, Dai minority culture, and Southeast Asian flavors.",
+  "highlights": [
+    "Tropical Botanical Garden",
+    "Dai minority villages",
+    "Mekong River scenery",
+    "Wild Elephant Valley",
+    "Tropical fruit tasting"
+  ],
+  "category": "yunnan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'yunnan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

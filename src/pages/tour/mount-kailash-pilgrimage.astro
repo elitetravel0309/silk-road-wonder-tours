@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "mount-kailash-pilgrimage",
+  "title": "Mount Kailash Pilgrimage",
+  "duration": "14 Days",
+  "route": "Lhasa → Shigatse → Saga → Kailash",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$2,980",
+  "features": [
+    "4-Star Hotels",
+    "English Guide",
+    "Trekking Support"
+  ],
+  "overview": "A sacred pilgrimage to Mount Kailash, revered by Hindus, Buddhists, Jains, and Bon followers. This challenging journey takes you across western Tibet to the holiest mountain on Earth.",
+  "highlights": [
+    "Mount Kailash kora trek",
+    "Lake Manasarovar",
+    "Potala Palace",
+    "Remote western Tibet landscapes",
+    "Spiritual pilgrimage experience"
+  ],
+  "category": "tibet"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'tibet'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

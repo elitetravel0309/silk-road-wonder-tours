@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "tiger-leaping-gorge-trek",
+  "title": "Tiger Leaping Gorge Trek",
+  "duration": "6 Days",
+  "route": "Lijiang → Qiaotou → Halfway Guesthouse → Walnut Grove",
+  "image": "/assets/images/hero-mountains.jpg",
+  "price": "$950",
+  "features": [
+    "Trekking Tour",
+    "English Guide"
+  ],
+  "overview": "Trek one of the world's deepest gorges. The Tiger Leaping Gorge trail offers spectacular views of the Jade Dragon Snow Mountain and the raging Yangtze River below.",
+  "highlights": [
+    "Full gorge trek (22km)",
+    "Jade Dragon Snow Mountain views",
+    "Guesthouse stays with views",
+    "Naxi culture",
+    "Lijiang Old Town"
+  ],
+  "category": "yunnan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'yunnan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

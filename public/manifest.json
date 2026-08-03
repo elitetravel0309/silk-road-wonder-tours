@@ -1,0 +1,28 @@
+{
+  "name": "Silk Road Wonders - China & Central Asia Tours",
+  "short_name": "Silk Road Wonders",
+  "description": "Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF8F0",
+  "theme_color": "#1B2A4A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "195x80",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["travel", "tourism"],
+  "lang": "en",
+  "scope": "/",
+  "id": "silkroad-wonders-v1"
+}

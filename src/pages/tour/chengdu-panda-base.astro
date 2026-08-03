@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "chengdu-panda-base",
+  "title": "Chengdu & Panda Base",
+  "duration": "4 Days",
+  "route": "Chengdu → Panda Base → Jinli Street",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$620",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "The ultimate Chengdu experience. Get up close with giant pandas, explore ancient streets, and taste the world's boldest cuisine in the capital of Sichuan.",
+  "highlights": [
+    "Giant Panda Breeding Center",
+    "Jinli Ancient Street",
+    "Sichuan hot pot dinner",
+    "People's Park tea house",
+    "Wuhou Shrine"
+  ],
+  "category": "sichuan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'sichuan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

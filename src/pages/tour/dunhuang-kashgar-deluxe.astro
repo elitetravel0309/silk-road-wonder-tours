@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "dunhuang-kashgar-deluxe",
+  "title": "Dunhuang to Kashgar Deluxe",
+  "duration": "9 Days",
+  "route": "Dunhuang → Turpan → Urumqi → Kashgar → Taxkorgan",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$3,200",
+  "features": [
+    "5-Star Hotels",
+    "Private Vehicle",
+    "VIP Access"
+  ],
+  "overview": "A luxury journey from the Buddhist grottoes of Dunhuang to the Islamic bazaars of Kashgar. Private guides, boutique hotels, and exclusive cultural experiences.",
+  "highlights": [
+    "Mogao Caves private tour",
+    "Kashgar Sunday Market",
+    "Karakoram Highway drive",
+    "Boutique desert hotels",
+    "Uyghur culinary experiences"
+  ],
+  "category": "luxury"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'luxury'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

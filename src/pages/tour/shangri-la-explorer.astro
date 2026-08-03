@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "shangri-la-explorer",
+  "title": "Shangri-La Explorer",
+  "duration": "7 Days",
+  "route": "Lijiang → Tiger Leaping Gorge → Shangri-La",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$1,450",
+  "features": [
+    "4-Star Hotels",
+    "English Guide",
+    "Himalayan Views"
+  ],
+  "overview": "Journey to Shangri-La, the mythical land of James Hilton's novel. Trek through Tiger Leaping Gorge and explore Tibetan monasteries in the foothills of the Himalayas.",
+  "highlights": [
+    "Tiger Leaping Gorge trek",
+    "Songzanlin Monastery",
+    "Pudacuo National Park",
+    "Dukezong Ancient Town",
+    "Himalayan panoramas"
+  ],
+  "category": "yunnan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'yunnan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

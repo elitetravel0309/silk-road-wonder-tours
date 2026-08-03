@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Gansu Tours — Dunhuang Mogao Caves, Zhangye Danxia & Hexi Corridor" description="Explore Gansu's Silk Road treasures — Dunhuang Mogao Caves, Zhangye Rainbow Mountains, Jiayuguan Fortress. 4–12 day tours with English guides, 4-star hotels." ogImage="/assets/images/hero-silkroad.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Gansu" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Gansu Tours",
+    "description": "Expert-guided tours through Gansu's Silk Road treasures — from Dunhuang's Buddhist grottoes to Zhangye's rainbow mountains.",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Dunhuang & Mogao Caves", "url": "https://silkroadwondertours.com/tour/dunhuang-mogao-caves.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Gansu Highlights", "url": "https://silkroadwondertours.com/tour/gansu-highlights.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Zhangye Danxia Photography", "url": "https://silkroadwondertours.com/tour/zhangye-danxia-photo.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Hexi Corridor Explorer", "url": "https://silkroadwondertours.com/tour/hexi-corridor-explorer.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Gansu Panorama", "url": "https://silkroadwondertours.com/tour/gansu-panorama.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Lanzhou & Yellow River", "url": "https://silkroadwondertours.com/tour/lanzhou-yellow-river.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/hero-silkroad.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="gan-hero">Gansu Tours</h1><p data-i18n="gan-hero-sub">Dunhuang Mogao Caves · Zhangye Danxia · Hexi Corridor — The Heart of the Silk Road</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Gansu</span></div></nav>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="gan-intro-title">Welcome to Gansu — Where the Silk Road Comes Alive</h2>
+        <div class="divider"></div>
+        <p data-i18n="gan-intro-desc">Gansu is the living heart of the ancient Silk Road. This narrow corridor between the Tibetan Plateau and the Gobi Desert was the lifeline of trade between China and the West for over a millennium. Today, it preserves the route's most spectacular treasures — from the thousand-year-old Buddhist art of the Mogao Caves to the rainbow-striped Zhangye Danxia landforms and the westernmost outpost of the Great Wall at Jiayuguan.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="gan-intro-desc2">Our Gansu tours take you along the legendary Hexi Corridor, stopping at each of its historic oasis towns. Wander through the echoing halls of the Mogao Caves, ride a camel across the Singing Sand Dunes at sunset, walk the ramparts of Jiayuguan Fortress, and taste authentic Lanzhou beef noodles in the capital. Whether you choose a focused 3-day Dunhuang experience or a comprehensive 12-day Gansu Panorama, every tour includes English-speaking guides, 4-star accommodation, and seamless private transportation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Must-See Wonders -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="gan-wonders">Must-See Wonders of Gansu</h2><div class="divider"></div></div>
+      <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="gan-w1-title">Mogao Caves, Dunhuang</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="gan-w1-desc">A UNESCO World Heritage site containing 492 caves with over 45,000 sqm of Buddhist murals spanning 1,000 years of art — one of the world's greatest repositories of ancient culture.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="gan-w2-title">Zhangye Danxia</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="gan-w2-desc">China's most famous rainbow mountains — layers of red, orange, yellow, and green sandstone sculpted by 24 million years of tectonic activity into a surreal painter's palette.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="gan-w3-title">Jiayuguan Fortress</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="gan-w3-desc">The westernmost pass of the Ming Great Wall — a mighty fortress standing alone at the edge of the Gobi Desert, marking where Chinese civilization met the vast unknown.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="gan-w4-title">Singing Sand Dunes</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="gan-w4-desc">Climb the massive dunes that surround Crescent Moon Spring — an oasis that has miraculously survived in the desert for 2,000 years. Ride a camel at sunset for an unforgettable experience.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Grid -->
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="gan-tour-title">Gansu Silk Road Tours</h2><div class="divider"></div><p data-i18n="gan-tour-sub">From ancient Buddhist grottoes to rainbow-colored mountains — explore the best of Gansu</p></div>
+    <div class="tour-grid">
+      {allTours.gansu.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+
+  <!-- Travel Tips -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="gan-tips-title">Gansu Travel Tips</h2><div class="divider"></div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="gan-t1-title">&#128208; Best Time to Visit</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="gan-t1-desc">May–October offers the most pleasant weather. September–October is ideal for photography with crisp air and golden autumn hues. Avoid the summer peak (July–August) if you prefer fewer crowds. Winter visits are possible at Dunhuang but some higher routes may close.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="gan-t2-title">&#128652; Getting Around</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="gan-t2-desc">High-speed trains connect Lanzhou, Zhangye, Jiayuguan, and Dunhuang in under 4 hours. Our tours use private vehicles to maximize flexibility and include train tickets where appropriate. The Hexi Corridor is a natural linear route — perfect for point-to-point travel.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="gan-t3-title">&#127860; Local Food</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="gan-t3-desc">Don't miss Lanzhou beef noodles (the city's iconic breakfast), Dunhuang donkey meat huangmian, Zhangye搓鱼面 (hand-rolled fish-shaped noodles), and Jiayuguan barbecued lamb skewers. Gansu's fusion of Chinese and Central Asian flavors is unique in China.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "classic-tibet-discovery",
+  "title": "Classic Tibet Discovery",
+  "duration": "6 Days",
+  "route": "Lhasa → Namtso Lake → Yangpachen",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$1,280",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Discover the spiritual essence of Tibet on this 6-day journey. Explore Lhasa's UNESCO World Heritage sites and venture to the breathtaking Namtso Lake, one of the world's highest saltwater lakes.",
+  "highlights": [
+    "Potala Palace",
+    "Namtso Lake at 4,718m",
+    "Sera Monastery monk debates",
+    "Barkhor pilgrimage circuit",
+    "Yangpachen hot springs"
+  ],
+  "category": "tibet"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'tibet'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

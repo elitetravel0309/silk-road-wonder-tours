@@ -1,0 +1,38 @@
+---
+export interface Tour {
+  title: string;
+  duration: string;
+  route?: string;
+  image: string;
+  features?: string[];
+  price?: string;
+  originalPrice?: string;
+  slug: string;
+}
+const { tour, showFeatures = false } = Astro.props;
+---
+<div class="tour-card reveal">
+  <div class="tour-card-img">
+    <a href={`/tour/${tour.slug}.html`}>
+      <img src={tour.image} alt={tour.title} class="img-fill" loading="lazy">
+    </a>
+    <span class="tour-card-duration">{tour.duration}</span>
+  </div>
+  <div class="tour-card-body">
+    <h3>{tour.title}</h3>
+    {tour.route && <div class="tour-card-route">&#128205; {tour.route}</div>}
+    {showFeatures && tour.features && tour.features.length > 0 && (
+      <div class="tour-card-features">
+        {tour.features.map(f => <span>{f}</span>)}
+      </div>
+    )}
+    <div class="tour-card-footer">
+      <div class="tour-price">
+        <span class="label">from</span>
+        <span class="current">{tour.price || 'Inquire'}</span>
+        {tour.originalPrice && <span class="original">{tour.originalPrice}</span>}
+      </div>
+      <a href={`/tour/${tour.slug}.html`} class="btn btn-gold btn-sm">View Details</a>
+    </div>
+  </div>
+</div>

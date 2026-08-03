@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "northern-xinjiang-loop",
+  "title": "Northern Xinjiang Loop",
+  "duration": "10 Days",
+  "route": "Urumqi → Kanas → Ili → Sayram → Bayanbulak → Urumqi",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$2,080",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "The complete Northern Xinjiang circuit. From Kanas Lake in the far north to the grasslands of Bayanbulak, this loop covers all the highlights of China's most beautiful region.",
+  "highlights": [
+    "Kanas Lake",
+    "Ili River Valley",
+    "Sayram Lake",
+    "Naraty Grassland",
+    "Bayanbulak Swan Lake"
+  ],
+  "category": "northXinjiang"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'northXinjiang'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

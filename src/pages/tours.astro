@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { all, featured, popular, extend } from '../data/tours';
+import { allTours } from '../data/all-tours';
+---
+
+<BaseLayout title="All Silk Road Tours — 2025-2026" description="Browse 60+ Silk Road tours across China and Central Asia. Group tours, private journeys, luxury expeditions. Xinjiang, Gansu, Qinghai, Tibet, Sichuan, Yunnan from $420." ogImage="/assets/images/hero-silkroad.jpg" canonical="https://silkroadwondertours.com/tours.html">
+  <section class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+    <div class="container">
+      <h1>Silk Road Tours &amp; Packages</h1>
+      <p>60+ Handcrafted Journeys Across China &amp; Central Asia — Group, Private &amp; Luxury from $420</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "All Silk Road Tours" }
+  ]
+}`}/>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Silk Road Tours Collection",
+  "description": "60+ handcrafted Silk Road tour packages",
+  "numberOfItems": ${all.length + Object.values(allTours).flat().length},
+  "itemListOrder": "https://schema.org/ItemListOrderDescending"
+}`}/>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/index.html">Home</a> <span class="sep">/</span>
+    <span class="current">All Tours</span>
+  </div></nav>
+
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Explore the Ancient Silk Road</h2>
+        <div class="divider"></div>
+        <p>Step into 2,000 years of history. Our Silk Road tours follow the legendary trade routes that connected China to Central Asia, the Middle East, and Europe. From the bustling Sunday Bazaar of Kashgar to the Buddhist grottoes of Dunhuang, from the rainbow mountains of Zhangye to the turquoise domes of Samarkand — every journey is a story waiting to be lived.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Group Tours -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge" style="display:inline-block;background:var(--primary);color:#fff;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Most Popular</span>
+        <h2>Featured Group Tours</h2>
+        <div class="divider"></div>
+        <p>Our signature small-group departures — 4-star comfort, English-speaking guides, Saturday departures</p>
+      </div>
+      <div class="tour-grid">
+        {featured.map(t => <TourCard tour={t} showFeatures={true} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Private Tours -->
+  <section class="section" id="popular" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge" style="display:inline-block;background:var(--accent);color:#fff;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Private Journeys</span>
+        <h2>Private Silk Road Tours</h2>
+        <div class="divider"></div>
+        <p>Travel at your own pace with a private guide and vehicle — fully customizable itineraries</p>
+      </div>
+      <div class="tour-grid">
+        {popular.map(t => <TourCard tour={t} showFeatures={true} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Extension Tours -->
+  <section class="section" id="extend">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge" style="display:inline-block;background:var(--secondary);color:#fff;padding:4px 12px;border-radius:20px;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Epic Combinations</span>
+        <h2>Silk Road Extension Tours</h2>
+        <div class="divider"></div>
+        <p>Combine the Silk Road with Tibet, Sichuan, Yunnan &mdash; multi-country overland adventures</p>
+      </div>
+      <div class="tour-grid">
+        {extend.map(t => <TourCard tour={t} showFeatures={true} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse by Destination -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Browse by Destination</h2>
+        <div class="divider"></div>
+        <p>Find the perfect Silk Road tour by region</p>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+        <a href="/gansu-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/desert-dunes.jpg" alt="Gansu Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">6 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Gansu Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Dunhuang, Zhangye, Jiayuguan &mdash; the Hexi Corridor</p></div>
+        </a>
+        <a href="/xinjiang-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/xinjiang-landscape.jpg" alt="Xinjiang Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">19 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Xinjiang Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Kashgar, Kanas, Turpan &mdash; the heart of the Silk Road</p></div>
+        </a>
+        <a href="/qinghai-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/hero-mountains.jpg" alt="Qinghai Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">6 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Qinghai Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Qinghai Lake, Chaka Salt Lake, Tibetan culture</p></div>
+        </a>
+        <a href="/tibet-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/hero-silkroad.jpg" alt="Tibet Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">6 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Tibet Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Lhasa, Everest Base Camp, sacred lakes</p></div>
+        </a>
+        <a href="/sichuan-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/hero-mountains.jpg" alt="Sichuan Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">6 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Sichuan Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Pandas, Jiuzhaigou, Leshan Buddha, hot pot</p></div>
+        </a>
+        <a href="/yunnan-tours.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/desert-dunes.jpg" alt="Yunnan Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">7 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Yunnan Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Dali, Lijiang, Tiger Leaping Gorge, Shangri-La</p></div>
+        </a>
+        <a href="/luxury-silk-road.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/central-asia-architecture.jpg" alt="Luxury Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">5 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">Luxury Silk Road</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">5-star hotels, VIP access, private jet tours</p></div>
+        </a>
+        <a href="/china-group-tour.html" class="tour-card" style="text-decoration:none;display:flex;flex-direction:column;">
+          <div class="tour-img-wrap" style="position:relative;overflow:hidden;aspect-ratio:16/10;"><img src="/assets/images/hero-silkroad.jpg" alt="Group Tours" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /><span class="tour-tag" style="position:absolute;top:12px;left:12px;background:var(--primary);color:#fff;padding:4px 10px;border-radius:4px;font-size:0.75rem;">6 Tours</span></div>
+          <div class="card-body" style="padding:20px;"><h3 style="margin:0 0 4px;">China Group Tours</h3><p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Small-group departures, all logistics handled</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Planning Your Silk Road Journey</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Best Time to Travel</h3>
+          <p style="margin:0;color:var(--text-muted);">April-October is ideal for most Silk Road destinations. Spring (Apr-May) and autumn (Sep-Oct) offer comfortable temperatures and fewer crowds. July-August is peak season with the best weather for high-altitude areas.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Visa &amp; Permits</h3>
+          <p style="margin:0;color:var(--text-muted);">Most travelers need a Chinese visa (L-type tourist visa). Tibet tours require an additional Tibet Travel Permit arranged by us. Central Asia extension tours may need visas for Uzbekistan, Kyrgyzstan, or Kazakhstan.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">What to Pack</h3>
+          <p style="margin:0;color:var(--text-muted);">Layers are essential — desert days are hot, nights are cool. Sunscreen, hat, sunglasses, comfortable walking shoes. A light jacket even in summer for high-altitude destinations like Tibet and Qinghai.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Getting Around</h3>
+          <p style="margin:0;color:var(--text-muted);">Our tours include private vehicles and domestic flights or high-speed trains where applicable. China's train network is world-class — comfortable, punctual, and a great way to see the landscape change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

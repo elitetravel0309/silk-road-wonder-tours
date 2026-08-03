@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { featured, popular, extend } from '../data/tours';
+
+const destinations = [
+  { name: 'Silk Road', url: '/destinations', image: '/assets/images/hero-silkroad.jpg' },
+  { name: 'Xinjiang', url: '/xinjiang-tours', image: '/assets/images/xinjiang-landscape.jpg' },
+  { name: 'Beijing', url: '/destination/beijing', image: '/assets/images/great-wall.jpg' },
+  { name: 'Dunhuang', url: '/destination/dunhuang', image: '/assets/images/desert-dunes.jpg' },
+  { name: 'Gansu', url: '/gansu-tours', image: '/assets/images/hero-silkroad.jpg' },
+  { name: 'Shanghai', url: '/destination/shanghai', image: '/assets/images/hero-mountains.jpg' },
+  { name: 'Tibet', url: '/tibet-tours', image: '/assets/images/hero-mountains.jpg' },
+  { name: 'Urumqi', url: '/xinjiang-tours', image: '/assets/images/xinjiang-landscape.jpg' },
+  { name: 'Kashgar', url: '/destination/kashgar', image: '/assets/images/central-asia-architecture.jpg' },
+  { name: 'Uzbekistan', url: '/destinations', image: '/assets/images/central-asia-architecture.jpg' },
+  { name: 'Xi\'an', url: '/destination/xian', image: '/assets/images/great-wall.jpg' },
+  { name: 'Zhangjiajie', url: '/destination/zhangjiajie', image: '/assets/images/hero-mountains.jpg' },
+  { name: 'Yunnan', url: '/yunnan-tours', image: '/assets/images/hero-silkroad.jpg' },
+  { name: 'Sichuan', url: '/sichuan-tours', image: '/assets/images/hero-silkroad.jpg' },
+  { name: 'Qinghai', url: '/qinghai-tours', image: '/assets/images/desert-dunes.jpg' },
+  { name: 'Kyrgyzstan', url: '/destinations', image: '/assets/images/xinjiang-landscape.jpg' },
+  { name: 'Kazakhstan', url: '/destinations', image: '/assets/images/hero-mountains.jpg' },
+  { name: 'Zhangye', url: '/gansu-tours', image: '/assets/images/hero-silkroad.jpg' },
+  { name: 'Jiayuguan', url: '/gansu-tours', image: '/assets/images/great-wall.jpg' },
+  { name: 'Turpan', url: '/xinjiang-tours', image: '/assets/images/desert-dunes.jpg' },
+  { name: 'Tajikistan', url: '/destinations', image: '/assets/images/hero-mountains.jpg' },
+];
+
+const reviews = [
+  { stars: '★★★★★', body: 'Thanks to the team for making our journey safe and unforgettable. Every detail was perfectly arranged — from the desert camps to the ancient cities. Truly a once-in-a-lifetime experience.', name: 'Paola', country: 'Italy', date: 'May 2026', initial: 'P' },
+  { stars: '★★★★★', body: 'Special thanks to Alice for her professional arrangements. Our guides Harry and Jane were incredibly knowledgeable and friendly. The drivers Zhou and Huang provided excellent service throughout.', name: 'Jenny Tang', country: 'Malaysia', date: 'May 2026', initial: 'J' },
+  { stars: '★★★★★', body: 'Amazing 13-day Xinjiang + Silk Road tour! Our guide Ali was exceptional — his knowledge of history and genuine care for every traveler made this journey extraordinary.', name: 'Amy', country: 'Canada', date: 'Oct 2025', initial: 'A' },
+  { stars: '★★★★★', body: 'Everything went smoothly as planned. The Silk Road exceeded all our expectations. We\'re already planning our next visit — there\'s so much more to explore!', name: 'Hans', country: 'Germany', date: 'Aug 2025', initial: 'H' },
+  { stars: '★★★★★', body: 'Thank you Alice and assistant Richard for all the help! As first-time China travelers, we were nervous, but you made everything seamless.', name: 'Quang & Michelle', country: 'USA', date: 'Sep 2025', initial: 'Q' },
+];
+
+const blogPosts = [
+  { title: 'Top 10 Intangible Cultural Heritage in Gansu', date: 'February 24, 2026', image: '/assets/images/hero-mountains.jpg', url: '/blog/gansu-heritage' },
+  { title: 'Why China Is a Diverse Travel Destination', date: 'January 29, 2026', image: '/assets/images/hero-silkroad.jpg', url: '/blog/china-diverse-destinations' },
+  { title: 'Gansu May Travel —Best Season for Hexi Corridor', date: 'October 22, 2021', image: '/assets/images/desert-dunes.jpg', url: '/blog/gansu-may-travel' },
+  { title: 'Sven Hedin in Xinjiang —130 Years Ago', date: 'March 17, 2022', image: '/assets/images/central-asia-architecture.jpg', url: '/blog/sven-hedin-xinjiang' },
+];
+---
+<BaseLayout
+  title="Journey Through Legends | China & Central Asia Tours"
+  description="Silk Road Wonders is the top China travel agency, offering private and group Silk Route trips to China, Xinjiang, Tibet, and Central Asia. 5-25 days Silk Road tours."
+  canonical="https://silkroadwondertours.com/"
+>
+  <link rel="preload" as="image" href="/assets/home-banner.jpg" fetchpriority="high">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Silk Road Wonders","url":"https://silkroadwondertours.com","description":"Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TravelAgency","name":"Silk Road Wonders","url":"https://silkroadwondertours.com","telephone":"+8615347723823","email":"booking@silkroadwondertours.com","address":{"@type":"PostalAddress","addressLocality":"Xinjiang","addressCountry":"CN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"20000"}}
+  </script>
+
+  <section class="hero" id="main-content" style="background-image:url('/assets/home-banner.jpg')">
+    <div class="hero-content">
+      <span class="hero-badge">&#127942; Best Seller</span>
+      <h1>Journey Through Legends</h1>
+      <p>Discover the ancient Silk Road —from the vibrant bazaars of Kashgar to the rainbow mountains of Zhangye</p>
+      <div>
+        <a href="/tours.html" class="btn btn-primary">Explore Our Tours</a>
+        <a href="/contact.html" class="btn btn-outline" style="margin-left:12px;">Tailor My Trip</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about"><div class="container"><div class="intro-grid reveal">
+    <div class="intro-image"><div class="img-placeholder" style="background:url('/assets/images/hero-mountains.jpg') center/cover"></div><div class="deco"></div></div>
+    <div class="intro-text">
+      <h2>Silk Road Wonders —Journey Through Legends</h2>
+      <p>We specialize in customized Silk Road journeys across China and Central Asia, offering both private tailor-made tours and small group adventures. Follow in the footsteps of Marco Polo and explore the fascinating history, unique cultures, arts, and ethnic traditions of the ancient Silk Road.</p>
+      <p>Your journey begins in Xi'an, extends through the Hexi Corridor —Lanzhou, Wuwei, Zhangye, Jiayuguan, Dunhuang —crosses the Gobi Desert and mountains to Xinjiang, and can continue into Central Asia. With 20+ years of experience, we promise an extraordinary holiday.</p>
+      <div class="intro-stats"><div class="intro-stat"><div class="num">20,000+</div><div class="label">Happy Travelers</div></div><div class="intro-stat"><div class="num">20+</div><div class="label">Years Experience</div></div><div class="intro-stat"><div class="num">99%</div><div class="label">Satisfaction</div></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="section section-alt" id="group"><div class="container">
+    <div class="section-header reveal"><h2>Most Popular Small Group Silk Road Journeys</h2><div class="divider"></div><p>4-star hotels 路 English-speaking guides 路 Saturday departures 路 99% satisfaction</p></div>
+    <div class="tour-grid">
+      {featured.map(t => <TourCard tour={t} showFeatures={true} />)}
+    </div>
+    <div class="view-more reveal"><a href="/china-group-tour" class="btn btn-gold">View All Group Tours &rarr;</a></div>
+  </div></section>
+
+  <section class="section" id="tours"><div class="container">
+    <div class="section-header reveal"><h2>Most Popular Silk Road Tours</h2><div class="divider"></div><p>Handpicked private journeys —fully customizable, your pace, your style</p></div>
+    <div class="tour-grid">
+      {popular.map(t => <TourCard tour={t} showFeatures={false} />)}
+    </div>
+    <div class="view-more reveal"><a href="/tours.html" class="btn btn-gold">View All Tours &rarr;</a></div>
+  </div></section>
+
+  <section class="section section-alt"><div class="container">
+    <div class="section-header reveal"><h2>Extend Your Silk Road Tour</h2><div class="divider"></div><p>Combine the Silk Road with other incredible destinations across China &amp; Central Asia</p></div>
+    <div class="tour-grid">
+      {extend.map(t => <TourCard tour={t} showFeatures={false} />)}
+    </div>
+    <div class="view-more reveal"><a href="/extend-silk-road-tour" class="btn btn-gold">View Extension Tours &rarr;</a></div>
+  </div></section>
+
+  <section class="section" id="reviews"><div class="container">
+    <div class="section-header reveal"><h2>What Our Customers Are Saying</h2><div class="divider"></div><p>Over 20,000 travelers have trusted us with their Silk Road dream.</p></div>
+    <div class="reviews-grid">
+      {reviews.map(r => (
+        <div class="review-card reveal"><div class="review-stars">{r.stars}</div><div class="review-body">"{r.body}"</div><div class="review-author"><div class="review-avatar">{r.initial}</div><div class="review-author-info"><strong>{r.name}</strong><span>{r.country} 路 {r.date}</span></div></div></div>
+      ))}
+    </div>
+    <div class="view-more reveal"><a href="/review.html" class="btn btn-gold">Read All Reviews &rarr;</a></div>
+  </div></section>
+
+  <section class="section section-alt"><div class="container">
+    <div class="section-header reveal"><h2>Why Choose Us</h2><div class="divider"></div></div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon tailor">鉁?/div><h3>100% Tailor Made</h3><p>Your entire holiday is designed around your requirements.</p></div>
+      <div class="why-card reveal"><div class="why-icon expert">馃�</div><h3>Expert Knowledge</h3><p>All our specialists have traveled extensively or lived in their specialist regions.</p></div>
+      <div class="why-card reveal"><div class="why-icon professional">鈿?/div><h3>Professional Arrangements</h3><p>Friendly guides and drivers. No shopping stops or hidden fees.</p></div>
+      <div class="why-card reveal"><div class="why-icon trusted">馃洝</div><h3>Trusted Service</h3><p>Licensed travel agency since 2005. Free cancellation up to 30 days.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="destinations"><div class="container">
+    <div class="section-header reveal"><h2>Most Popular China &amp; Silk Road Destinations</h2><div class="divider"></div></div>
+    <div class="dest-grid">
+      {destinations.map(d => <a href={d.url} class="dest-card reveal"><div class="img-placeholder" style={`background-image:url('${d.image}');background-size:cover;`}></div><span class="dest-name">{d.name}</span></a>)}
+    </div>
+    <div class="view-more reveal"><a href="/destinations.html" class="btn btn-gold">View All Destinations &rarr;</a></div>
+  </div></section>
+
+  <section class="section section-alt"><div class="container">
+    <div class="section-header reveal"><h2>Latest Silk Road Travel Information</h2><div class="divider"></div></div>
+    <div class="blog-grid">
+      {blogPosts.map(b => <a href={b.url} class="blog-card reveal"><div class="blog-card-img"><img src={b.image} class="img-fill" loading="lazy" style="height:100%" alt={b.title} /></div><div class="blog-card-body"><h3>{b.title}</h3><span class="date">{b.date}</span></div></a>)}
+    </div>
+    <div class="view-more reveal"><a href="/blog.html" class="btn btn-gold">Read More Articles &rarr;</a></div>
+  </div></section>
+
+  <CtaSection />
+</BaseLayout>

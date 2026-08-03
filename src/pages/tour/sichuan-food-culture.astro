@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "sichuan-food-culture",
+  "title": "Sichuan Food & Culture",
+  "duration": "5 Days",
+  "route": "Chengdu → Zigong → Leshan",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$720",
+  "features": [
+    "Food Focus",
+    "English Guide"
+  ],
+  "overview": "A journey through the culinary heart of China. Sichuan is one of the world's great food regions — learn to cook its iconic dishes, visit night markets, and eat your way through Chengdu, Zigong, and Leshan.",
+  "highlights": [
+    "Sichuan cooking class",
+    "Chengdu night food market",
+    "Zigong dinosaur museum",
+    "Leshan street food",
+    "Tea house culture"
+  ],
+  "category": "sichuan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'sichuan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

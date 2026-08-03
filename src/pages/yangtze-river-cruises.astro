@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = "Yangtze River Cruises — Three Gorges Luxury Voyages";
+---
+<BaseLayout title={title} description="Yangtze cruise packages through the Three Gorges — 4-5 day luxury cruises from Chongqing to Yichang. Combine with Silk Road tours for the ultimate China journey." ogImage="/assets/images/hero-silkroad.jpg">
+
+
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>Yangtze River Cruises</h1><p>Sail through the heart of China — luxury cruises along the mighty Yangtze River</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Yangtze River Cruises" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Yangtze River Cruises</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>The Yangtze: China’s Lifeline</h2>
+  <div class="divider"></div>
+  <p>The Yangtze River — Asia’s longest — has been China’s lifeblood for 5,000 years. A cruise through the Three Gorges (Qutang, Wu, and Xiling) is one of China’s quintessential experiences. Between towering limestone cliffs, sail past ancient hanging coffins, the Ghost City of Fengdu, and the Three Gorges Dam. Modern luxury ships offer spacious balcony cabins, gourmet dining, and onboard cultural activities.</p>
+  <p style="margin-top:12px;">Our cruises can be stand-alone 4-5 day voyages or seamlessly combined with Silk Road tours. Choose upstream (Yichang to Chongqing, 5 days) or downstream (Chongqing to Yichang, 4 days). Best seasons are April to May and September to October. All cruises include shore excursions, meals, and English-speaking guides.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Chongqing to Yichang: Downstream" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$680</span></div>
+      <h3>Chongqing to Yichang: Downstream</h3>
+      <p class="tour-route">Chongqing → Fengdu → Three Gorges → Yichang</p>
+      <p class="tour-desc">The classic downstream voyage through Qutang, Wu, and Xiling Gorges. Visit Fengdu Ghost City, take a sampan up Shennong Stream, and tour the Three Gorges Dam.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Yichang to Chongqing: Upstream" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$750</span></div>
+      <h3>Yichang to Chongqing: Upstream</h3>
+      <p class="tour-route">Yichang → Three Gorges Dam → Shennong Stream → Chongqing</p>
+      <p class="tour-desc">The leisurely upstream journey with more time to absorb gorge scenery. Includes the Dam, a sampan excursion, and the ancient Shibaozhai pagoda.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Yangtze & Silk Road Grand Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">14 Days</span><span class="tour-price">$3,200</span></div>
+      <h3>Yangtze & Silk Road Grand Tour</h3>
+      <p class="tour-route">Beijing → Xi’an → Chongqing → Yangtze Cruise → Dunhuang → Shanghai</p>
+      <p class="tour-desc">The ultimate combination — Great Wall, Warriors, 4-night Yangtze cruise, then the desert wonders of the Silk Road. China’s greatest hits in one epic journey.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Yangtze Gold Luxury Cruise" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$890</span></div>
+      <h3>Yangtze Gold Luxury Cruise</h3>
+      <p class="tour-route">Chongqing → Fengdu → Wu Gorge → Three Gorges Dam → Yichang</p>
+      <p class="tour-desc">5-star luxury on the Yangtze’s finest ships — private balcony suites, gourmet cuisine, onboard spa, and exclusive shore excursions with smaller groups.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Yangtze & Zhangjiajie" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">8 Days</span><span class="tour-price">$1,680</span></div>
+      <h3>Yangtze & Zhangjiajie</h3>
+      <p class="tour-route">Chongqing → Yangtze Cruise → Yichang → Zhangjiajie</p>
+      <p class="tour-desc">Sail the Three Gorges, then walk among Zhangjiajie’s Avatar-inspiring pillars. Two of China’s most dramatic landscapes in one incredible adventure.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Yangtze Explorer: History & Culture" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$1,050</span></div>
+      <h3>Yangtze Explorer: History & Culture</h3>
+      <p class="tour-route">Yichang → Three Gorges Dam → Lesser Three Gorges → White Emperor City → Chongqing</p>
+      <p class="tour-desc">A culturally immersive cruise — enter White Emperor City where poets composed for 2,000 years, explore Lesser Three Gorges by wooden boat, learn about the Ba people.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Book Your Yangtze Cruise</h2><p>Let our expert team craft your perfect itinerary — free consultation, no obligation.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+
+
+<CtaSection />
+</BaseLayout>

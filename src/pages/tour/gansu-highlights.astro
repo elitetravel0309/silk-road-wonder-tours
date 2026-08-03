@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "gansu-highlights",
+  "title": "Gansu Highlights",
+  "duration": "6 Days",
+  "route": "Lanzhou → Zhangye → Jiayuguan → Dunhuang",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$1,150",
+  "features": [
+    "4-Star Hotels",
+    "English Guide",
+    "Train Included"
+  ],
+  "overview": "The essential Gansu Silk Road experience. From the Yellow River in Lanzhou to the rainbow mountains of Zhangye, the Great Wall fortress at Jiayuguan, and the Buddhist grottoes of Dunhuang.",
+  "highlights": [
+    "Zhangye Danxia rainbow mountains",
+    "Jiayuguan Fortress",
+    "Mogao Caves",
+    "Yellow River in Lanzhou",
+    "Singing Sand Dunes"
+  ],
+  "category": "gansu"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'gansu'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Yunnan Tours — Kunming, Dali, Lijiang, Shangri-La & Xishuangbanna" description="Discover Yunnan's diversity — Stone Forest, ancient towns of Dali & Lijiang, Shangri-La monasteries, tropical Xishuangbanna. 5–14 day tours with English guides." ogImage="/assets/images/hero-mountains.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Yunnan" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Yunnan Tours",
+    "description": "Expert-guided tours through Yunnan's diverse landscapes — from ancient towns to Tibetan monasteries to tropical rainforests.",
+    "numberOfItems": 7,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Kunming-Dali-Lijiang", "url": "https://silkroadwondertours.com/tour/kunming-dali-lijiang.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Shangri-La Explorer", "url": "https://silkroadwondertours.com/tour/shangri-la-explorer.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Xishuangbanna Tropical", "url": "https://silkroadwondertours.com/tour/xishuangbanna-tropical.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Yuanyang Rice Terraces Photo", "url": "https://silkroadwondertours.com/tour/yuanyang-rice-terraces.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Yunnan Tea Horse Road", "url": "https://silkroadwondertours.com/tour/yunnan-tea-horse-road.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Tiger Leaping Gorge Trek", "url": "https://silkroadwondertours.com/tour/tiger-leaping-gorge-trek.html" } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "TouristTrip", "name": "Yunnan Grand Tour", "url": "https://silkroadwondertours.com/tour/yunnan-grand-tour.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/hero-mountains.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="yun-hero">Yunnan Tours</h1><p data-i18n="yun-hero-sub">Kunming · Dali · Lijiang · Shangri-La · Xishuangbanna — China's Most Diverse Province</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Yunnan</span></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="yun-intro-title">Welcome to Yunnan — Where Snow Peaks Meet Tropical Rainforests</h2>
+        <div class="divider"></div>
+        <p data-i18n="yun-intro-desc">No other province in China packs as much diversity into one place as Yunnan. In a single journey, you can wander the cobblestone lanes of 1,000-year-old towns, stand before snow-capped Himalayan peaks, trek through the world's deepest river gorge, and sip tea in tropical botanical gardens. Yunnan is home to 25 of China's 56 ethnic minorities, each with distinct languages, costumes, festivals, and cuisines.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="yun-intro-desc2">Our Yunnan tours cover the province's greatest hits — the UNESCO-listed Old Towns of Lijiang and Dali, the Tibetan monastery town of Shangri-La, the legendary Tiger Leaping Gorge, the photographic rice terraces of Yuanyang, and the Southeast Asian-flavored tropics of Xishuangbanna. Each tour includes English-speaking guides, comfortable 4-star accommodation, and seamless private transportation between destinations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="yun-wonders">Yunnan's Must-See Destinations</h2><div class="divider"></div></div>
+      <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="yun-w1-title">Lijiang Old Town</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="yun-w1-desc">A UNESCO World Heritage site — labyrinthine cobblestone streets, wooden Naxi houses, ancient stone bridges over crystal-clear canals, with Jade Dragon Snow Mountain towering in the distance.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="yun-w2-title">Shangri-La</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="yun-w2-desc">The mythical land at 3,300m — visit Songzanlin Monastery (the 'Little Potala'), explore Pudacuo National Park's pristine lakes, and experience Tibetan culture at the edge of the Himalayas.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="yun-w3-title">Tiger Leaping Gorge</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="yun-w3-desc">One of the world's deepest gorges — the Yangtze River thunders through a canyon flanked by 5,596m Jade Dragon Snow Mountain. The 22km high trail offers jaw-dropping views at every turn.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="yun-w4-title">Xishuangbanna</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="yun-w4-desc">China's tropical south — palm-fringed roads, Dai minority stilt houses, wild elephants, and Southeast Asian flavors. A completely different China just a short flight from Kunming.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="yun-tour-title">Yunnan Tours</h2><div class="divider"></div><p data-i18n="yun-tour-sub">From ancient towns to Himalayan peaks — discover the best of China's most diverse province</p></div>
+    <div class="tour-grid">
+      {allTours.yunnan.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="yun-tips-title">Yunnan Travel Tips</h2><div class="divider"></div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="yun-t1-title">&#127782; Weather by Region</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="yun-t1-desc">Yunnan's climate varies dramatically: Kunming is the 'Spring City' (15–25°C year-round), Shangri-La is alpine (can snow in winter), and Xishuangbanna is tropical (hot and humid). Pack in layers and check each destination's forecast.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="yun-t2-title">&#127912; Ethnic Festivals</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="yun-t2-desc">Time your visit with the Dai Water Splashing Festival (mid-April), Torch Festival of the Yi people (late July), or the Tibetan Horse Racing Festival in Shangri-La (June). Each offers a unique window into Yunnan's living cultures.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="yun-t3-title">&#128652; Getting Around</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="yun-t3-desc">Kunming is the hub with flights to all major towns. Our tours use private vehicles between close destinations (Dali–Lijiang–Shangri-La) and flights for longer hops (to Xishuangbanna). High-speed rail links Kunming–Dali–Lijiang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

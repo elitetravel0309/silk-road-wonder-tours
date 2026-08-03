@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from './CtaSection.astro';
+import TourCard from './TourCard.astro';
+import { allTours } from '../data/all-tours';
+
+export interface Props {
+  title: string;
+  duration: string;
+  route: string;
+  image: string;
+  price?: string;
+  originalPrice?: string;
+  features?: string[];
+  overview: string;
+  highlights?: string[];
+  itinerary?: { day: number; title: string; description: string }[];
+  includes?: string[];
+  excludes?: string[];
+  stats?: { label: string; value: string }[];
+  category?: string;
+}
+const tour = Astro.props;
+
+// Find similar tours (same category, exclude self)
+const similar = tour.category && allTours[tour.category]
+  ? allTours[tour.category].filter(t => t.title !== tour.title).slice(0, 3)
+  : [];
+
+// Category-specific fallback itineraries — replaces generic 5-day placeholder
+const catItineraries: Record<string, { day: number; title: string; description: string }[]> = {
+  tibet: [
+    { day: 1, title: "Arrival in Lhasa — Acclimatization", description: "Arrive at Lhasa Gonggar Airport. Your Tibetan English-speaking guide welcomes you with a traditional khata scarf. Transfer to your hotel in central Lhasa. Rest and acclimatize — altitude is 3,650m. Evening gentle stroll around Barkhor Street to soak in the spiritual atmosphere." },
+    { day: 2, title: "Lhasa's Spiritual Heart — Potala Palace & Jokhang Temple", description: "Morning visit to the iconic Potala Palace — the winter palace of the Dalai Lamas with 1,000 rooms. Afternoon explore Jokhang Temple, Tibet's holiest shrine, and join pilgrims on the Barkhor kora circuit. Evening witness the lively monk debate at Sera Monastery." },
+    { day: 3, title: "Tibetan Plateau Exploration", description: "Full-day excursion to the breathtaking high-altitude landscapes beyond Lhasa. Visit sacred lakes, ancient monasteries, and remote Tibetan villages. Your guide shares stories of Tibetan Buddhism, nomadic life, and the region's rich history." },
+    { day: 4, title: "Cultural Immersion & Local Encounters", description: "Deepen your Tibetan experience with a visit to a traditional thangka painting workshop, a local family home for butter tea, or a nunnery tucked into the hills. Afternoon free time to explore Lhasa's old quarter at your own pace." },
+    { day: 5, title: "Departure from the Roof of the World", description: "Morning at leisure for last-minute photos and souvenirs. Your guide escorts you to Lhasa airport or train station. Depart with unforgettable memories of Tibet — the Roof of the World." },
+  ],
+  gansu: [
+    { day: 1, title: "Arrival in Dunhuang — Gateway to the Silk Road", description: "Arrive in Dunhuang, the legendary Silk Road oasis. Your guide meets you at the airport/train station. After checking into your hotel, evening visit to the vibrant Shazhou Night Market for local snacks and handicrafts." },
+    { day: 2, title: "Mogao Caves & Singing Sand Dunes", description: "Morning exploration of the UNESCO-listed Mogao Caves — 1,000 years of Buddhist art across 492 grottoes. Afternoon adventure at the Singing Sand Dunes: camel ride, sand sliding, and sunset at Crescent Moon Spring, a natural wonder in the desert." },
+    { day: 3, title: "Hexi Corridor — Ancient Fortresses & Rainbow Mountains", description: "Journey along the historic Hexi Corridor. Visit Jiayuguan — the western end of the Great Wall — and its imposing fortress. Continue to Zhangye for the sunset spectacle of the rainbow-colored Danxia landforms." },
+    { day: 4, title: "Cultural Treasures of Gansu", description: "Explore more of Gansu's rich Silk Road heritage. Visit ancient Buddhist grottoes, traditional water mills along the Yellow River, or giant Buddha statues carved into cliff faces. Taste Lanzhou's legendary hand-pulled beef noodles." },
+    { day: 5, title: "Departure — Farewell to the Hexi Corridor", description: "Morning at leisure. Your guide transfers you to the airport or train station. Leave with memories of desert landscapes, ancient cave art, and the timeless spirit of the Silk Road." },
+  ],
+  sichuan: [
+    { day: 1, title: "Arrival in Chengdu — Land of Abundance", description: "Arrive in Chengdu, the capital of Sichuan. Your guide meets you at the airport and transfers you to your hotel. Evening welcome dinner featuring authentic Sichuan hot pot — the world's boldest cuisine." },
+    { day: 2, title: "Giant Pandas & Ancient Chengdu", description: "Morning at the Giant Panda Breeding Research Base — watch pandas play, eat bamboo, and nap in their natural habitat. Afternoon explore Jinli Ancient Street, People's Park tea house, and the lively Kuanzhai Alley." },
+    { day: 3, title: "UNESCO Treasures — Buddha & Mountains", description: "Full-day excursion to one of Sichuan's UNESCO World Heritage sites. Options include the 71-meter Leshan Giant Buddha carved into a cliff, the sacred Mount Emei with its Golden Summit, or the fairytale turquoise lakes of Jiuzhaigou Valley." },
+    { day: 4, title: "Sichuan Flavors & Tibetan Highlands", description: "Dive deeper into Sichuan's diversity. Morning Sichuan cooking class — learn to make dan dan noodles and mapo tofu. Afternoon explore Tibetan culture in Garze or the ancient irrigation system at Dujiangyan." },
+    { day: 5, title: "Departure from the Panda Kingdom", description: "Morning visit to a local market for Sichuan pepper and tea souvenirs. Your guide transfers you to the airport. Depart with a full stomach and unforgettable memories of Sichuan." },
+  ],
+  yunnan: [
+    { day: 1, title: "Arrival in Kunming — Spring City", description: "Arrive in Kunming, the 'City of Eternal Spring'. Your guide welcomes you at the airport. Afternoon visit the spectacular Stone Forest, a UNESCO geopark of towering limestone karsts. Evening explore Kunming's vibrant food scene." },
+    { day: 2, title: "Ancient Towns — Dali & Erhai Lake", description: "Travel to Dali, the ancient capital of the Bai Kingdom. Stroll through Dali Old Town with its cobblestone streets and traditional architecture. Afternoon bike ride or boat trip along scenic Erhai Lake with the Cangshan Mountains as backdrop." },
+    { day: 3, title: "Lijiang — UNESCO Old Town & Jade Dragon Mountain", description: "Continue to Lijiang, a UNESCO World Heritage site. Wander the maze of canals, stone bridges, and Naxi minority architecture. Take the cable car up Jade Dragon Snow Mountain for panoramic views at 4,506 meters." },
+    { day: 4, title: "Ethnic Cultures & Natural Wonders", description: "Immerse yourself in Yunnan's cultural mosaic. Options include the Tibetan town of Shangri-La, the tropical rainforests of Xishuangbanna, or a trek into Tiger Leaping Gorge — one of the world's deepest canyons." },
+    { day: 5, title: "Departure from the Land of Eternal Spring", description: "Morning at leisure for last-minute shopping at a local market. Your guide escorts you to the airport. Depart with Yunnan's colorful memories — from snow-capped peaks to tropical gardens." },
+  ],
+  qinghai: [
+    { day: 1, title: "Arrival in Xining — Gateway to the Tibetan Plateau", description: "Arrive in Xining, the capital of Qinghai province at 2,275m. Your guide welcomes you and transfers to your hotel. Evening walk through the vibrant Muslim Quarter and taste local Qinghai specialties like hand-grabbed lamb and yogurt." },
+    { day: 2, title: "Qinghai Lake — China's Largest Inland Sea", description: "Full-day excursion to Qinghai Lake, a vast turquoise expanse at 3,200m. In summer, golden rapeseed fields frame the lake. Visit Bird Island (seasonal), ride a yak along the shore, and breathe the crisp Tibetan Plateau air." },
+    { day: 3, title: "Chaka Salt Lake — Mirror of the Sky", description: "Journey to Chaka Salt Lake, one of China's most photogenic landscapes. Walk on the crystallized salt surface that perfectly reflects the sky — the famous 'Mirror of the Sky'. Afternoon explore the surreal Dachaidan Emerald Lake." },
+    { day: 4, title: "Tibetan Monasteries & Grassland Culture", description: "Visit Kumbum Monastery (Ta'er Si), one of Tibet's six great Gelugpa monasteries, with its incredible butter sculptures. Drive through the vast Tibetan grasslands, spotting yak herds and nomad tents. Optional: visit a Tibetan family for butter tea." },
+    { day: 5, title: "Departure from the Tibetan Plateau", description: "Morning at leisure. Your guide transfers you to Xining airport or train station. Leave with memories of mirror-like salt lakes, turquoise high-altitude waters, and the spiritual serenity of the Tibetan Plateau." },
+  ],
+  luxury: [
+    { day: 1, title: "Arrival — VIP Welcome", description: "Arrive to a VIP welcome with private chauffeur transfer to your 5-star boutique hotel. Welcome champagne and personalized itinerary briefing with your dedicated concierge. Evening fine dining at the hotel's signature restaurant." },
+    { day: 2, title: "Exclusive Cultural Access", description: "Private guided tour of UNESCO World Heritage sites with skip-the-line access and behind-the-scenes experiences not available to the public. Lunch at a Michelin-recommended restaurant. Afternoon spa treatment at your hotel." },
+    { day: 3, title: "Scenic Journey in Style", description: "Travel to your next destination by private luxury vehicle with leather seats, WiFi, and refreshments. Scenic stops curated for the best photo opportunities. Evening private dining experience — desert camp or rooftop with panoramic views." },
+    { day: 4, title: "Curated Cultural Immersion", description: "Bespoke cultural experiences tailored to your interests: private cooking class with a master chef, calligraphy workshop with a renowned artist, exclusive visit to an artisan's studio, or a private concert of traditional music." },
+    { day: 5, title: "Departure with Lasting Impressions", description: "Leisurely morning with breakfast in bed or a final spa session. Private chauffeur transfer to the airport with VIP departure assistance. Depart with extraordinary memories of your luxury Silk Road journey." },
+  ],
+  northXinjiang: [
+    { day: 1, title: "Arrival in Urumqi — Heart of Xinjiang", description: "Arrive in Urumqi, the world's most inland major city. Your guide meets you at the airport. Afternoon visit the Xinjiang Regional Museum and the vibrant Grand Bazaar. Evening welcome dinner with Uyghur specialties — lamb kebabs, polo, and nang bread." },
+    { day: 2, title: "Heavenly Lake & Tianshan Mountains", description: "Journey to Heavenly Lake (Tianchi) at 1,980m, nestled beneath the snow-capped Bogda Peak. Take a boat ride on the crystal-clear waters, hike through spruce forests, and visit Kazakh yurts to learn about nomadic life." },
+    { day: 3, title: "Kanas Lake — Alpine Paradise", description: "Fly or drive to the legendary Kanas Lake in the Altay Mountains. Explore the turquoise lake by boat, hike to Moon Bay and Dragon Bay viewpoints, and discover the Tuva minority culture. Kanas is at its most spectacular in autumn when birch forests turn gold." },
+    { day: 4, title: "Hemu Village & Nomad Encounters", description: "Visit the fairytale Hemu Village — wooden cabins, morning mist over the river, and snow-capped peaks. Meet Kazakh eagle hunters, ride horses through alpine meadows, and experience the timeless rhythms of nomadic life." },
+    { day: 5, title: "Departure from Northern Xinjiang", description: "Morning photography of the sunrise over the grasslands. Your guide transfers you to the airport. Depart with vivid memories of Xinjiang's pristine wilderness — turquoise lakes, golden forests, and nomadic hospitality." },
+  ],
+};
+
+// Use category-specific itinerary if no custom itinerary provided
+const itinerary = tour.itinerary && tour.itinerary.length > 0
+  ? tour.itinerary
+  : (tour.category && catItineraries[tour.category]) || null;
+
+// Smart defaults for includes/excludes/stats when not explicitly provided
+const defaultIncludes = [
+  "Hotel accommodation (twin-share)",
+  "English-speaking guide throughout",
+  "All entrance fees to attractions",
+  "Private vehicle & driver",
+  "Daily breakfast + selected meals",
+  "Airport transfers on arrival & departure"
+];
+const defaultExcludes = [
+  "International flights to/from China",
+  "Chinese visa fees",
+  "Travel insurance",
+  "Personal expenses & tips",
+  "Single room supplement"
+];
+const includes = (tour.includes && tour.includes.length > 0) ? tour.includes : defaultIncludes;
+const excludes = (tour.excludes && tour.excludes.length > 0) ? tour.excludes : defaultExcludes;
+
+const defaultStats = [
+  { label: "Duration", value: tour.duration || "See above" },
+  { label: "Hotel Level", value: "4-Star" },
+  { label: "Guide", value: "English-speaking" },
+  { label: "Best Season", value: "Apr–Oct" }
+];
+const stats = (tour.stats && tour.stats.length > 0) ? tour.stats : defaultStats;
+---
+
+<BaseLayout title={tour.title} description={tour.overview.substring(0, 160)} ogImage={tour.image} canonical={`https://silkroadwondertours.com/tour/${Astro.url.pathname.split('/').pop()}`}>
+  <section class="tour-detail-hero" style={`background-image:url('${tour.image}');`}>
+    <div class="container">
+      <h1>{tour.title}</h1>
+      <p class="route">{tour.route}</p>
+      {tour.features && tour.features.length > 0 && (
+        <div class="badge-row">{tour.features.map(f => <span>{f}</span>)}</div>
+      )}
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "${tour.title.replace(/"/g, '\\"')}",
+  "description": "${tour.overview.replace(/"/g, '\\"').substring(0, 200)}",
+  "duration": "${tour.duration.replace(/"/g, '\\"')}",
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "Silk Road Wonder Tours",
+    "url": "https://silkroadwondertours.com/",
+    "image": "https://silkroadwondertours.com/assets/images/hero-silkroad.jpg"
+  },
+  "image": "https://silkroadwondertours.com${tour.image.replace(/"/g, '\\"')}",
+  "offers": {
+    "@type": "Offer",
+    "price": "${(tour.price || 'Inquire').replace(/"/g, '\\"').replace('$','').replace(',','')}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "itinerary": {
+    "@type": "Trip",
+    "name": "${tour.title.replace(/"/g, '\\"')} Itinerary",
+    "description": "From ${(tour.route || tour.title).replace(/"/g, '\\"')}"
+  }
+}`}/>
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+    { "@type": "ListItem", "position": 3, "name": "${tour.title.replace(/"/g, '\\"')}" }
+  ]
+}`}/>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/index.html">Home</a> <span class="sep">/</span>
+    <a href="/tours.html">Tours</a> <span class="sep">/</span>
+    <span class="current">{tour.title}</span>
+  </div></nav>
+
+  <section class="section"><div class="container"><div class="tour-detail-layout">
+    <div class="tour-detail-main">
+      <h2>Overview</h2>
+      <p>{tour.overview}</p>
+
+      {tour.highlights && tour.highlights.length > 0 && (
+        <div class="highlight-box"><h3>Tour Highlights</h3>
+          <ul>{tour.highlights.map(h => <li>{h}</li>)}</ul>
+        </div>
+      )}
+
+      {itinerary && itinerary.length > 0 && (
+        <>
+          <h2>Itinerary</h2>
+          <ul class="itinerary">
+            {itinerary.map(day => (
+              <li>
+                <div class="day-badge"><strong>{day.day}</strong>Day</div>
+                <div class="day-content"><h4>{day.title}</h4><p>{day.description}</p></div>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {(includes && includes.length > 0 || excludes && excludes.length > 0) && (
+        <>
+          <h2>What's Included</h2>
+          <div class="inc-list">
+            {includes?.map(i => <div class="inc-item good"><span class="icon">&check;</span><p>{i}</p></div>)}
+            {excludes?.map(e => <div class="inc-item bad"><span class="icon">&cross;</span><p>{e}</p></div>)}
+          </div>
+        </>
+      )}
+
+      {similar.length > 0 && (
+        <div style="margin-top:48px;">
+          <h2>Similar Tours You Might Like</h2>
+          <div class="tour-grid" style="margin-top:24px;">
+            {similar.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={false} />)}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <aside class="sidebar-card">
+      <div class="price-row">
+        <div class="price-big">{tour.price || 'Inquire'}<span>per person</span></div>
+        {tour.originalPrice && <div style="text-decoration:line-through;color:var(--text-muted);font-size:0.9rem;">{tour.originalPrice}</div>}
+      </div>
+      {stats?.map(s => <div class="stat-row"><span class="label">{s.label}</span><span class="value">{s.value}</span></div>)}
+      <a href="/contact.html" class="btn btn-primary btn-book">Inquire About This Tour</a>
+    </aside>
+  </div></div></section>
+
+  <CtaSection />
+</BaseLayout>

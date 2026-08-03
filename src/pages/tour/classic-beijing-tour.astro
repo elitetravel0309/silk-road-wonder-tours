@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "classic-beijing-tour",
+  "title": "Classic Beijing Discovery",
+  "duration": "5 Days",
+  "route": "Beijing → Great Wall → Forbidden City → Temple of Heaven",
+  "image": "/assets/images/great-wall.jpg",
+  "price": "$980",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "The essential Beijing experience. Walk the Great Wall, explore the Forbidden City, and discover the hutongs of China's magnificent capital.",
+  "highlights": [
+    "Great Wall at Mutianyu",
+    "Forbidden City",
+    "Temple of Heaven",
+    "Summer Palace",
+    "Hutong rickshaw tour"
+  ],
+  "category": "city"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'extend'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

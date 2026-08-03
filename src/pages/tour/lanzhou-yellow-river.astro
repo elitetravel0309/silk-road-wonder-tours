@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "lanzhou-yellow-river",
+  "title": "Lanzhou & Yellow River",
+  "duration": "3 Days",
+  "route": "Lanzhou → Bingling Temple → Yellow River Stone Forest",
+  "image": "/assets/images/hero-mountains.jpg",
+  "price": "$420",
+  "features": [
+    "River Cruise",
+    "English Guide"
+  ],
+  "overview": "Discover Lanzhou, the capital of Gansu and a key Silk Road city. Cruise the Yellow River, explore ancient grottoes, and taste authentic Lanzhou beef noodles.",
+  "highlights": [
+    "Yellow River cruise",
+    "Bingling Temple Grottoes",
+    "Lanzhou beef noodles",
+    "Waterwheel Garden",
+    "White Pagoda Mountain"
+  ],
+  "category": "gansu"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'gansu'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

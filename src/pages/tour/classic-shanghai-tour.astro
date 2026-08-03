@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "classic-shanghai-tour",
+  "title": "Shanghai Highlights",
+  "duration": "4 Days",
+  "route": "Shanghai → The Bund → French Concession → Zhujiajiao Water Town",
+  "image": "/assets/images/hero-mountains.jpg",
+  "price": "$720",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Discover the contrast of old and new Shanghai. From the futuristic Pudong skyline to the tree-lined French Concession and ancient water towns.",
+  "highlights": [
+    "The Bund & Pudong skyline",
+    "French Concession walk",
+    "Zhujiajiao Water Town",
+    "Yu Garden",
+    "Shanghai Tower observation deck"
+  ],
+  "category": "city"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'extend'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

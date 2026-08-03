@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "hemu-village-winter",
+  "title": "Hemu Village Winter",
+  "duration": "5 Days",
+  "route": "Urumqi → Kanas → Hemu Village → Snowy Birch Forests",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$1,050",
+  "features": [
+    "Winter Experience",
+    "English Guide"
+  ],
+  "overview": "Experience the fairytale winter of northern Xinjiang. Hemu Village under a blanket of snow, frozen Kanas Lake, and birch forests covered in hoarfrost.",
+  "highlights": [
+    "Hemu Village in snow",
+    "Frozen Kanas Lake",
+    "Snowy birch forests",
+    "Horse-drawn sleigh ride",
+    "Tuva winter culture"
+  ],
+  "category": "northXinjiang"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'northXinjiang'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

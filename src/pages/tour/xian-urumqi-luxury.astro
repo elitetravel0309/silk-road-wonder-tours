@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "xian-urumqi-luxury",
+  "title": "Xi'an to Urumqi Luxury",
+  "duration": "9 Days",
+  "route": "Xi'an → Lanzhou → Dunhuang → Turpan → Urumqi",
+  "image": "/assets/images/central-asia-architecture.jpg",
+  "price": "$3,500",
+  "features": [
+    "5-Star Hotels",
+    "Private Transfers",
+    "VIP Access"
+  ],
+  "overview": "Travel the Silk Road in unparalleled luxury. 5-star hotels, private chauffeur, and exclusive access to some of China's most extraordinary sites.",
+  "highlights": [
+    "Terracotta Warriors VIP access",
+    "Mogao Caves private guide",
+    "Luxury desert camp",
+    "5-star hotels throughout",
+    "Private chauffeur"
+  ],
+  "category": "luxury"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'luxury'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

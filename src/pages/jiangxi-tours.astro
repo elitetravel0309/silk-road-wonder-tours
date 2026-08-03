@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = "Jiangxi Tours - Porcelain, Poetry & Sacred Mountains";
+---
+<BaseLayout title={title} description="Explore Jiangxi - Jingdezhen porcelain capital, Lushan Mountain, Wuyuan ancient villages. Private tours through China's land of porcelain, tea, and Taoist mountains." ogImage="/assets/images/hero-mountains.jpg">
+
+
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>Jiangxi</h1><p>Land of porcelain and poetry - ancient kilns, misty mountains, and timeless villages</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Jiangxi Tours" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Jiangxi Tours</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>Jiangxi: Where Art and Nature Converge</h2>
+  <div class="divider"></div>
+  <p>Jiangxi province is the spiritual home of Chinese porcelain. For over 1,000 years, the kilns of Jingdezhen have produced the world's finest ceramics, supplying emperors, sultans, and kings from Beijing to Versailles. Beyond porcelain, Jiangxi enchants with Lushan Mountain - a UNESCO site that has inspired poets and painters for millennia with its sea of clouds, and Wuyuan, often called China's most beautiful countryside with its whitewashed Hui-style villages nestled among rapeseed fields.</p>
+  <p style="margin-top:12px;">The province is also home to Sanqing Mountain (UNESCO), Longhu Mountain (birthplace of Taoism), and the iconic Tengwang Pavilion in Nanchang. Best seasons are March to May when Wuyuan's rapeseed blooms golden, and September to November for clear mountain views. Our private tours include expert local guides and comfortable transport.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Jingdezhen Porcelain Capital" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$420</span></div>
+      <h3>Jingdezhen Porcelain Capital</h3>
+      <p class="tour-route">Jingdezhen → Ancient Kiln Museum → Sanbao Village → Taoxichuan</p>
+      <p class="tour-desc">Immerse in 1,000 years of porcelain history - watch master craftsmen at work, try your hand at the potter's wheel, and explore the creative studios of Sanbao International Ceramic Village.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Lushan Mountain Retreat" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$550</span></div>
+      <h3>Lushan Mountain Retreat</h3>
+      <p class="tour-route">Nanchang → Lushan → Three-Step Waterfall → Meilu Villa</p>
+      <p class="tour-desc">Escape to Lushan Mountain, a UNESCO site that has inspired poets from Li Bai to Mao Zedong. Hike through misty peaks, visit colonial-era villas, and watch clouds cascade over cliffs.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Wuyuan Ancient Villages" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$520</span></div>
+      <h3>Wuyuan Ancient Villages</h3>
+      <p class="tour-route">Wuyuan → Likeng → Xiaoqi → Jiangling → Huangling</p>
+      <p class="tour-desc">Wander through China's most beautiful countryside - white-walled Hui-style villages, ancient covered bridges, and terraced rapeseed fields. A photographer's paradise in spring.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Nanchang: Hero City" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$380</span></div>
+      <h3>Nanchang: Hero City</h3>
+      <p class="tour-route">Nanchang → Tengwang Pavilion → August 1st Museum → Shengjin Pagoda</p>
+      <p class="tour-desc">Explore Jiangxi's capital - the magnificent Tengwang Pavilion overlooking the Gan River, revolutionary history at the site of China's first Communist uprising, and vibrant night markets.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Sanqing Mountain UNESCO" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$580</span></div>
+      <h3>Sanqing Mountain UNESCO</h3>
+      <p class="tour-route">Shangrao → Sanqing Mountain → Southern Qing Garden</p>
+      <p class="tour-desc">Trek the granite pillars and Taoist shrines of Sanqing Mountain, a UNESCO site. Cable car to the summit, walk sky-high boardwalks, and photograph the iconic Python Emerging peak.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Longhu Mountain: Taoist Birthplace" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$450</span></div>
+      <h3>Longhu Mountain: Taoist Birthplace</h3>
+      <p class="tour-route">Yingtan → Longhu Mountain → Shangqing Ancient Town</p>
+      <p class="tour-desc">Visit the birthplace of Taoism where Zhang Daoling founded the Way of the Celestial Masters 1,900 years ago. Cruise the Luxi River past cliff coffins and ancient Taoist temples.</p>
+      <a href="/contact.html" class="btn btn-gold">Vi/assets/images/desert-dunes.jpg">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Jiangxi Heritage Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">8 Days</span><span class="tour-price">$1,150</span></div>
+      <h3>Jiangxi Heritage Tour</h3>
+      <p class="tour-route">Nanchang → Lushan → Jingdezhen → Wuyuan → Sanqing Mountain</p>
+      <p class="tour-desc">The complete Jiangxi - Tengwang Pavilion, misty Lushan, Jingdezhen's kilns, Wuyuan's villages, and Sanqing's sacred peaks. Poetry, porcelain, and Taoist mountain magic.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-header reveal"><h2>Why Choose Jiangxi</h2><div class="divider"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Land of Poets &amp; Painters</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">For over a thousand years, Jiangxi's mist-shrouded peaks and emerald waters have inspired China's greatest poets and landscape painters. Lushan Mountain alone has been immortalized in over 4,000 classical poems.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Porcelain Capital</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Jingdezhen has been producing the world's finest porcelain for 1,700 years. Visit ancient kilns, try your hand at the potter's wheel, and purchase hand-painted blue-and-white ceramics directly from master artisans.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Wuyuan Wonderland</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Often called China's most beautiful countryside, Wuyuan's whitewashed Huizhou-style villages burst into seas of golden rapeseed blossoms each March, framed by terraced tea plantations and ancient camphor trees.</p>
+  </div>
+</div>
+<div style="margin-top:32px;padding:24px;background:var(--cream);border-radius:8px;text-align:center;">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:8px;">Best Time to Visit: March &ndash; May, September &ndash; November</p>
+  <p style="color:var(--text-light);font-size:0.95rem;">March-April for Wuyuan's spectacular rapeseed bloom and misty mountain scenery. September-November for comfortable hiking on Lushan and Sanqing Mountains with autumn foliage and clear skies.</p>
+</div>
+</div></section>
+
+<section class="cta-section">
+<div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Discover Poetic Jiangxi</h2><p>Let our expert team craft your perfect itinerary -- free consultation, no obligation.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+
+
+<CtaSection />
+</BaseLayout>

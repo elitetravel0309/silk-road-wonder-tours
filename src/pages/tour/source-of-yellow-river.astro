@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "source-of-yellow-river",
+  "title": "Source of Yellow River",
+  "duration": "8 Days",
+  "route": "Xining → Maduo → Ngoring Lake → Gyaring Lake",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$1,350",
+  "features": [
+    "High Altitude",
+    "English Guide",
+    "4WD Vehicle"
+  ],
+  "overview": "An expedition to the source of China's Mother River. Travel through remote Qinghai to the twin lakes that give birth to the Yellow River at over 4,200m.",
+  "highlights": [
+    "Ngoring Lake — source of the Yellow River",
+    "Gyaring Lake",
+    "Tibetan plateau at 4,200m",
+    "Remote Amdo culture",
+    "Wildlife spotting"
+  ],
+  "category": "qinghai"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'qinghai'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

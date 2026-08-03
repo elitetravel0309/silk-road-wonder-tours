@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "gansu-gastronomy-luxury",
+  "title": "Gansu Gastronomy Luxury",
+  "duration": "7 Days",
+  "route": "Lanzhou → Zhangye → Jiayuguan → Dunhuang",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$2,800",
+  "features": [
+    "5-Star Hotels",
+    "Gourmet Dining",
+    "Private Chef"
+  ],
+  "overview": "A culinary journey along the Silk Road. Taste the flavors of Gansu — from Lanzhou beef noodles to Dunhuang camel meat — prepared by top chefs in stunning settings.",
+  "highlights": [
+    "Private chef experiences",
+    "Lanzhou beef noodle masterclass",
+    "Desert dining under the stars",
+    "Wine tasting in Zhangye",
+    "5-star boutique hotels"
+  ],
+  "category": "luxury"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'luxury'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="Payment Methods — Secure Booking" description="Secure payment options for your Silk Road tour. We accept PayPal, MasterCard, VISA, Bank Transfer, WeChat Pay, and Alipay. Book with confidence." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Payment</h1><p>Secure and convenient payment options for your Silk Road tour</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Payment" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Payment</span></div></nav>
+
+<!-- PAYMENT METHODS -->
+<section class="section"><div class="container"><div class="section-header reveal"><h2>Payment Methods</h2><div class="divider"></div><p>We offer multiple secure payment options for your convenience</p></div>
+<div class="payment-grid">
+  <div class="payment-card reveal"><div class="payment-card-icon">&#127758;</div><h3>PayPal</h3><p>Secure online payments via PayPal. Accepted worldwide with buyer protection.</p></div>
+  <div class="payment-card reveal"><div class="payment-card-icon">&#128179;</div><h3>MasterCard</h3><p>Global credit card payments with MasterCard's secure processing.</p></div>
+  <div class="payment-card reveal"><div class="payment-card-icon">&#128178;</div><h3>VISA</h3><p>Pay securely with your VISA credit or debit card from anywhere in the world.</p></div>
+  <div class="payment-card reveal"><div class="payment-card-icon">&#127975;</div><h3>Bank Transfer</h3><p>Direct bank wire transfer for large group bookings and agency payments.</p></div>
+  <div class="payment-card reveal"><div class="payment-card-icon">&#128172;</div><h3>WeChat Pay</h3><p>Convenient payment via WeChat Pay, popular among Asian travelers.</p></div>
+  <div class="payment-card reveal"><div class="payment-card-icon">&#128176;</div><h3>Alipay</h3><p>Fast and secure mobile payment via Alipay, trusted by millions globally.</p></div>
+</div></div></section>
+
+<!-- PAYMENT PROCESS -->
+<section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Payment Process</h2><div class="divider"></div><p>Simple, transparent, and secure — here's how it works</p></div>
+<div class="steps-grid">
+  <div class="step reveal"><div class="step-circle">1</div><h3>Confirm Booking</h3><p>Your travel specialist sends you the final itinerary and invoice.</p></div>
+  <div class="step reveal"><div class="step-circle">2</div><h3>Pay Deposit</h3><p>Pay a 30% deposit to secure your booking via your preferred method.</p></div>
+  <div class="step reveal"><div class="step-circle">3</div><h3>Receive Confirmation</h3><p>Get a booking confirmation with detailed itinerary and payment receipt.</p></div>
+  <div class="step reveal"><div class="step-circle">4</div><h3>Pay Balance</h3><p>Final payment due 30 days before departure. We'll send you a reminder.</p></div>
+</div></div></section>
+
+<!-- SECURITY -->
+<section class="section"><div class="container"><div class="section-header reveal"><h2>Secure & Trusted</h2><div class="divider"></div></div>
+<div class="security-grid">
+  <div class="security-item reveal"><h3>&#128274; SSL Encryption</h3><p>All payment transactions are protected by industry-standard 256-bit SSL encryption.</p></div>
+  <div class="security-item reveal"><h3>&#128176; Buyer Protection</h3><p>PayPal and credit card payments include buyer protection for your peace of mind.</p></div>
+  <div class="security-item reveal"><h3>&#127975; Licensed Agency</h3><p>We are a fully licensed China travel agency operating legally since 2005.</p></div>
+  <div class="security-item reveal"><h3>&#128196; Transparent Billing</h3><p>No hidden fees or surprise charges. Every cost is clearly itemized in your invoice.</p></div>
+</div></div></section>
+
+<!-- FAQ -->
+<section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Frequently Asked Questions</h2><div class="divider"></div></div>
+<div class="faq-list">
+  <div class="faq-plain reveal"><h3>&#10067; How much is the deposit?</h3><p>We require a 30% deposit to confirm your booking. The remaining 70% balance is due 30 days before your departure date.</p></div>
+  <div class="faq-plain reveal"><h3>&#10067; When is the final payment due?</h3><p>Final payment is due 30 days before your tour start date. We'll send you a reminder email 2 weeks before the deadline.</p></div>
+  <div class="faq-plain reveal"><h3>&#10067; Are there any additional fees for credit card payments?</h3><p>No. We do not charge any processing fees for credit card or PayPal payments. The price you see is the price you pay.</p></div>
+  <div class="faq-plain reveal"><h3>&#10067; Can I pay in my local currency?</h3><p>All prices are quoted in USD. Payments via PayPal and credit cards will be automatically converted at your bank's exchange rate.</p></div>
+  <div class="faq-plain reveal"><h3>&#10067; Is my payment information stored?</h3><p>No. We never store your credit card or payment details. All payments are processed through secure third-party gateways.</p></div>
+</div></div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Ready to Start?</h2><p>Have questions about payment? Contact our team for assistance.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+<CtaSection />
+</BaseLayout>

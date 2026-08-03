@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="FAQ — Silk Road Wonders" description="Frequently asked questions about Silk Road tours. Everything you need to know about booking, visas, weather, safety, hotels, and more." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Frequently Asked Questions</h1><p>Everything you need to know about traveling the Silk Road</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQ" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>FAQ</span></div></nav>
+
+<!-- CATEGORY FILTERS -->
+<section class="section"><div class="container">
+<div class="faq-categories">
+  <button class="active" data-cat="all">All Questions</button>
+  <button data-cat="booking">Booking & Payment</button>
+  <button data-cat="visa">Visas & Documents</button>
+  <button data-cat="travel">Travel & Safety</button>
+  <button data-cat="tour">On the Tour</button>
+</div>
+
+<div class="faq-section">
+
+<h2 data-section="booking">Booking & Payment</h2>
+
+<div class="faq-item reveal" data-cat="booking"><button class="faq-q">How do I book a Silk Road tour?</button><div class="faq-a"><p>Contact us through our inquiry form, email, or WhatsApp. Tell us your travel dates, group size, interests, and budget. We'll create a personalized itinerary within 24 hours. Once you confirm, pay a 30% deposit to secure your booking. The remaining 70% is due 30 days before departure.</p></div></div>
+
+<div class="faq-item reveal" data-cat="booking"><button class="faq-q">What payment methods do you accept?</button><div class="faq-a"><p>We accept PayPal, VISA, MasterCard, bank transfer, WeChat Pay, and Alipay. All payments are processed through secure gateways with SSL encryption. We never store your credit card details.</p></div></div>
+
+<div class="faq-item reveal" data-cat="booking"><button class="faq-q">Is my deposit refundable if I cancel?</button><div class="faq-a"><p>Yes, with conditions. Free cancellation is available up to 30 days before departure. Cancellations 15-30 days before departure receive a 50% refund. Within 15 days, the deposit is non-refundable. See our <a href="cancellation-policy.html">full cancellation policy</a> for details.</p></div></div>
+
+<div class="faq-item reveal" data-cat="booking"><button class="faq-q">What is included in the tour price?</button><div class="faq-a"><p>Our standard packages include: private transportation with professional driver, English-speaking guide, 4-star hotel accommodation, daily breakfast, all entrance fees to attractions, airport transfers, and 24/7 emergency support. Not included: international flights, travel insurance, lunches and dinners, personal expenses, and tips.</p></div></div>
+
+<div class="faq-item reveal" data-cat="booking"><button class="faq-q">Can I customize my itinerary?</button><div class="faq-a"><p>Absolutely. All our tours are 100% tailor-made. You can adjust the duration, destinations, hotel level, transportation type, and activities. There is no extra charge for customization — just tell us what you want.</p></div></div>
+
+<h2 data-section="visa">Visas & Documents</h2>
+
+<div class="faq-item reveal" data-cat="visa"><button class="faq-q">Do I need a visa for China?</button><div class="faq-a"><p>Yes, most nationalities require a Chinese tourist visa (L visa). We provide an official invitation letter to support your application. The process typically takes 4-7 business days. Citizens of Singapore, Brunei, and Japan may enjoy visa-free entry for short stays — check the latest regulations.</p></div></div>
+
+<div class="faq-item reveal" data-cat="visa"><button class="faq-q">Do I need special permits for Xinjiang or Tibet?</button><div class="faq-a"><p>Xinjiang: Standard Chinese visa is sufficient for most areas. Tibet: A Tibet Travel Permit is required for all foreign travelers, which we arrange on your behalf. Certain border areas in Xinjiang (e.g., Tashkurgan) may require additional permits — we handle all paperwork.</p></div></div>
+
+<div class="faq-item reveal" data-cat="visa"><button class="faq-q">What about visas for Central Asian countries?</button><div class="faq-a"><p>Uzbekistan and Kazakhstan offer visa-free entry for many nationalities (including EU, UK, Malaysia, Singapore). Kyrgyzstan and Tajikistan offer e-visas that can be obtained online. We provide detailed guidance based on your nationality when you book a multi-country tour.</p></div></div>
+
+<div class="faq-item reveal" data-cat="visa"><button class="faq-q">Do I need travel insurance?</button><div class="faq-a"><p>Yes, we strongly recommend comprehensive travel insurance covering medical expenses, trip cancellation, and lost luggage. While not mandatory, it gives you peace of mind. We can recommend trusted insurance providers upon request.</p></div></div>
+
+<h2 data-section="travel">Travel & Safety</h2>
+
+<div class="faq-item reveal" data-cat="travel"><button class="faq-q">Is it safe to travel the Silk Road?</button><div class="faq-a"><p>Yes, the Silk Road through China is very safe for international travelers. Xinjiang, Gansu, and Qinghai have modern infrastructure and strong security. We have operated tours since 2005 with zero safety incidents. Our local guides know every route and ensure your comfort at all times.</p></div></div>
+
+<div class="faq-item reveal" data-cat="travel"><button class="faq-q">When is the best time to visit?</button><div class="faq-a"><p>May through October is the prime season. May-June offers pleasant spring weather and fewer crowds. September-October brings stunning autumn colors and the harvest season. July-August is warmest and busiest. Winter (November-March) offers lower prices and unique snowy landscapes.</p></div></div>
+
+<div class="faq-item reveal" data-cat="travel"><button class="faq-q">What should I pack for a Silk Road trip?</button><div class="faq-a"><p>Pack layers — temperatures can vary 20°C between day and night in desert areas. Essentials: comfortable walking shoes, sun hat, sunscreen, sunglasses, light jacket, photo ID, power adapter, and any personal medications. We'll send a detailed packing list with your itinerary.</p></div></div>
+
+<div class="faq-item reveal" data-cat="travel"><button class="faq-q">How do I get internet access in China?</button><div class="faq-a"><p>Our vehicles have Wi-Fi hotspots in most areas. We recommend installing a VPN before arriving in China to access Google, Facebook, Instagram, and WhatsApp. We can advise on reliable VPN options. Alternatively, purchase a local SIM card with a data plan at the airport.</p></div></div>
+
+<div class="faq-item reveal" data-cat="travel"><button class="faq-q">What is the altitude like? Will I get altitude sickness?</button><div class="faq-a"><p>Most Silk Road destinations are below 2,000m and pose no altitude concerns. Tibet tours and Pamir Highway routes reach 3,500-5,000m. We design itineraries with gradual ascent, provide oxygen canisters in vehicles, and our guides are trained to recognize and respond to altitude symptoms.</p></div></div>
+
+<h2 data-section="tour">On the Tour</h2>
+
+<div class="faq-item reveal" data-cat="tour"><button class="faq-q">What type of transportation is used?</button><div class="faq-a"><p>Depending on group size: 1-3 travelers use comfortable SUVs, 4-6 use spacious minivans, 7+ use air-conditioned coaches. For long distances, we recommend high-speed trains or domestic flights to maximize your time at destinations. All vehicles are well-maintained with professional drivers.</p></div></div>
+
+<div class="faq-item reveal" data-cat="tour"><button class="faq-q">What is the accommodation standard?</button><div class="faq-a"><p>Standard packages use 4-star hotels (e.g., Hilton, Sheraton where available). In remote areas like the Gobi Desert or Pamir Mountains, we select the best available guesthouses or traditional yurt camps. Luxury packages upgrade to 5-star hotels throughout. Budget options available on request.</p></div></div>
+
+<div class="faq-item reveal" data-cat="tour"><button class="faq-q">What is the food like?</button><div class="faq-a"><p>The Silk Road is a food lover's paradise! Enjoy Xinjiang lamb kebabs, hand-pulled noodles (laghman), Gansu beef noodles, Uyghur naan, Central Asian plov, and abundant fresh fruits (grapes, melons, pomegranates). We accommodate halal, vegetarian, vegan, gluten-free, and other dietary needs.</p></div></div>
+
+<div class="faq-item reveal" data-cat="tour"><button class="faq-q">Will the guide speak English?</button><div class="faq-a"><p>Yes, all our guides are fluent in English and professionally trained. Many also speak additional languages. For specific language requirements (French, German, Japanese, etc.), let us know in advance and we'll arrange accordingly.</p></div></div>
+
+<div class="faq-item reveal" data-cat="tour"><button class="faq-q">Can I extend my tour to other parts of China or Asia?</button><div class="faq-a"><p>Absolutely! Popular extensions include Beijing (Great Wall), Shanghai, Zhangjiajie, Tibet, and Chengdu (pandas). We also offer Central Asia extensions to Uzbekistan, Kyrgyzstan, and Kazakhstan. Just tell us your interests and we'll design a seamless multi-destination journey.</p></div></div>
+
+</div>
+</div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Still Have Questions?</h2><p>Our travel specialists are happy to help. Reach out and we'll respond within 24 hours.</p><a href="/contact.html" class="btn btn-gold">Ask Us Anything</a></div>
+</div></div></section>
+<CtaSection />
+</BaseLayout>

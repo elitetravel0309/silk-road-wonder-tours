@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="Silk Road Wonders Search" description="Search for Silk Road tours, destinations, and travel information." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Search Silk Road Wonders</h1><p>Find your perfect Silk Road adventure</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Search" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Search</span></div></nav>
+
+<section class="section"><div class="container">
+<div style="max-width:800px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:32px;">
+    <h2 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;">Let's Find Your Adventure</h2>
+    <p style="color:var(--text-light);margin-bottom:24px;font-size:1.05rem;">Search for destinations, tours, or travel interests across our entire collection.</p>
+    <div style="display:flex;gap:12px;justify-content:center;align-items:center;max-width:600px;margin:0 auto 20px;">
+      <input type="text" id="searchInput" placeholder="e.g. Silk Road, Kashgar, luxury..." style="flex:1;padding:14px 20px;font-size:1rem;border:2px solid var(--border);border-radius:8px;outline:none;" oninput="doSearch()" autofocus>
+      <button id="searchBtn" onclick="doSearch()" style="padding:14px 28px;font-size:1rem;background:var(--clay);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Search</button>
+    </div>
+    <div id="quickTags" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;">
+      <span class="search-tag" onclick="quickSearch('Xinjiang')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Xinjiang</span>
+      <span class="search-tag" onclick="quickSearch('Silk Road')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Silk Road</span>
+      <span class="search-tag" onclick="quickSearch('Tibet')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Tibet</span>
+      <span class="search-tag" onclick="quickSearch('Luxury')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Luxury</span>
+      <span class="search-tag" onclick="quickSearch('Uzbekistan')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Uzbekistan</span>
+      <span class="search-tag" onclick="quickSearch('Kashgar')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Kashgar</span>
+      <span class="search-tag" onclick="quickSearch('Dunhuang')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Dunhuang</span>
+      <span class="search-tag" onclick="quickSearch('Group Tour')" style="cursor:pointer;background:var(--sand);color:var(--navy);padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:500;transition:all .2s;">Group Tours</span>
+    </div>
+  </div>
+
+  <div id="searchInfo" style="text-align:center;margin-bottom:24px;display:none;">
+    <span style="color:var(--text-muted);font-size:0.95rem;">Found <strong id="resultCount">0</strong> results for "<strong id="searchTerm"></strong>"</span>
+  </div>
+
+  <div id="searchResults" style="display:none;margin-bottom:32px;">
+    <div id="resultTours" style="display:none;"><h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:16px;font-size:1.3rem;">Tours</h3><div id="tourResults" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;"></div></div>
+    <div id="resultDests" style="display:none;margin-top:24px;"><h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:16px;font-size:1.3rem;">Destinations</h3><div id="destResults" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;"></div></div>
+    <div id="resultBlog" style="display:none;margin-top:24px;"><h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:16px;font-size:1.3rem;">Travel Guides</h3><div id="blogResults" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;"></div></div>
+  </div>
+
+  <div class="no-results" id="noResults" style="display:none;text-align:center;padding:40px;background:var(--cream);border-radius:12px;">
+    <div style="font-size:3rem;margin-bottom:16px;">🗺️</div>
+    <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">No exact match found</h3>
+    <p style="color:var(--text-light);margin-bottom:24px;">We customize every tour to your preferences — try a different search or browse below.</p>
+  </div>
+</div></div></section>
+
+<section class="section section-alt" id="browseSection"><div class="container">
+<div class="section-header"><h2>Popular Destinations</h2><div class="divider"></div></div>
+<div class="dest-grid" style="margin-bottom:40px;">
+  <a href="xinjiang-tours.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Xinjiang</span></a>
+  <a href="gansu-tours.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/xinjiang-landscape.jpg);background-size:cover;"></div><span class="dest-name">Gansu</span></a>
+  <a href="tibet-tours.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Tibet</span></a>
+  <a href="destination/dunhuang.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Dunhuang</span></a>
+  <a href="destination/kashgar.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Kashgar</span></a>
+  <a href="destination/uzbekistan.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Uzbekistan</span></a>
+  <a href="destination/xian.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Xi'an</span></a>
+  <a href="destination/zhangjiajie.html" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-silkroad.jpg);background-size:cover;"></div><span class="dest-name">Zhangjiajie</span></a>
+</div>
+
+<div class="section-header"><h2>Popular Tour Categories</h2><div class="divider"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+  <a href="china-group-tour.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">Group Tours</a>
+  <a href="tours.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">Private Tours</a>
+  <a href="luxury-silk-road.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">Luxury Silk Road</a>
+  <a href="silk-road-photography.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">Photography Tours</a>
+  <a href="city-tours.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">City Tours</a>
+  <a href="extend-silk-road-tour.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--border);text-align:center;padding:16px 24px;">Extended Tours</a>
+</div>
+
+<div style="text-align:center;margin-top:40px;">
+  <p style="color:var(--text-light);margin-bottom:16px;">Can't find what you're looking for? We design custom itineraries.</p>
+  <a href="/contact.html" class="btn btn-gold">Customize My Trip</a>
+</div>
+
+</div></section>
+
+<script>
+const searchData = { tours: [
+  {name:"13-Day Silk Road Group Tour",url:"tour/13d-silk-road-group.html",keywords:"silk road group classic china xian dunhuang turpan kashgar",price:"$2,680"},
+  {name:"19-Day China & Uzbekistan",url:"tour/19d-china-uzbekistan.html",keywords:"china uzbekistan silk road central asia samarkand tashkent",price:"$4,890"},
+  {name:"11-Day Kashgar to Kanas",url:"tour/11d-kashgar-kanas.html",keywords:"kashgar kanas xinjiang lake heaven mountain",price:"$2,350"},
+  {name:"14-Day Mount Kailash Pilgrimage",url:"tibet-tours.html",keywords:"tibet kailash pilgrimage lhasa everest base camp buddhist",price:"$2,980"},
+  {name:"9-Day Luxury Xi'an to Urumqi",url:"luxury-silk-road.html",keywords:"luxury xian urumqi dunhuang premium 5-star private",price:"$3,500"},
+  {name:"8-Day Lanzhou to Urumqi",url:"tour/8d-lanzhou-urumqi.html",keywords:"lanzhou urumqi gansu xinjiang hexi corridor",price:"$1,680"},
+  {name:"12-Day Silk Road by Train",url:"tour/12d-silk-road-train.html",keywords:"train silk road railway china xian dunhuang turpan",price:"$3,200"},
+  {name:"7-Day Gansu & Qinghai",url:"tour/7d-gansu-qinghai.html",keywords:"gansu qinghai lanzhou xiahe zhangye danxia",price:"$1,280"},
+  {name:"10-Day Xinjiang Gansu Qinghai",url:"tour/10d-xinjiang-gansu-qinghai.html",keywords:"xinjiang gansu qinghai combined tour northwest china",price:"$2,480"},
+  {name:"15-Day Kashgar to Tashkent",url:"tour/15d-kashgar-tashkent.html",keywords:"kashgar tashkent central asia kyrgyzstan pamir highway",price:"$3,890"},
+  {name:"9-Day Dunhuang to Kashgar",url:"tour/9d-dunhuang-kashgar.html",keywords:"dunhuang kashgar mogao caves turpan taklamakan desert",price:"$2,200"},
+  {name:"11-Day Urumqi to Bishkek",url:"tour/11d-urumqi-bishkek.html",keywords:"urumqi bishkek kyrgyzstan xinjiang issyk kul",price:"$2,680"},
+  {name:"6-Day Classic Tibet Discovery",url:"tibet-tours.html",keywords:"tibet lhasa namtso lake yamdrok short tour",price:"$1,280"},
+  {name:"Silk Road Northern Xinjiang",url:"silk-road-northern-xinjiang.html",keywords:"northern xinjiang kanas altay grassland nomad",price:"$1,980"},
+  {name:"Uzbekistan Kyrgyzstan China",url:"tour/uzbekistan-kyrgyzstan-china.html",keywords:"uzbekistan kyrgyzstan china combined central asia",price:"$4,200"},
+  {name:"Beijing Chengdu Zhangjiajie",url:"tour/beijing-chengdu-zhangjiajie-shanghai.html",keywords:"beijing chengdu zhangjiajie shanghai panda avatar",price:"$2,480"},
+  {name:"7-Day Kashgar to Bishkek",url:"tour/7d-kashgar-bishkek.html",keywords:"kashgar bishkek kyrgyzstan torugart pass central asia",price:"$1,980"},
+  {name:"Silk Road Tibet Adventure",url:"tour/silk-road-tibet-adventure.html",keywords:"tibet silk road lhasa train xining plateau",price:"$2,680"},
+  {name:"Silk Road Yunnan Explorer",url:"tour/silk-road-yunnan.html",keywords:"yunnan silk road tea horse lijiang shangri-la",price:"$2,200"},
+  {name:"Yangtze & Silk Road Grand Tour",url:"yangtze-river-cruises.html",keywords:"yangtze cruise three gorges silk road combination",price:"$3,200"},
+  {name:"Uzbekistan Pakistan Karakoram",url:"tour/uzbekistan-pakistan-karakoram.html",keywords:"uzbekistan pakistan karakoram highway hunza valley",price:"$4,580"},
+  {name:"City Tours Collection",url:"city-tours.html",keywords:"city tours beijing shanghai xian guangzhou chengdu",price:""}
+], destinations: [
+  {name:"Beijing",url:"destination/beijing.html",img:"photo-1508804185872-d7badad00f7d",keywords:"beijing great wall forbidden city capital china"},
+  {name:"Xi'an",url:"destination/xian.html",img:"photo-1547981609-4b6bfe67ca0b",keywords:"xian terracotta warriors ancient capital silk road start"},
+  {name:"Shanghai",url:"destination/shanghai.html",img:"photo-1537531383496-f4749b88813e",keywords:"shanghai bund modern china oriental pearl"},
+  {name:"Kashgar",url:"destination/kashgar.html",img:"photo-1569073694494-af151e04fc73",keywords:"kashgar xinjiang bazaar old city uyghur silk road"},
+  {name:"Dunhuang",url:"destination/dunhuang.html",img:"photo-1624483747107-c52cf07f3486",keywords:"dunhuang mogao caves gansu desert oasis sand dunes"},
+  {name:"Zhangjiajie",url:"destination/zhangjiajie.html",img:"photo-1528164344705-47542687000d",keywords:"zhangjiajie avatar mountains hunan sandstone pillars"},
+  {name:"Chongqing",url:"destination/chongqing.html",img:"photo-1558618665-3f1e54881834",keywords:"chongqing yangtze river hotpot mountain city"},
+  {name:"Uzbekistan",url:"destination/uzbekistan.html",img:"photo-1604580864964-0462f5d5b1a8",keywords:"uzbekistan samarkand bukhara khiva silk road central asia"},
+  {name:"Kyrgyzstan",url:"destination/kyrgyzstan.html",img:"photo-1506905925185-40e9986a0540",keywords:"kyrgyzstan bishkek issyk kul mountains central asia"},
+  {name:"Kazakhstan",url:"destination/kazakhstan.html",img:"photo-1559059699-085698eba48c",keywords:"kazakhstan almaty charyn canyon steppe central asia"},
+  {name:"Mongolia",url:"destination/mongolia.html",img:"photo-1565967511849-76a60a516170",keywords:"mongolia ulaanbaatar gobi desert yurt nomad"},
+  {name:"Pakistan",url:"destination/pakistan.html",img:"photo-1516428529178-ff9e5d5e05e1",keywords:"pakistan karakoram hunza lahore islamabad"},
+  {name:"Tajikistan",url:"destination/tajikistan.html",img:"photo-1484343585569-390a9ceb9bc7",keywords:"tajikistan pamir highway dushanbe mountains"},
+  {name:"Turkmenistan",url:"destination/turkmenistan.html",img:"photo-1507003211169-0a1dd7228f2d",keywords:"turkmenistan ashgabat darvaza gas crater silk road"},
+  {name:"Xinjiang",url:"xinjiang-tours.html",img:"photo-1615554648482-72b47fe0d79d",keywords:"xinjiang uyghur kashgar urumqi kanas turpan"},
+  {name:"Gansu",url:"gansu-tours.html",img:"photo-1600269452121-4f2416e55c28",keywords:"gansu lanzhou zhangye danxia jiayuguan dunhuang"},
+  {name:"Tibet",url:"tibet-tours.html",img:"photo-1559829089-bc637e18ff53",keywords:"tibet lhasa everest kailash plateau buddhist"},
+  {name:"Sichuan",url:"sichuan-tours.html",img:"photo-1509316785289-025f5b846b35",keywords:"sichuan chengdu panda jiuzhaigou emei mountain"},
+  {name:"Yunnan",url:"yunnan-tours.html",img:"photo-1519681393784-d120267933ba",keywords:"yunnan kunming lijiang shangri-la dali tea horse"},
+  {name:"Qinghai",url:"qinghai-tours.html",img:"photo-1517842645767-c639042777db",keywords:"qinghai qinghai lake xining amdo tibetan plateau"},
+  {name:"Shanxi",url:"shanxi-tours.html",img:"photo-1558618665-3f1e54881834",keywords:"shanxi datong yungang grottoes pingyao ancient city"},
+  {name:"Guangzhou",url:"destination/guangzhou.html",img:"photo-1548912233-f4d6741f447b",keywords:"guangzhou canton chen clan academy dim sum"}
+], blog: [
+  {name:"Gansu Intangible Heritage",url:"blog/gansu-heritage.html",keywords:"gansu heritage culture intangible unesco tradition"},
+  {name:"China Diverse Destinations",url:"blog/china-diverse-destinations.html",keywords:"china diverse destinations travel guide variety"},
+  {name:"Sven Hedin in Xinjiang",url:"blog/sven-hedin-xinjiang.html",keywords:"sven hedin xinjiang explorer history 130 years"},
+  {name:"Gansu May Travel Guide",url:"blog/gansu-may-travel.html",keywords:"gansu may travel best season hexi corridor"},
+  {name:"Silk Road Monthly Guide",url:"blog/silk-road-monthly-guide.html",keywords:"silk road monthly guide best time to visit season"},
+  {name:"Silk Road Food Guide",url:"blog/silk-road-food-guide.html",keywords:"silk road food cuisine dishes must try lamb noodles"},
+  {name:"Karakoram Highway",url:"blog/karakoram-highway.html",keywords:"karakoram highway highest paved road pakistan china"}
+]};
+
+function doSearch() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) {
+    document.getElementById('searchResults').style.display = 'none';
+    document.getElementById('searchInfo').style.display = 'none';
+    document.getElementById('noResults').style.display = 'none';
+    document.getElementById('browseSection').style.display = '';
+    return;
+  }
+  const terms = q.split(/\s+/);
+  let tourResults = [], destResults = [], blogResults = [];
+  searchData.tours.forEach(t => { if (terms.every(k => t.name.toLowerCase().includes(k) || t.keywords.includes(k))) tourResults.push(t); });
+  searchData.destinations.forEach(d => { if (terms.every(k => d.name.toLowerCase().includes(k) || d.keywords.includes(k))) destResults.push(d); });
+  searchData.blog.forEach(b => { if (terms.every(k => b.name.toLowerCase().includes(k) || b.keywords.includes(k))) blogResults.push(b); });
+  const total = tourResults.length + destResults.length + blogResults.length;
+  document.getElementById('searchInfo').style.display = '';
+  document.getElementById('resultCount').textContent = total;
+  document.getElementById('searchTerm').textContent = q;
+  if (total === 0) {
+    document.getElementById('searchResults').style.display = 'none';
+    document.getElementById('noResults').style.display = '';
+    document.getElementById('browseSection').style.display = '';
+    document.getElementById('searchInput').style.borderColor = 'var(--clay)';
+  } else {
+    document.getElementById('searchInput').style.borderColor = '#4CAF50';
+    document.getElementById('noResults').style.display = 'none';
+    document.getElementById('searchResults').style.display = '';
+    document.getElementById('browseSection').style.display = 'none';
+    document.getElementById('resultTours').style.display = tourResults.length ? '' : 'none';
+    document.getElementById('resultDests').style.display = destResults.length ? '' : 'none';
+    document.getElementById('resultBlog').style.display = blogResults.length ? '' : 'none';
+    document.getElementById('tourResults').innerHTML = tourResults.map(t => '<a href="'+t.url+'" class="tour-card" style="text-decoration:none;color:inherit;"><div class="tour-card-body"><h3>'+t.name+'</h3>'+(t.price?'<span style="color:var(--clay);font-weight:700;">From '+t.price+'</span>':'')+'</div></a>').join('');
+    document.getElementById('destResults').innerHTML = destResults.map(function(d){ return '<a href="'+d.url+'" class="dest-card"><div class="img-placeholder" style="background-image:url(/assets/images/hero-mountains.jpg);background-size:cover;height:100px;"></div><span class="dest-name">'+d.name+'</span></a>'; }).join('');
+    document.getElementById('blogResults').innerHTML = blogResults.map(b => '<a href="'+b.url+'" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><h3>'+b.name+'</h3></div></a>').join('');
+  }
+}
+
+function quickSearch(term) {
+  document.getElementById('searchInput').value = term;
+  doSearch();
+  document.getElementById('searchInput').focus();
+}
+
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+});
+
+// Handle ?q= from header search form
+(function initSearchFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q) {
+    document.getElementById('searchInput').value = q;
+    doSearch();
+  }
+})();
+
+const tags = document.querySelectorAll('.search-tag');
+tags.forEach(tag => {
+  tag.addEventListener('mouseenter', function(){ this.style.background = 'var(--clay)'; this.style.color = '#fff'; });
+  tag.addEventListener('mouseleave', function(){ this.style.background = 'var(--sand)'; this.style.color = 'var(--navy)'; });
+});
+</script>
+<CtaSection />
+</BaseLayout>

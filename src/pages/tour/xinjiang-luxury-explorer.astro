@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "xinjiang-luxury-explorer",
+  "title": "Xinjiang Luxury Explorer",
+  "duration": "11 Days",
+  "route": "Urumqi → Kanas → Turpan → Kuqa → Kashgar",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$4,500",
+  "features": [
+    "5-Star Hotels",
+    "Private Flights",
+    "VIP Access"
+  ],
+  "overview": "Discover Xinjiang in ultimate comfort. Private flights between destinations, the finest hotels, and exclusive access to cultural experiences across China's largest province.",
+  "highlights": [
+    "Kanas Lake private boat tour",
+    "Kashgar Old City VIP tour",
+    "Helicopter over the Tianshan",
+    "Uyghur cultural performances",
+    "5-star desert resorts"
+  ],
+  "category": "luxury"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'luxury'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

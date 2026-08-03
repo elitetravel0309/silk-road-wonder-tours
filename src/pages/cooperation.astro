@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="Travel Agency Cooperation" description="Partner with the leading Silk Road travel operator. Access competitive rates, dedicated support, and marketing materials for your travel agency." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Travel Agency Cooperation</h1><p>Partner with the leading Silk Road travel operator</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Agency Cooperation" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Agency Cooperation</span></div></nav>
+
+<!-- WHY PARTNER -->
+<section class="section"><div class="container"><div class="section-header reveal"><h2>Why Partner With Silk Road Wonders</h2><div class="divider"></div><p>Join our global network of trusted travel partners and offer your clients the best Silk Road experience</p></div>
+<div class="why-grid">
+  <div class="why-card reveal"><div class="why-icon tailor">🌍</div><h3>Local Expertise Since 2005</h3><p>With 20+ years of on-the-ground experience in Xinjiang and across the Silk Road, we provide your clients with authentic, safe, and unforgettable journeys.</p></div>
+  <div class="why-card reveal"><div class="why-icon expert">🌟</div><h3>99% Client Satisfaction</h3><p>Our consistently high satisfaction rate means fewer complaints and more repeat bookings for your agency.</p></div>
+  <div class="why-card reveal"><div class="why-icon professional">📄</div><h3>Comprehensive Coverage</h3><p>From China to Central Asia — we cover all Silk Road destinations including Xinjiang, Gansu, Qinghai, Uzbekistan, Kyrgyzstan, and Kazakhstan.</p></div>
+  <div class="why-card reveal"><div class="why-icon trusted">👤</div><h3>Dedicated Partner Manager</h3><p>Every partner agency gets a dedicated account manager who handles all inquiries, bookings, and on-trip support.</p></div>
+</div></div></section>
+
+<!-- PARTNERSHIP BENEFITS -->
+<section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Partnership Benefits</h2><div class="divider"></div></div>
+<div class="benefits-grid">
+  <div class="benefit-card reveal"><div class="benefit-icon">💰</div><h3>Competitive Net Rates</h3><p>Access exclusive partner-only net rates that give you healthy margins while remaining competitive in your market. Volume-based tier discounts available for high-performing partners.</p></div>
+  <div class="benefit-card reveal"><div class="benefit-icon">📞</div><h3>Dedicated Support Team</h3><p>Your dedicated account manager responds within 12 hours. 24/7 emergency support for your clients during their trip. Multilingual support in English, Chinese, and Malay.</p></div>
+  <div class="benefit-card reveal"><div class="benefit-icon">📷</div><h3>Marketing Materials</h3><p>Professional photos, videos, brochures, and itinerary templates ready for your website and social media. Co-branded marketing collateral available upon request.</p></div>
+  <div class="benefit-card reveal"><div class="benefit-icon">🌐</div><h3>Flexible Booking Terms</h3><p>Flexible deposit and payment schedules designed for agency workflows. Easy amendment and cancellation handling with transparent policies.</p></div>
+  <div class="benefit-card reveal"><div class="benefit-icon">✈</div><h3>FAM Trip Opportunities</h3><p>Qualified partners are invited to exclusive familiarization trips to experience our tours firsthand. Know exactly what you're selling to your clients.</p></div>
+  <div class="benefit-card reveal"><div class="benefit-icon">🚀</div><h3>Early Access to New Products</h3><p>Be the first to know about new tour routes, seasonal promotions, and exclusive packages. Get a competitive edge in your market.</p></div>
+</div></div></section>
+
+<!-- PARTNERSHIP TYPES -->
+<section class="section"><div class="container"><div class="section-header reveal"><h2>Types of Partnerships</h2><div class="divider"></div><p>Flexible partnership models designed for agencies of all sizes</p></div>
+<div class="partner-types">
+  <div class="partner-type reveal"><div class="icon">🏰</div><h3>Preferred Partner</h3><p style="color:var(--gold);font-size:0.85rem;font-weight:600;margin-bottom:12px;">For Established Agencies</p><p>Full access to our complete product range, competitive net rates, co-branded marketing materials, dedicated partner manager, and priority booking. Annual volume commitment required.</p></div>
+  <div class="partner-type reveal"><div class="icon">🤝</div><h3>Standard Partner</h3><p style="color:var(--gold);font-size:0.85rem;font-weight:600;margin-bottom:12px;">For Growing Agencies</p><p>Access to our core Silk Road tours with competitive rates. Marketing assets on request. Standard booking support with response within 24 hours. No volume commitment.</p></div>
+  <div class="partner-type reveal"><div class="icon">🎯</div><h3>Project-Based</h3><p style="color:var(--gold);font-size:0.85rem;font-weight:600;margin-bottom:12px;">For Specialized Groups</p><p>Ideal for agencies organizing specific themed tours — photography expeditions, academic trips, corporate retreats. Custom itineraries and pricing for each project.</p></div>
+</div></div></section>
+
+<!-- CONTACT FORM -->
+<section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Become a Partner</h2><div class="divider"></div><p>Fill out the form below and our partnership team will get back to you within 48 hours</p></div>
+<div class="cooperation-form-wrap reveal">
+  <h3>Partnership Inquiry</h3>
+  <form id="cooperationForm" method="POST" aria-label="Partnership Inquiry Form">
+    <input type="hidden" name="form_type" value="agency_cooperation">
+    <div class="form-row">
+      <div class="form-group"><label for="coopAgency">Agency Name *</label><input type="text" id="coopAgency" name="agency_name" required placeholder="Your travel agency name"></div>
+      <div class="form-group"><label for="coopContact">Contact Person *</label><input type="text" id="coopContact" name="contact_person" required placeholder="Your full name"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="coopEmail">Email Address *</label><input type="email" id="coopEmail" name="email" required placeholder="your@agency.com"></div>
+      <div class="form-group"><label for="coopPhone">Phone / WhatsApp</label><input type="tel" id="coopPhone" name="phone" placeholder="+__ ___________"></div>
+    </div>
+    <div class="form-group"><label for="coopWebsite">Agency Website</label><input type="url" id="coopWebsite" name="website" placeholder="https://www.your-agency.com"></div>
+    <div class="form-group"><label for="coopCountry">Country of Operation *</label>
+      <select id="coopCountry" name="country" required>
+        <option value="">Select your country</option>
+        <option value="malaysia">Malaysia</option><option value="singapore">Singapore</option><option value="indonesia">Indonesia</option><option value="thailand">Thailand</option>
+        <option value="usa">United States</option><option value="uk">United Kingdom</option><option value="germany">Germany</option><option value="france">France</option>
+        <option value="italy">Italy</option><option value="australia">Australia</option><option value="canada">Canada</option><option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label for="coopType">Partnership Interest *</label>
+      <select id="coopType" name="partnership_type" required>
+        <option value="">Select partnership type</option>
+        <option value="preferred">Preferred Partner</option><option value="standard">Standard Partner</option><option value="project">Project-Based</option>
+      </select>
+    </div>
+    <div class="form-group"><label for="coopMessage">Tell Us About Your Agency</label><textarea id="coopMessage" name="message" rows="4" placeholder="Briefly describe your agency, primary markets, and what kind of Silk Road tours your clients are interested in."></textarea></div>
+    <button type="submit" class="btn btn-gold form-submit">Submit Partnership Inquiry</button>
+  </form>
+</div></div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Ready to Start?</h2><p>Have questions about our partnership program? We'd love to hear from you.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+<CtaSection />
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "sayram-lake-naraty",
+  "title": "Sayram Lake & Naraty",
+  "duration": "5 Days",
+  "route": "Urumqi → Sayram Lake → Naraty Grassland → Bayanbulak",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$980",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Two of Xinjiang's most beautiful landscapes in one trip. The sapphire waters of Sayram Lake and the endless green of Naraty Grassland, with Kazakh culture throughout.",
+  "highlights": [
+    "Sayram Lake at sunset",
+    "Naraty Grassland",
+    "Kazakh yurt stay",
+    "Bayanbulak Swan Lake",
+    "Tianshan Mountain scenery"
+  ],
+  "category": "northXinjiang"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'northXinjiang'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

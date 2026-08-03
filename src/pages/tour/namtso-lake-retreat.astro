@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "namtso-lake-retreat",
+  "title": "Namtso Lake Retreat",
+  "duration": "5 Days",
+  "route": "Lhasa → Damxung → Namtso → Yangpachen",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$980",
+  "features": [
+    "Lakeside Camp",
+    "English Guide"
+  ],
+  "overview": "A short but unforgettable escape to Namtso Lake, one of Tibet's most stunning natural wonders. Camp by the lakeshore under a canopy of stars.",
+  "highlights": [
+    "Namtso Lake at sunset",
+    "Stargazing at 4,700m",
+    "Lhasa highlights",
+    "Yangpachen hot springs",
+    "Tashi Dor Island"
+  ],
+  "category": "tibet"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'tibet'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "silk-road-private-jet",
+  "title": "Silk Road by Private Jet",
+  "duration": "12 Days",
+  "route": "Beijing → Xi'an → Dunhuang → Kashgar → Samarkand → Istanbul",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$8,900",
+  "features": [
+    "Private Jet",
+    "Butler Service",
+    "Ultra-Luxury"
+  ],
+  "overview": "The ultimate Silk Road experience. Travel by private jet from Beijing to Istanbul, following the ancient trade route with butler service and Michelin-starred dining.",
+  "highlights": [
+    "Private jet travel",
+    "Beijing to Istanbul",
+    "Samarkand's Registan",
+    "Michelin-starred dining",
+    "Butler service throughout"
+  ],
+  "category": "luxury"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'luxury'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

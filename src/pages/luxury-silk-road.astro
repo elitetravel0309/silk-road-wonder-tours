@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Luxury Silk Road Tours —5-Star Hotels & VIP Experiences" description="Experience the Silk Road in ultimate luxury —private tours with 5-star hotels, VIP access, private chauffeurs, and exclusive cultural encounters. From Xi'an to Samarkand." ogImage="/assets/images/central-asia-architecture.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Luxury Silk Road" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Luxury Silk Road Tours",
+    "description": "Premium Silk Road journeys with 5-star hotels, private transfers, and VIP access.",
+    "numberOfItems": 5,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Xi'an to Urumqi Luxury", "url": "https://silkroadwondertours.com/tour/xian-urumqi-luxury.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Dunhuang to Kashgar Deluxe", "url": "https://silkroadwondertours.com/tour/dunhuang-kashgar-deluxe.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Silk Road by Private Jet", "url": "https://silkroadwondertours.com/tour/silk-road-private-jet.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Gansu Gastronomy Luxury", "url": "https://silkroadwondertours.com/tour/gansu-gastronomy-luxury.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Xinjiang Luxury Explorer", "url": "https://silkroadwondertours.com/tour/xinjiang-luxury-explorer.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/central-asia-architecture.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="lux-hero">Luxury Silk Road Tours</h1><p data-i18n="lux-hero-sub">5-Star Hotels 路 Private Transfers 路 VIP Access 路 Exclusive Experiences</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Luxury</span></div></nav>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="lux-intro-title">The Silk Road, Reimagined in Luxury</h2>
+        <div class="divider"></div>
+        <p data-i18n="lux-intro-desc">The ancient Silk Road was once traveled by camel caravans and merchant princes. Today, we've reimagined this legendary route for the modern luxury traveler. Think five-star desert resorts under the stars, private access to UNESCO World Heritage sites, Michelin-caliber dining experiences, and chauffeur-driven journeys through landscapes that have inspired explorers for millennia.</p>
+        <p style="margin-top:12px;color:var(--text-light);">Whether you dream of a private jet odyssey from Beijing to Istanbul, a gastronomic journey through Gansu's Silk Road flavors, or an intimate exploration of Uzbekistan's turquoise-domed cities, our luxury collection delivers the extraordinary. Every detail —from the thread count of your sheets to the vintage of your wine —is curated to exceed expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Luxury With Us -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="lux-why-title">The Silk Road Wonders Luxury Difference</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px;">
+        <div class="reveal" style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid var(--border);">
+          <div style="font-size:2.2rem;margin-bottom:12px;">&#11088;</div>
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="lux-feat-hotels">5-Star & Boutique Hotels</h3>
+          <p style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">Hand-picked luxury properties —from desert resorts in Dunhuang to palatial hotels in Samarkand. Every property inspected personally by our team.</p>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid var(--border);">
+          <div style="font-size:2.2rem;margin-bottom:12px;">&#128663;</div>
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="lux-feat-transport">Private Chauffeur Service</h3>
+          <p style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">Luxury SUVs with professional English-speaking drivers. Private airport transfers, intercity travel, and flexible routing —your schedule, your pace.</p>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid var(--border);">
+          <div style="font-size:2.2rem;margin-bottom:12px;">&#127775;</div>
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="lux-feat-exclusive">Exclusive Access</h3>
+          <p style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">Private viewings at UNESCO sites, after-hours museum tours, meetings with local artisans and historians. Experiences money alone can't buy.</p>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;padding:28px 24px;border:1px solid var(--border);">
+          <div style="font-size:2.2rem;margin-bottom:12px;">&#127860;</div>
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="lux-feat-dining">Curated Dining</h3>
+          <p style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">Private chef experiences, desert dinner under the stars, wine tastings, cooking masterclasses. Every meal is an event, not just sustenance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Grid -->
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="lux-tours-title">Our Luxury Silk Road Collection</h2><div class="divider"></div><p data-i18n="lux-tours-desc">Travel the ancient trade route in unparalleled comfort and style —every journey fully customizable</p></div>
+    <div class="tour-grid">
+      {allTours.luxury.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+  <CtaSection />
+</BaseLayout>

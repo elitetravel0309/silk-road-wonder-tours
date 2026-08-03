@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "emei-leshan-buddha",
+  "title": "Emei & Leshan Buddha",
+  "duration": "3 Days",
+  "route": "Chengdu → Leshan → Emei Mountain",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$480",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Two UNESCO World Heritage sites in one trip. Marvel at the 71-meter Leshan Giant Buddha carved into a cliff face, then ascend the sacred Emei Mountain.",
+  "highlights": [
+    "Leshan Giant Buddha (71m)",
+    "Emei Mountain summit (3,099m)",
+    "Golden Summit at sunrise",
+    "Baoguo Temple",
+    "Sichuan food"
+  ],
+  "category": "sichuan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'sichuan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

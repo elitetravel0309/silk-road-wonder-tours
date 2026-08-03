@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Sichuan Tours — Chengdu Pandas, Jiuzhaigou, Leshan Buddha & Tibetan Highlands" description="Discover Sichuan — giant pandas in Chengdu, fairytale Jiuzhaigou Valley, the Leshan Giant Buddha, and Garze Tibetan Highlands. 3–10 day tours." ogImage="/assets/images/hero-silkroad.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Sichuan" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Sichuan Tours",
+    "description": "Expert-guided tours through Sichuan — pandas, fairytale lakes, giant Buddhas, and Tibetan highlands.",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Chengdu & Panda Base", "url": "https://silkroadwondertours.com/tour/chengdu-panda-base.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Jiuzhaigou Valley", "url": "https://silkroadwondertours.com/tour/jiuzhaigou-valley.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Sichuan & Tibet Combo", "url": "https://silkroadwondertours.com/tour/sichuan-tibet-combo.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Emei & Leshan Buddha", "url": "https://silkroadwondertours.com/tour/emei-leshan-buddha.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Garze Tibetan Highlands", "url": "https://silkroadwondertours.com/tour/garze-tibetan-highlands.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Sichuan Food & Culture", "url": "https://silkroadwondertours.com/tour/sichuan-food-culture.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/hero-silkroad.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="sic-hero">Sichuan Tours</h1><p data-i18n="sic-hero-sub">Chengdu Pandas · Jiuzhaigou Valley · Leshan Buddha · Tibetan Highlands — Land of Abundance</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Sichuan</span></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="sic-intro-title">Welcome to Sichuan — Pandas, Peppers & Paradises</h2>
+        <div class="divider"></div>
+        <p data-i18n="sic-intro-desc">Sichuan is a province of superlatives — home to the world's cutest animal (the giant panda), China's spiciest cuisine, the planet's most otherworldly turquoise lakes (Jiuzhaigou), and the largest stone Buddha ever carved (71 meters at Leshan). It's been called the 'Land of Abundance' for 2,000 years, and once you taste your first Sichuan hot pot while watching pandas munch bamboo, you'll understand why.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="sic-intro-desc2">Our Sichuan tours cover the full spectrum — from easy 3-day culture-and-cuisine breaks in Chengdu to epic 10-day journeys across the Tibetan highlands of Garze. Get nose-to-nose with baby pandas, stand speechless before the travertine pools of Huanglong, climb the sacred slopes of Emei Mountain, and learn to cook mapo tofu from a Chengdu grandmother. All tours include English-speaking guides, 4-star accommodation, and private transportation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="sic-wonders">Sichuan's Greatest Hits</h2><div class="divider"></div></div>
+      <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="sic-w1-title">Chengdu Panda Base</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="sic-w1-desc">The world's premier giant panda research and breeding facility. Watch pandas of all ages — from newborn cubs in incubators to adults lazily munching bamboo — in a beautifully landscaped setting.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="sic-w2-title">Jiuzhaigou Valley</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="sic-w2-desc">A UNESCO World Heritage fairytale — 108 turquoise lakes connected by multi-tiered waterfalls, surrounded by virgin forest and snow-capped peaks. Autumn (September–October) transforms the valley into a riot of gold, orange, and red.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="sic-w3-title">Leshan Giant Buddha</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="sic-w3-desc">A 71-meter seated Buddha carved directly into a cliff face overlooking the confluence of three rivers. Built over 90 years starting in 713 AD, it remains the world's largest stone Buddha — a jaw-dropping feat of ancient engineering.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/xinjiang-landscape.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="sic-w4-title">Sichuan Cuisine</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="sic-w4-desc">The world's boldest food culture — the numbing-spicy magic of Sichuan peppercorns, bubbling hot pot, mapo tofu, kung pao chicken, dan dan noodles. Take a cooking class and learn the secrets behind the flavors.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="sic-tour-title">Sichuan Tours</h2><div class="divider"></div><p data-i18n="sic-tour-sub">From pandas to mountain peaks — explore the Land of Abundance</p></div>
+    <div class="tour-grid">
+      {allTours.sichuan.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="sic-tips-title">Sichuan Travel Tips</h2><div class="divider"></div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="sic-t1-title">&#127798; Spice Level Survival Guide</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="sic-t1-desc">Sichuan food is famously spicy, but not everything is fiery. Say 'bù yào là' (不要辣) for no spice, or 'wēi là' (微辣) for mild. Hot pot places offer split pots with non-spicy broth. The numbing sensation from Sichuan peppercorns is normal — it's part of the experience!</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="sic-t2-title">&#9968; Best Seasons</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="sic-t2-desc">Autumn (Sept–Oct): Jiuzhaigou's fall colors are world-famous. Spring (Mar–May): pleasant in Chengdu, pandas are most active. Summer: escape Chengdu's heat in the mountains. Winter: Jiuzhaigou transforms into a frozen wonderland with far fewer tourists.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="sic-t3-title">&#9961; Tea House Culture</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="sic-t3-desc">Chengdu's tea houses are an essential experience — spend an afternoon in People's Park sipping jasmine tea, getting your ears cleaned (a local tradition!), and watching locals play mahjong. Heming Tea House has been serving since the Qing Dynasty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

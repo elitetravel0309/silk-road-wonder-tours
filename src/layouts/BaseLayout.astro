@@ -1,0 +1,62 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileNav from '../components/MobileNav.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  twitterImage?: string;
+  canonical?: string;
+}
+const { title, description = 'Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.', ogImage, twitterImage, canonical } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="djI7G9O9aSEJf4Cwi67r0oadfIODvf_1RerX1xH3LaQ" />
+<title>{title} | Silk Road Wonders</title>
+<meta name="description" content={description}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="website">
+<meta property="og:image" content={ogImage || '/assets/images/hero-mountains.jpg'}>
+<meta property="og:site_name" content="Silk Road Wonders">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={twitterImage || ogImage || '/assets/images/hero-mountains.jpg'}>
+<link rel="canonical" href={canonical || Astro.url.href}>
+<link rel="alternate" hreflang="en" href={canonical || Astro.url.href}>
+<link rel="alternate" hreflang="zh-Hans" href={canonical || Astro.url.href}>
+<link rel="alternate" hreflang="x-default" href={canonical || Astro.url.href}>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1B2A4A">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HGKX7GFMFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HGKX7GFMFY');
+</script>
+</head>
+<body>
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<Header />
+<main id="main-content" role="main">
+<slot />
+</main>
+<Footer />
+<MobileNav />
+<script src="/js/main.js" defer></script>
+</body>
+</html>

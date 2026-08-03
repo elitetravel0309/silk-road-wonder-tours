@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "tibet-silk-road-combo",
+  "title": "Tibet & Silk Road Combo",
+  "duration": "15 Days",
+  "route": "Xining → Lhasa → Shigatse → EBC",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$3,450",
+  "features": [
+    "4-Star Hotels",
+    "English Guide",
+    "Train Included"
+  ],
+  "overview": "The ultimate Tibet and Silk Road combination. Take the Qinghai-Tibet Railway from Xining to Lhasa, then explore the best of Tibet including Everest Base Camp.",
+  "highlights": [
+    "Qinghai-Tibet Railway — world's highest",
+    "Potala Palace & Jokhang Temple",
+    "Everest Base Camp",
+    "Kumbum Monastery",
+    "Yamdrok Lake"
+  ],
+  "category": "tibet"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'tibet'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

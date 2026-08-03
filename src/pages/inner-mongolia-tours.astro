@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = "Inner Mongolia Tours - Grasslands, Deserts & Nomadic Culture";
+---
+<BaseLayout title={title} description="Explore Inner Mongolia - Hulunbuir Grassland, Badain Jaran Desert, Xilingol Horse Culture. Private tours through China's northern frontier of nomadic traditions." ogImage="/assets/images/hero-mountains.jpg">
+
+
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>Inner Mongolia</h1><p>The endless steppe - vast grasslands, singing deserts, and the spirit of Genghis Khan</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Inner Mongolia Tours" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Inner Mongolia Tours</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>Inner Mongolia: Land of the Eternal Blue Sky</h2>
+  <div class="divider"></div>
+  <p>Inner Mongolia is China's northern frontier - a vast region of rolling grasslands that stretch to the horizon, towering sand dunes that sing in the wind, and nomadic Mongolian culture that has endured for millennia. Under the eternal blue sky (Mongke Tengri), you'll find a way of life still intimately connected to the land - Mongolian herders moving their gers (yurts) with the seasons, horsemen racing across the steppe, and the haunting sounds of khoomei throat singing echoing through the valleys. The legendary Hulunbuir Grassland is considered one of the world's most beautiful prairies, while the Badain Jaran Desert holds the world's tallest stationary sand dunes.</p>
+  <p style="margin-top:12px;">Inner Mongolia is best explored in summer (June to September) when the grasslands are lush green and the Naadam Festival fills the plains with wrestling, archery, and horse racing. Each tour includes stays in traditional Mongolian yurts, horseback riding, and meals featuring roast lamb and milk tea. Our private tours use 4x4 vehicles for desert excursions and include experienced Mongolian guides.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Hohhot Grassland Experience" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$620</span></div>
+      <h3>Hohhot Grassland Experience</h3>
+      <p class="tour-route">Hohhot → Xilamuren Grassland → Gegentala → Dazhao Temple</p>
+      <p class="tour-desc">Stay in a traditional Mongolian yurt on the grasslands, ride horses across the prairie, watch spectacular sunsets, and visit the silver Buddha of Dazhao Lamasery.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Hulunbuir Prairie" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$780</span></div>
+      <h3>Hulunbuir Prairie</h3>
+      <p class="tour-route">Hailar → Hulunbuir → Ergun Wetlands → Manzhouli</p>
+      <p class="tour-desc">Explore China's most beautiful grassland - rivers winding through emerald prairie, Russian-influenced border towns, and the vast wetlands of Ergun teeming with migratory birds.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Badain Jaran Desert" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">6 Days</span><span class="tour-price">$950</span></div>
+      <h3>Badain Jaran Desert</h3>
+      <p class="tour-route">Alxa Right Banner → Badain Jaran → Bilutu Peak → Desert Lakes</p>
+      <p class="tour-desc">Trek to the world's tallest stationary dunes (500m), discover mysterious desert lakes that never dry, and hear the singing sands at sunset in China's most dramatic desert.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Ordos & Kubqi Desert" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$580</span></div>
+      <h3>Ordos & Kubqi Desert</h3>
+      <p class="tour-route">Ordos → Kubqi Desert → Resonant Sand Bay → Genghis Khan Mausoleum</p>
+      <p class="tour-desc">Sandboard down the Kubqi Desert dunes, visit the spiritual memorial of Genghis Khan, and experience the surreal modern city of Ordos - China's most famous ghost city.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Xilingol Horse Culture" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$850</span></div>
+      <h3>Xilingol Horse Culture</h3>
+      <p class="tour-route">Xilinhot → Xilingol Grassland → Horse Ranch → Naadam Festival (July)</p>
+      <p class="tour-desc">Immerse in Mongolian horse culture on the legendary Xilingol Steppe. Visit breeding ranches for the famous Mongolian horse, ride with nomadic herders, and attend the Naadam Festival.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    /assets/images/hero-silkroad.jpg"></div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Eastern Inner Mongolia" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">6 Days</span><span class="tour-price">$1,080</span></div>
+      <h3>Eastern Inner Mongolia</h3>
+      <p class="tour-route">Hailar → Hulunbuir → Arxan → Moerdaoga → Shiwei</p>
+      <p class="tour-desc">Explore Inner Mongolia's wild east - primordial forests, volcanic hot springs at Arxan, the last reindeer herders of the Ewenki people, and the Sino-Russian border village of Shiwei.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Inner Mongolia Grand Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">10 Days</span><span class="tour-price">$1,680</span></div>
+      <h3>Inner Mongolia Grand Tour</h3>
+      <p class="tour-route">Hohhot → Xilamuren → Ordos → Hulunbuir → Manzhouli</p>
+      <p class="tour-desc">The complete Inner Mongolia - southern deserts, central grasslands, and the northern prairie. From Genghis Khan's legacy to the Russian border, the ultimate nomadic adventure.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-header reveal"><h2>Why Choose Inner Mongolia</h2><div class="divider"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Endless Grasslands</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">The Hulunbuir Prairie spans 100,000 km² of undulating green — one of the world's largest and most pristine grasslands where Mongolian herders still live in gers (yurts), ride horses across the steppe, and tend flocks of sheep beneath enormous skies.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Mongolian Culture</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Experience the Naadam Festival (July) — Mongolia's traditional games of wrestling, horse racing, and archery. Stay in a ger camp, learn to ride, try fermented mare's milk (airag), and listen to khoomei throat singing under a canopy of stars.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Desert Adventures</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">The Kubuqi and Badain Jaran deserts offer some of China's most dramatic dune landscapes — sandboarding, camel treks, and 4x4 dune bashing. The Mausoleum of Genghis Khan near Ordos is the spiritual center of Mongolian heritage in China.</p>
+  </div>
+</div>
+<div style="margin-top:32px;padding:24px;background:var(--cream);border-radius:8px;text-align:center;">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:8px;">Best Time to Visit: June &ndash; September</p>
+  <p style="color:var(--text-light);font-size:0.95rem;">The grasslands are at their greenest, temperatures are pleasantly warm (20-28°C), and the Naadam Festival takes place in July. September offers golden autumn colors and thinner crowds. Winter (November-March) is brutally cold — unless you want the frozen Yellow River ice festival.</p>
+</div>
+</div></section>
+
+<section class="cta-section">
+<div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Discover Nomadic Mongolia</h2><p>Let our expert team craft your perfect itinerary -- free consultation, no obligation.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+
+
+<CtaSection />
+</BaseLayout>

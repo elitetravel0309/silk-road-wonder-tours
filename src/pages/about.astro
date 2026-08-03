@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = 'About Silk Road Wonders';
+---
+<BaseLayout title={title} description="Learn about Silk Road Wonders — the top China travel agency specializing in Silk Road tours since 2005. 20,000+ happy travelers.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com",
+    "description": "Leading China travel agency specializing in Silk Road tours across China and Central Asia since 2005.",
+    "foundingDate": "2005",
+    "email": "booking@silkroadwondertours.com",
+    "telephone": "+8615347723823",
+    "address": { "@type": "PostalAddress", "addressLocality": "Xinjiang", "addressCountry": "CN" },
+    "sameAs": [
+      "https://www.facebook.com/silkroadtravel",
+      "https://www.instagram.com/silkroadtravel"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "20000" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About" }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background:url('/assets/images/hero-silkroad.jpg') center/cover;"><div class="container"><h1>{title}</h1><p>Your Trusted Silk Road Wonders Partner Since 2005</p></div></section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">&rsaquo;</span> <span class="current">About</span></div></nav>
+
+  <!-- INTRO -->
+  <section class="section"><div class="container"><div class="intro-grid reveal">
+    <div class="intro-image"><div class="img-placeholder" style="background:url('/assets/images/hero-mountains.jpg') center/cover;"></div><div class="deco"></div></div>
+    <div class="intro-text">
+      <h2>The Best Silk Road Tour Operator</h2>
+      <p>Silk Road Wonders is a leading travel agency established in 2005, specializing in customized Silk Road journeys across China and Central Asia. With over 20 years of experience, we have helped more than 20,000 travelers discover the magic of the ancient trade routes.</p>
+      <p>Our team of passionate travel experts has firsthand experience exploring every destination we offer. From the bustling bazaars of Kashgar to the serene monasteries of Tibet, we know the Silk Road inside and out. We are a fully licensed tour operator registered in China, with partnerships spanning 15 countries along the historic Silk Road.</p>
+      <div class="intro-stats"><div class="intro-stat"><div class="num">20,000+</div><div class="label">Happy Travelers</div></div><div class="intro-stat"><div class="num">20+</div><div class="label">Years Experience</div></div><div class="intro-stat"><div class="num">99%</div><div class="label">Satisfaction</div></div><div class="intro-stat"><div class="num">15+</div><div class="label">Countries Covered</div></div></div>
+    </div>
+  </div></div></section>
+
+  <!-- MILESTONES -->
+  <section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Our Journey</h2><div class="divider"></div><p>Two decades of excellence on the Silk Road</p></div>
+    <div class="timeline" style="max-width:800px;margin:40px auto 0;">
+      <div class="timeline-item reveal" style="display:flex;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border-color,#e8e8e8);">
+        <div style="flex-shrink:0;width:80px;font-weight:700;font-size:20px;color:var(--clay,#C67B4B);">2005</div>
+        <div><h3 style="font-size:18px;margin:0 0 6px;">Founded in Xinjiang</h3><p style="margin:0;color:#666;">Silk Road Wonders was established in Urumqi, with a vision to share the ancient Silk Road with the world. Started with a small team of 3 guides and one minibus.</p></div>
+      </div>
+      <div class="timeline-item reveal" style="display:flex;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border-color,#e8e8e8);">
+        <div style="flex-shrink:0;width:80px;font-weight:700;font-size:20px;color:var(--clay,#C67B4B);">2010</div>
+        <div><h3 style="font-size:18px;margin:0 0 6px;">Expanded to Central Asia</h3><p style="margin:0;color:#666;">Launched our first cross-border tours into Kazakhstan, Kyrgyzstan, and Uzbekistan. Became one of the first Chinese agencies to offer overland Silk Road journeys spanning 5 countries.</p></div>
+      </div>
+      <div class="timeline-item reveal" style="display:flex;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border-color,#e8e8e8);">
+        <div style="flex-shrink:0;width:80px;font-weight:700;font-size:20px;color:var(--clay,#C67B4B);">2015</div>
+        <div><h3 style="font-size:18px;margin:0 0 6px;">10,000 Travelers Milestone</h3><p style="margin:0;color:#666;">Reached 10,000 happy travelers. Launched luxury Silk Road experiences, including private jet tours and 5-star desert camps. Expanded team to 25 travel professionals.</p></div>
+      </div>
+      <div class="timeline-item reveal" style="display:flex;gap:24px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border-color,#e8e8e8);">
+        <div style="flex-shrink:0;width:80px;font-weight:700;font-size:20px;color:var(--clay,#C67B4B);">2020</div>
+        <div><h3 style="font-size:18px;margin:0 0 6px;">Award-Winning Service</h3><p style="margin:0;color:#666;">Recognized as Top Silk Road Tour Operator by multiple international travel platforms. Pioneered virtual tours during global travel restrictions, keeping the Silk Road accessible.</p></div>
+      </div>
+      <div class="timeline-item reveal" style="display:flex;gap:24px;">
+        <div style="flex-shrink:0;width:80px;font-weight:700;font-size:20px;color:var(--clay,#C67B4B);">2024</div>
+        <div><h3 style="font-size:18px;margin:0 0 6px;">20,000+ Travelers & Growing</h3><p style="margin:0;color:#666;">Surpassed 20,000 travelers. Launched our new digital platform with real-time booking, 24/7 support, and expanded coverage to 15+ countries. 99% satisfaction rate maintained over two decades.</p></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CORE VALUES -->
+  <section class="section"><div class="container"><div class="section-header reveal"><h2>Our Core Values</h2><div class="divider"></div></div>
+    <div class="why-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:40px;">
+      <div class="why-card reveal" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:32px 24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:12px;">🌏</div>
+        <h3 style="font-size:18px;color:#1a1a1a;">Authentic Experiences</h3>
+        <p style="color:#666;line-height:1.6;">We go beyond tourist trails. Our itineraries are crafted with local communities, ensuring genuine cultural encounters that respect and preserve Silk Road heritage.</p>
+      </div>
+      <div class="why-card reveal" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:32px 24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:12px;">🛡️</div>
+        <h3 style="font-size:18px;color:#1a1a1a;">Safety First</h3>
+        <p style="color:#666;line-height:1.6;">All our guides are certified first-aid responders. Vehicles undergo daily safety checks. Emergency protocols are in place across every destination we serve.</p>
+      </div>
+      <div class="why-card reveal" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:32px 24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:12px;">💎</div>
+        <h3 style="font-size:18px;color:#1a1a1a;">Tailored Excellence</h3>
+        <p style="color:#666;line-height:1.6;">No two travelers are alike. We customize every journey — pace, accommodation, cuisine, and activities — to match your unique interests and travel style.</p>
+      </div>
+      <div class="why-card reveal" style="background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:32px 24px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:12px;">🌱</div>
+        <h3 style="font-size:18px;color:#1a1a1a;">Sustainable Tourism</h3>
+        <p style="color:#666;line-height:1.6;">We are committed to responsible travel. From plastic-free tours to supporting local economies, we ensure our journeys leave a positive impact on the communities we visit.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- TEAM -->
+  <section class="section section-alt"><div class="container"><div class="section-header reveal"><h2>Our Team</h2><div class="divider"></div></div>
+    <div class="team-grid">
+      <div class="member-card reveal"><div class="member-avatar">&#128100;</div><h3>Alice Wang</h3><div class="role">Founder & CEO</div><p>20+ years in travel industry. Pioneer of Silk Road tourism.</p></div>
+      <div class="member-card reveal"><div class="member-avatar">&#128100;</div><h3>Ali Mamat</h3><div class="role">Senior Guide & Cultural Expert</div><p>Native of Kashgar with deep knowledge of Uyghur and Silk Road history.</p></div>
+      <div class="member-card reveal"><div class="member-avatar">&#128100;</div><h3>Jane Liu</h3><div class="role">Travel Consultant</div><p>Expert in crafting bespoke itineraries across China and Central Asia.</p></div>
+      <div class="member-card reveal"><div class="member-avatar">&#128100;</div><h3>Richard Zhou</h3><div class="role">Operations Manager</div><p>Ensures every detail of your journey is seamlessly executed.</p></div>
+    </div>
+  </div></section>
+
+  <CtaSection />
+</BaseLayout>

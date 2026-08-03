@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+const title = "Fujian Tours — Tulou, Tea & Maritime Silk Road";
+---
+<BaseLayout title={title} description="Explore Fujian — UNESCO Tulou roundhouses, Wuyi Mountain tea, Xiamen’s Gulangyu Island. Private tours through the starting point of the Maritime Silk Road." ogImage="/assets/images/hero-mountains.jpg">
+
+
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>Fujian</h1><p>Land of tea, tulou, and the Maritime Silk Road — Fujian’s ancient harbors and misty mountains</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Fujian Tours" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Fujian Tours</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>Fujian: Gateway to the Maritime Silk Road</h2>
+  <div class="divider"></div>
+  <p>Fujian, perched on China’s southeastern coast, was the starting point of the legendary Maritime Silk Road. The port city of Quanzhou (Zayton, as Marco Polo called it) was once one of the world’s busiest ports where Persian, Arab, and Indian merchants traded silk, porcelain, and tea. Today, Fujian blends ancient maritime heritage, unique Hakka culture, and breathtaking beauty — from UNESCO Tulou roundhouses to Wuyi Mountain’s tea terraces.</p>
+  <p style="margin-top:12px;">Explore the car-free island of Gulangyu, wander through Tulou fortresses where Hakka clans live communally, hike Wuyi Mountain’s Nine-Bend River, or photograph Xiapu’s mudflats at sunrise. Best time is March to May and October to December when weather is mild and spring tea harvests add special charm. Our private tours cover all Fujian’s highlights.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Xiamen & Gulangyu Island" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$580</span></div>
+      <h3>Xiamen & Gulangyu Island</h3>
+      <p class="tour-route">Xiamen → Gulangyu → Nanputuo Temple → Zhongshan Road</p>
+      <p class="tour-desc">Explore car-free Gulangyu with colonial architecture and piano museums, visit thousand-year-old Nanputuo Temple, and feast on Xiamen’s famous seafood street food.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Fujian Tulou Clusters" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">5 Days</span><span class="tour-price">$720</span></div>
+      <h3>Fujian Tulou Clusters</h3>
+      <p class="tour-route">Xiamen → Nanjing Tulou → Yongding Tulou → Chuxi</p>
+      <p class="tour-desc">Discover UNESCO Tulou roundhouses — earthen buildings housing entire Hakka clans. Visit the magnificent Chengqi Lou (King of Tulou) and Tianluokeng’s famous cluster.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Wuyi Mountain Tea Trail" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$650</span></div>
+      <h3>Wuyi Mountain Tea Trail</h3>
+      <p class="tour-route">Wuyishan → Nine-Bend River → Dahongpao → Xiamei Village</p>
+      <p class="tour-desc">Float down the Nine-Bend River on bamboo rafts through misty peaks, hike to original Da Hong Pao tea bushes, and learn gongfu tea ceremony in a Ming Dynasty village.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Quanzhou: Maritime Silk Road" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$420</span></div>
+      <h3>Quanzhou: Maritime Silk Road</h3>
+      <p class="tour-route">Quanzhou → Maritime Museum → Kaiyuan Temple → Qingjing Mosque</p>
+      <p class="tour-desc">Walk through the starting point of the Maritime Silk Road — China’s oldest mosque, Hindu temple ruins, and the Maritime Museum telling Zheng He’s treasure fleet stories.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/desert-dunes.jpg" alt="Xiapu Mudflat Photography" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$680</span></div>
+      <h3>Xiapu Mudflat Photography</h3>
+      <p class="tour-route">Fuzhou → Xiapu → Beiqi → Xiaohao</p>
+      <p class="tour-desc">Capture China’s most photogenic mudflats — fishing nets silhouetted against sunrise, seaweed farms in geometric patterns, bamboo poles stretching to the horizon.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Fujian Coast & Culture" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">7 Days</span><span class="tour-price">$1,080</span></div>
+      <h3>Fujian Coast & Culture</h3>
+      <p class="tour-route">Xiamen → Quanzhou → Fuzhou → Wuyi Mountain</p>
+      <p class="tour-desc">From Xiamen’s colonial charm to Quanzhou’s Silk Road heritage, Fuzhou’s hot springs, and Wuyi Mountain’s tea terraces — Fujian’s greatest hits.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/desert-dunes.jpg" alt="Fujian Grand Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">10 Days</span><span class="tour-price">$1,580</span></div>
+      <h3>Fujian Grand Tour</h3>
+      <p class="tour-route">Xiamen → Nanjing Tulou → Quanzhou → Fuzhou → Xiapu → Wuyi Mountain</p>
+      <p class="tour-desc">The complete Fujian — islands, UNESCO Tulou, Silk Road history, photogenic mudflats, and ancient tea mountains. Every dimension of this enchanting province.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="section-header reveal"><h2>Why Choose Fujian</h2><div class="divider"></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Maritime Silk Road Hub</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Quanzhou was once the world's largest port — the starting point of the Maritime Silk Road where Marco Polo embarked for Persia. Today its stone-built old town preserves mosques, Hindu temples, and the world's only Manichaean temple.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Tulou Earth Buildings</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">These massive circular fortress-homes of the Hakka people, built 600-800 years ago, are UNESCO World Heritage masterpieces. Each tulou housed an entire clan — up to 800 people — behind walls thick enough to withstand cannon fire.</p>
+  </div>
+  <div style="padding:24px;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h4 style="color:var(--navy);margin-bottom:8px;">Tea &amp; Mountains</h4>
+    <p style="color:var(--text-light);font-size:0.95rem;">Wuyi Mountain produces China's most legendary oolong teas, including the fabled Da Hong Pao (Big Red Robe) — a single gram sells for more than gold. Cruise the Nine-Bend River through the same gorge landscapes that appear on classical scroll paintings.</p>
+  </div>
+</div>
+<div style="margin-top:32px;padding:24px;background:var(--cream);border-radius:8px;text-align:center;">
+  <p style="color:var(--navy);font-weight:600;margin-bottom:8px;">Best Time to Visit: March &ndash; May, September &ndash; November</p>
+  <p style="color:var(--text-light);font-size:0.95rem;">Spring for tea harvest season on Wuyi Mountain and mild temperatures for exploring tulou villages. Autumn for clear skies, golden rice terraces, and Xiamen's comfortable coastal weather.</p>
+</div>
+</div></section>
+
+<section class="cta-section">
+<div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Discover Maritime Fujian</h2><p>Let our expert team craft your perfect itinerary — free consultation, no obligation.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+
+
+<CtaSection />
+</BaseLayout>

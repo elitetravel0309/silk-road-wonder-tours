@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "jiuzhaigou-valley",
+  "title": "Jiuzhaigou Valley",
+  "duration": "5 Days",
+  "route": "Chengdu → Jiuzhaigou → Huanglong",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$890",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Discover the fairytale landscape of Jiuzhaigou — turquoise lakes, multi-tiered waterfalls, and snow-capped peaks. A UNESCO World Heritage site of extraordinary beauty.",
+  "highlights": [
+    "Five Flower Lake",
+    "Nuorilang Waterfall",
+    "Huanglong's travertine pools",
+    "Tibetan villages",
+    "Autumn colors (Sept-Oct)"
+  ],
+  "category": "sichuan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'sichuan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

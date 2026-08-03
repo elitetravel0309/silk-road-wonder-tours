@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const tours = [
+  { slug:"11d-kashgar-kanas", title:"Kashgar & Kanas Group Tour", duration:"11 Days", route:"Kashgar → Taxkorgan → Urumqi → Turpan → Beitun → Hemu → Kanas → Urho", image:"/assets/images/central-asia-architecture.jpg", price:"$1,780", originalPrice:"$1,970", features:["4-Star Hotels","English Guide","Flight Included"] },
+  { slug:"11d-silk-road-xinjiang", title:"Silk Road Xinjiang Tour", duration:"11 Days", route:"Kashgar → Urumqi → Turpan → Dunhuang → Xi'an", image:"/assets/images/xinjiang-landscape.jpg", price:"$2,599", features:["4-Star Hotels","English Guide"] },
+  { slug:"classic-xinjiang-tour", title:"Classic Xinjiang Tour", duration:"7 Days", route:"Urumqi → Turpan → Heavenly Lake → Kashgar", image:"/assets/images/xinjiang-landscape.jpg", price:"$1,450", features:["4-Star Hotels","English Guide"] },
+  { slug:"19d-china-uzbekistan", title:"Xinjiang China & Uzbekistan Tour", duration:"19 Days", route:"Kashgar → Taxkorgan → Kuqa → Urumqi → Turpan → Tashkent → Bukhara → Samarkand", image:"/assets/images/central-asia-architecture.jpg", price:"$4,390", originalPrice:"$4,890", features:["4-Star Hotels","English Guide"] },
+  { slug:"kanas-lake-autumn", title:"Kanas Lake Autumn", duration:"6 Days", route:"Urumqi → Beitun → Kanas Lake → Hemu → Moon Bay", image:"/assets/images/xinjiang-landscape.jpg", price:"$1,250", features:["4-Star Hotels","English Guide"] },
+  { slug:"ili-river-valley", title:"Ili River Valley", duration:"6 Days", route:"Urumqi → Yining → Ili Valley → Lavender Fields", image:"/assets/images/xinjiang-landscape.jpg", price:"$1,150", features:["4-Star Hotels","English Guide"] },
+  { slug:"sayram-lake-naraty", title:"Sayram Lake & Naraty", duration:"5 Days", route:"Urumqi → Sayram Lake → Naraty Grassland → Bayanbulak", image:"/assets/images/hero-silkroad.jpg", price:"$980" },
+  { slug:"northern-xinjiang-loop", title:"Northern Xinjiang Loop", duration:"10 Days", route:"Urumqi → Kanas → Ili → Sayram → Bayanbulak → Urumqi", image:"/assets/images/xinjiang-landscape.jpg", price:"$2,080" },
+  { slug:"hemu-village-winter", title:"Hemu Village Winter", duration:"5 Days", route:"Urumqi → Kanas → Hemu → Snowy Birch Forests", image:"/assets/images/xinjiang-landscape.jpg", price:"$1,050" },
+  { slug:"altay-mountain-trek", title:"Altay Mountain Trek", duration:"7 Days", route:"Urumqi → Altay → Kanas → Hemu → Alpine Meadows", image:"/assets/images/xinjiang-landscape.jpg", price:"$1,380" },
+  { slug:"urumqi-northern-grasslands", title:"Urumqi-Northern Grasslands", duration:"4 Days", route:"Urumqi → Heavenly Lake → Nanshan Pasture → Kazakh Yurt", image:"/assets/images/xinjiang-landscape.jpg", price:"$720" },
+  { slug:"xian-urumqi-luxury", title:"Xi'an to Urumqi Luxury", duration:"9 Days", route:"Xi'an → Lanzhou → Dunhuang → Turpan → Urumqi", image:"/assets/images/central-asia-architecture.jpg", price:"$3,500" },
+];
+---
+
+<BaseLayout title="Xinjiang Tours 2025-2026 — Silk Road Heartland" description="Discover Xinjiang's Silk Road treasures — Kashgar bazaars, Kanas Lake, Turpan oases. Private & group tours from $720. 4-star hotels, English guides." ogImage="/assets/images/xinjiang-landscape.jpg" canonical="https://silkroadwondertours.com/xinjiang-tours.html">
+  <section class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+    <div class="container">
+      <h1>Xinjiang Tours</h1>
+      <p>China's Vast Western Frontier — Ancient Silk Road Cities, Alpine Lakes &amp; Nomad Culture</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+    { "@type": "ListItem", "position": 3, "name": "Xinjiang Tours" }
+  ]
+}`}/>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/index.html">Home</a> <span class="sep">/</span>
+    <a href="/tours.html">Tours</a> <span class="sep">/</span>
+    <span class="current">Xinjiang</span>
+  </div></nav>
+
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Xinjiang: Where the Silk Road Comes Alive</h2>
+        <div class="divider"></div>
+        <p>China's largest province — one-sixth of the country — is the beating heart of the ancient Silk Road. From Kashgar's legendary Sunday Bazaar to Kanas Lake's turquoise waters, from the flaming red cliffs of Turpan to the lavender fields of Ili, every corner tells a 2,000-year story. Xinjiang is where deserts meet snow-capped peaks, where Uyghur, Kazakh, and Han cultures blend in a vibrant tapestry unlike anywhere else on Earth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Must-See Wonders -->
+  <section class="section" style="padding-top:40px;padding-bottom:40px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Xinjiang's Must-See Wonders</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;overflow:hidden;">
+          <div style="aspect-ratio:16/10;background:url('/assets/images/central-asia-architecture.jpg') center/cover;"></div>
+          <div style="padding:24px;">
+            <h3 style="margin-top:0;">Kashgar Old City</h3>
+            <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">The westernmost city in China and the best-preserved Silk Road city. Lose yourself in the maze-like Old City, witness the legendary Sunday Bazaar, and feel the pulse of 2,000 years of trade.</p>
+          </div>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;overflow:hidden;">
+          <div style="aspect-ratio:16/10;background:url('/assets/images/xinjiang-landscape.jpg') center/cover;"></div>
+          <div style="padding:24px;">
+            <h3 style="margin-top:0;">Kanas Lake</h3>
+            <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">An alpine paradise in the Altay Mountains. Turquoise waters, golden birch forests in autumn, and the mysterious 'Kanas Monster'. Hemu Village nearby is a fairytale of wooden cabins and morning mist.</p>
+          </div>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;overflow:hidden;">
+          <div style="aspect-ratio:16/10;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:24px;">
+            <h3 style="margin-top:0;">Turpan Oasis</h3>
+            <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">The second-lowest depression on Earth and the hottest place in China. Explore the ancient Jiaohe ruins, taste the world's sweetest grapes in Grape Valley, and marvel at the millennia-old karez irrigation system.</p>
+          </div>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;overflow:hidden;">
+          <div style="aspect-ratio:16/10;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:24px;">
+            <h3 style="margin-top:0;">Heavenly Lake (Tianchi)</h3>
+            <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">A crystal-clear alpine lake at 1,980m, nestled beneath the snow-capped Bogda Peak. Boat rides, spruce forest hikes, and Kazakh yurt visits — just 2 hours from Urumqi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Cards -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Xinjiang Tour Packages</h2>
+        <div class="divider"></div>
+        <p>12 curated tours from $720 — group &amp; private, 4-19 days</p>
+      </div>
+      <div class="tour-grid">
+        {tours.map(t => <TourCard tour={t} showFeatures={!!(t.features && t.features.length)} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Travel with Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Travel Xinjiang with Us</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🗺️</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Local Expertise</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">20+ years operating in Xinjiang. We know every hidden gem, the best photo spots, and the most authentic local restaurants.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Flexible Options</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Group tours for sociability, private tours for flexibility, luxury tours for indulgence. Choose what suits your travel style.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🛡️</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Fully Licensed</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Licensed tour operator with all necessary permits for remote areas including the Karakoram Highway and border regions.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🌍</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Cross-Border Specialists</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">We handle the logistics of cross-border tours into Central Asia — Kyrgyzstan, Uzbekistan, Kazakhstan — all with one team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Xinjiang Travel Tips</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Best Time to Visit</h3>
+          <p style="margin:0;color:var(--text-muted);">May-October is ideal. September-October for Kanas autumn colors (truly spectacular). July-August for Ili lavender and grasslands. Winter (Dec-Feb) for Hemu's snow fairytale.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Getting Around</h3>
+          <p style="margin:0;color:var(--text-muted);">Xinjiang is vast — about the size of France and Germany combined. Our tours use a mix of private vehicles, domestic flights, and high-speed trains to cover the distances comfortably.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">What to Eat</h3>
+          <p style="margin:0;color:var(--text-muted);">Don't miss: lamb kebabs, polo (Uyghur pilaf), laghman (hand-pulled noodles), nang bread, samsa (baked meat pies), and Xinjiang's famous sweet melons and grapes.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Altitude &amp; Climate</h3>
+          <p style="margin:0;color:var(--text-muted);">Most destinations are below 2,000m (no altitude concerns). The Karakoram Highway reaches 4,700m. Climate varies dramatically — bring layers for hot desert days and cool mountain evenings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

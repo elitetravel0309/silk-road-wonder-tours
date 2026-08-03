@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "altay-mountain-trek",
+  "title": "Altay Mountain Trek",
+  "duration": "7 Days",
+  "route": "Urumqi → Altay → Kanas → Hemu → Alpine Meadows",
+  "image": "/assets/images/xinjiang-landscape.jpg",
+  "price": "$1,380",
+  "features": [
+    "Trekking Tour",
+    "English Guide"
+  ],
+  "overview": "Trek through the pristine Altay Mountains of northern Xinjiang. Alpine meadows, snow-capped peaks, and the crystal-clear Kanas Lake await the adventurous traveler.",
+  "highlights": [
+    "Altay Mountain trekking",
+    "Kanas Lake",
+    "Hemu Village",
+    "Alpine meadows at 2,000m",
+    "Kazakh nomad encounters"
+  ],
+  "category": "northXinjiang"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'northXinjiang'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

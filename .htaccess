@@ -1,0 +1,114 @@
+# === Silk Road Wonders — Apache Config ===
+
+## 1. Security Headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  # Force HTTPS (uncomment in production with SSL)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+## 2. Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE application/rss+xml image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf font/woff2
+</IfModule>
+
+## 3. Cache-Control
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML: short cache
+  ExpiresByType text/html "access plus 1 hour"
+
+  # CSS/JS: long cache (versioned with ?v=)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Images: long cache
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts: long cache
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # Manifest: short cache
+  ExpiresByType application/manifest+json "access plus 1 day"
+</IfModule>
+
+## 4. Rewrite Rules
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www → non-www redirect
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # Force HTTPS (uncomment with SSL)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Service Worker: allow at root only
+  RewriteCond %{REQUEST_URI} ^/sw\.js$
+  RewriteCond %{HTTP_HOST} !^$
+  RewriteRule ^ - [L]
+
+  # Extensionless URL → .html fallback (SEO safety for old/external links)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+[^/])$ $1.html [L]
+
+  # Custom 404
+  ErrorDocument 404 /404.html
+
+  # Block access to sensitive files
+  RewriteRule ^mailer\.php$ - [F,L]
+  RewriteRule ^inquiries\.log$ - [F,L]
+  RewriteRule ^rate_limits\.json$ - [F,L]
+  RewriteRule \.git - [F,L]
+  RewriteRule \.env - [F,L]
+</IfModule>
+
+## 5. MIME types
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType application/manifest+json manifest.json
+  AddType image/svg+xml .svg .svgz
+  AddType font/woff2 .woff2
+</IfModule>
+
+## 6. Block bad bots
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase User-Agent "GPTBot" bad_bot
+  SetEnvIfNoCase User-Agent "CCBot" bad_bot
+  SetEnvIfNoCase User-Agent "Bytespider" bad_bot
+  SetEnvIfNoCase User-Agent "SemrushBot" bad_bot
+  SetEnvIfNoCase User-Agent "AhrefsBot" bad_bot
+  SetEnvIfNoCase User-Agent "MJ12bot" bad_bot
+  SetEnvIfNoCase User-Agent "DotBot" bad_bot
+
+  <RequireAll>
+    Require all granted
+    Require not env bad_bot
+  </RequireAll>
+</IfModule>
+
+## 7. Enable Keep-Alive
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+</IfModule>
+
+## 8. Remove server signature
+ServerSignature Off

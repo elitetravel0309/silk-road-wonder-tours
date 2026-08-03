@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const chinaDestinations = [
+  { name: 'Xinjiang', url: '/xinjiang-tours', desc: 'China\'s vast western frontier — Kashgar bazaars, Kanas Lake, Turpan oases, and the beating heart of the ancient Silk Road.', image: '/assets/images/xinjiang-landscape.jpg', tours: '12+ tours', highlight: 'Kashgar Sunday Market' },
+  { name: 'Gansu', url: '/gansu-tours', desc: 'The Hexi Corridor lifeline — Mogao Caves, Zhangye rainbow mountains, Jiayuguan Fortress, and Dunhuang\'s desert wonders.', image: '/assets/images/desert-dunes.jpg', tours: '8+ tours', highlight: 'Mogao Caves (UNESCO)' },
+  { name: 'Tibet', url: '/tibet-tours', desc: 'The Roof of the World — Lhasa\'s Potala Palace, Everest Base Camp, sacred lakes, and ancient Buddhist monasteries.', image: '/assets/images/hero-mountains.jpg', tours: '6+ tours', highlight: 'Potala Palace' },
+  { name: 'Sichuan', url: '/sichuan-tours', desc: 'Panda homeland and spice capital — Chengdu, Jiuzhaigou Valley, Leshan Giant Buddha, and the gateway to Tibet.', image: '/assets/images/hero-silkroad.jpg', tours: '6+ tours', highlight: 'Giant Panda Base' },
+  { name: 'Qinghai', url: '/qinghai-tours', desc: 'Tibetan Plateau gateway — Qinghai Lake, Chaka Salt Lake "Mirror of the Sky", Amdo monasteries, and the source of the Yellow River.', image: '/assets/images/hero-mountains.jpg', tours: '6+ tours', highlight: 'Chaka Salt Lake' },
+  { name: 'Yunnan', url: '/yunnan-tours', desc: 'China\'s tropical south — Kunming Stone Forest, Lijiang Old Town, Shangri-La, Tiger Leaping Gorge, and the Tea Horse Road.', image: '/assets/images/xinjiang-landscape.jpg', tours: '8+ tours', highlight: 'Tiger Leaping Gorge' },
+  { name: 'Beijing', url: '/destination/beijing', desc: 'China\'s imperial capital — the Great Wall, Forbidden City, Temple of Heaven, and the eastern gateway to the Silk Road.', image: '/assets/images/great-wall.jpg', tours: '4+ tours', highlight: 'Great Wall at Mutianyu' },
+  { name: 'Xi\'an', url: '/destination/xian', desc: 'The ancient starting point of the Silk Road — Terracotta Warriors, ancient city walls, and the Muslim Quarter.', image: '/assets/images/central-asia-architecture.jpg', tours: '3+ tours', highlight: 'Terracotta Warriors' },
+  { name: 'Shanghai', url: '/destination/shanghai', desc: 'Where east meets west — the Bund skyline, French Concession, Yu Garden, and China\'s most cosmopolitan city.', image: '/assets/images/hero-silkroad.jpg', tours: '3+ tours', highlight: 'The Bund' },
+  { name: 'Dunhuang', url: '/destination/dunhuang', desc: 'Desert oasis of Buddhist art — the legendary Mogao Caves, Singing Sand Dunes, and Crescent Moon Spring.', image: '/assets/images/desert-dunes.jpg', tours: '5+ tours', highlight: 'Mogao Caves' },
+  { name: 'Kashgar', url: '/destination/kashgar', desc: 'Central Asia meets China — the legendary Sunday Bazaar, Old City maze, Id Kah Mosque, and gateway to the Karakoram Highway.', image: '/assets/images/central-asia-architecture.jpg', tours: '7+ tours', highlight: 'Kashgar Sunday Bazaar' },
+  { name: 'Zhangjiajie', url: '/destination/zhangjiajie', desc: 'Avatar\'s inspiration — towering sandstone pillars, the world\'s highest glass bridge, and misty mountain landscapes.', image: '/assets/images/hero-silkroad.jpg', tours: '3+ tours', highlight: 'Glass Bridge' },
+  { name: 'Chongqing', url: '/destination/chongqing', desc: 'Mountain city on the Yangtze — fiery hotpot, Three Gorges cruises, and a futuristic skyline built into the hills.', image: '/assets/images/hero-mountains.jpg', tours: '2+ tours', highlight: 'Yangtze River Cruise' },
+  { name: 'Guangzhou', url: '/destination/guangzhou', desc: 'Canton\'s trading legacy — Chen Clan Academy, Canton Tower, dim sum culture, and the southern maritime Silk Road.', image: '/assets/images/hero-silkroad.jpg', tours: '2+ tours', highlight: 'Canton Tower' },
+  { name: 'Shanxi', url: '/shanxi-tours', desc: 'Ancient China preserved — Yungang Grottoes, Hanging Temple, Pingyao Ancient City, and the Wutai Mountain monasteries.', image: '/assets/images/hero-mountains.jpg', tours: '3+ tours', highlight: 'Yungang Grottoes' },
+];
+
+const centralAsiaDestinations = [
+  { name: 'Uzbekistan', url: '/destination/uzbekistan', desc: 'The jewel of the Silk Road — Samarkand\'s Registan, Bukhara\'s trading domes, Khiva\'s walled city, and Tashkent\'s modern energy.', image: '/assets/images/central-asia-architecture.jpg', tours: '8+ tours', highlight: 'Samarkand Registan' },
+  { name: 'Kyrgyzstan', url: '/destination/kyrgyzstan', desc: 'The Switzerland of Central Asia — Issyk Kul alpine lake, Tianshan Mountains, nomad yurt stays, and endless horseback trails.', image: '/assets/images/xinjiang-landscape.jpg', tours: '6+ tours', highlight: 'Issyk Kul Lake' },
+  { name: 'Kazakhstan', url: '/destination/kazakhstan', desc: 'The great steppe — Almaty\'s cosmopolitan charm, Charyn Canyon\'s red walls, and the vast Altai Mountains wilderness.', image: '/assets/images/hero-mountains.jpg', tours: '4+ tours', highlight: 'Charyn Canyon' },
+  { name: 'Mongolia', url: '/destination/mongolia', desc: 'Land of the eternal blue sky — Gobi Desert dinosaur fossils, Ulaanbaatar, nomad ger camps, and the Naadam Festival.', image: '/assets/images/hero-silkroad.jpg', tours: '3+ tours', highlight: 'Gobi Desert' },
+  { name: 'Pakistan', url: '/destination/pakistan', desc: 'The Karakoram Highway — Hunza Valley\'s apricot blossoms, ancient Silk Road passes, and the world\'s highest mountains.', image: '/assets/images/central-asia-architecture.jpg', tours: '4+ tours', highlight: 'Karakoram Highway' },
+  { name: 'Tajikistan', url: '/destination/tajikistan', desc: 'The Pamir Highway — the "Roof of the World" road trip through the Wakhan Corridor, Dushanbe, and ancient fortresses.', image: '/assets/images/xinjiang-landscape.jpg', tours: '3+ tours', highlight: 'Pamir Highway' },
+  { name: 'Turkmenistan', url: '/destination/turkmenistan', desc: 'The mysterious Silk Road — the burning Darvaza Gas Crater, Ashgabat\'s marble city, and ancient Merv ruins.', image: '/assets/images/desert-dunes.jpg', tours: '2+ tours', highlight: 'Darvaza Gas Crater' },
+];
+---
+
+<BaseLayout
+  title="Silk Road Destinations — China & Central Asia Travel Guide"
+  description="Explore 22 Silk Road destinations across China and Central Asia: Xinjiang, Gansu, Tibet, Uzbekistan, Kyrgyzstan, Kazakhstan. Travel guides and tours for Kashgar, Dunhuang, Samarkand, and more."
+  ogImage="/assets/images/hero-silkroad.jpg"
+  canonical="https://silkroadwondertours.com/destinations.html"
+>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Silk Road Destinations",
+  "description": "Complete guide to Silk Road destinations across China and Central Asia. Explore Xinjiang, Gansu, Tibet, Uzbekistan, Kyrgyzstan, Kazakhstan, and more.",
+  "url": "https://silkroadwondertours.com/destinations.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {chinaDestinations.map((d, i) => `{ "@type": "ListItem", "position": ${i + 1}, "item": { "@type": "TouristDestination", "name": "${d.name}", "url": "https://silkroadwondertours.com${d.url}" } }`).join(',')},
+      {centralAsiaDestinations.map((d, i) => `{ "@type": "ListItem", "position": ${chinaDestinations.length + i + 1}, "item": { "@type": "TouristDestination", "name": "${d.name}", "url": "https://silkroadwondertours.com${d.url}" } }`).join(',')}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Destinations" }
+  ]
+}
+</script>
+
+<section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.6), rgba(27,42,74,0.4)), url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container">
+    <h1 data-i18n="dest-hero-title">Silk Road Destinations</h1>
+    <p data-i18n="dest-hero-sub">22 Legendary Cities &amp; Regions Across China &amp; Central Asia</p>
+  </div>
+</section>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+  <a href="/">Home</a> <span class="sep">/</span>
+  <span class="current">Destinations</span>
+</div></nav>
+
+<!-- Intro Section -->
+<section class="section" id="china-destinations">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 data-i18n="dest-china-title">China Silk Road Destinations</h2>
+      <div class="divider"></div>
+      <p data-i18n="dest-china-desc">From the imperial capital of Xi'an to the vast deserts of Xinjiang, China's Silk Road stretches over 4,000 kilometers through ancient cities, Buddhist grottoes, and breathtaking landscapes. Each destination tells a chapter of the 2,000-year story that connected East and West.</p>
+    </div>
+    <div class="tour-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+      {chinaDestinations.map(d => (
+        <a href={d.url} class="tour-card reveal" style="text-decoration:none;color:inherit;">
+          <div class="tour-card-img">
+            <img src={d.image} alt={d.name} class="img-fill" loading="lazy">
+            <span class="tour-card-duration">{d.tours}</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>{d.name}</h3>
+            <p class="tour-card-route" style="font-size:0.9rem;line-height:1.5;color:var(--text-light);">{d.desc}</p>
+            <div class="tour-card-features" style="margin-top:8px;">
+              <span style="background:var(--clay);color:#fff;">{d.highlight}</span>
+            </div>
+            <div class="tour-card-footer" style="margin-top:12px;">
+              <span class="btn btn-gold btn-sm" style="font-size:0.85rem;">Explore {d.name} &rarr;</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Central Asia Section -->
+<section class="section section-alt" id="central-asia-destinations">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 data-i18n="dest-ca-title">Central Asia Silk Road Destinations</h2>
+      <div class="divider"></div>
+      <p data-i18n="dest-ca-desc">Beyond China's western borders lies the heart of the ancient Silk Road. Samarkand's turquoise domes, Kyrgyzstan's alpine lakes, and the legendary Pamir and Karakoram highways — Central Asia preserves the most authentic Silk Road heritage on Earth.</p>
+    </div>
+    <div class="tour-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+      {centralAsiaDestinations.map(d => (
+        <a href={d.url} class="tour-card reveal" style="text-decoration:none;color:inherit;">
+          <div class="tour-card-img">
+            <img src={d.image} alt={d.name} class="img-fill" loading="lazy">
+            <span class="tour-card-duration">{d.tours}</span>
+          </div>
+          <div class="tour-card-body">
+            <h3>{d.name}</h3>
+            <p class="tour-card-route" style="font-size:0.9rem;line-height:1.5;color:var(--text-light);">{d.desc}</p>
+            <div class="tour-card-features" style="margin-top:8px;">
+              <span style="background:var(--clay);color:#fff;">{d.highlight}</span>
+            </div>
+            <div class="tour-card-footer" style="margin-top:12px;">
+              <span class="btn btn-gold btn-sm" style="font-size:0.85rem;">Explore {d.name} &rarr;</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Why Travel With Us -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 data-i18n="dest-why-title">Why Explore the Silk Road With Us</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:24px;">
+      <div class="reveal" style="text-align:center;padding:24px;background:var(--cream);border-radius:12px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#127758;</div>
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="dest-feat-local">Local Expertise</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;">Native guides in every region — Uyghur, Tibetan, Kazakh, Uzbek — sharing authentic stories passed down through generations.</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:24px;background:var(--cream);border-radius:12px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#128208;</div>
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="dest-feat-custom">100% Customizable</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;">Every itinerary is tailored — choose your pace, accommodation level, and interests from photography to food to history.</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:24px;background:var(--cream);border-radius:12px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#128737;</div>
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="dest-feat-safety">Safety First</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;">20+ years of experience, 24/7 support, vetted accommodations, and professional drivers on every journey.</p>
+      </div>
+      <div class="reveal" style="text-align:center;padding:24px;background:var(--cream);border-radius:12px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">&#128176;</div>
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="dest-feat-value">Best Value</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;">Direct local pricing — no middlemen. 4-star hotels, included meals, and English guides at unbeatable rates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Travel Tips -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 data-i18n="dest-tips-title">Silk Road Travel Tips</h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:24px;">
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#128197; Best Time to Visit</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">Spring (April-May) and autumn (September-October) offer the most pleasant weather. Summers can be hot in Xinjiang and Central Asia (30-40°C), while winters bring snow to Tibet and the mountains. The Hexi Corridor is beautiful year-round with distinct seasonal charms.</p>
+      </div>
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#128196; Visas & Permits</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">China requires a tourist visa (L) for most nationalities. Tibet requires an additional permit arranged through a travel agency. Central Asian countries have varying visa policies — Uzbekistan offers e-visas, while Kyrgyzstan and Kazakhstan have visa-free programs for many nationalities.</p>
+      </div>
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#128652; Getting Around</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">China's high-speed rail network connects most Silk Road cities efficiently. For remote areas, private vehicles with experienced drivers are the norm. Domestic flights link major hubs like Urumqi, Kashgar, Lanzhou, and Xi'an. We handle all transportation logistics.</p>
+      </div>
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#127834; Food & Culture</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">The Silk Road is a culinary adventure — Uyghur lamb kebabs and naan in Xinjiang, Lanzhou beef noodles in Gansu, Tibetan yak butter tea, and Uzbek plov (pilaf) in Central Asia. Each region has unique traditions, music, and festivals worth experiencing.</p>
+      </div>
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#127939; Altitude & Health</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">Tibet (3,500m+) and parts of Qinghai and the Pamir Highway are high-altitude. We recommend gradual acclimatization, staying hydrated, and consulting your doctor before travel. Our guides carry oxygen and first-aid kits on all high-altitude itineraries.</p>
+      </div>
+      <div class="reveal" style="padding:24px;background:#fff;border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:12px;">&#128176; Currency & Payment</h3>
+        <p style="color:var(--text-light);font-size:0.95rem;line-height:1.7;">China uses RMB (¥); WeChat Pay and Alipay are universal. Central Asia uses local currencies — Uzbek Som, Kyrgyz Som, Kazakh Tenge. ATMs are available in cities; we recommend carrying some USD cash for remote areas. Credit cards work in major hotels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<CtaSection />
+</BaseLayout>

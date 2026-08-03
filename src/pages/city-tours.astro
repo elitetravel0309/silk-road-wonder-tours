@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="China City Tours — Explore Beijing, Shanghai, Xi'an & More" description="Explore China's most fascinating cities with private guided tours. Beijing, Shanghai, Xi'an, Chengdu, Chongqing, Guangzhou, Zhangjiajie, Guilin, Kunming, Lhasa and more." ogImage="/assets/images/hero-mountains.jpg">
+<section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+  <div class="container"><h1>China City Tours</h1><p>Explore China's most fascinating cities — each with its own history, cuisine, and unique character</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "City Tours" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>City Tours</span></div></nav>
+
+<section class="section"><div class="container">
+<div class="section-header reveal">
+  <h2>Discover China, One City at a Time</h2>
+  <div class="divider"></div>
+  <p>China's cities are living museums where millennia of history unfold on every street corner. From the imperial grandeur of Beijing to the futuristic skyline of Shanghai, each city tells a distinct story — and our private city tours are designed to help you experience each one at the perfect pace, with expert local guides who know every hidden courtyard, backstreet eatery, and off-the-beaten-path treasure.</p>
+  <p>All our city tours include private transportation, skip-the-line access to major attractions, and flexible itineraries that adapt to your interests. Whether you have three days in Beijing or a week exploring Chongqing, you will see the iconic sights and discover the authentic soul of each city. Mix and match multiple city tours to create your perfect China journey.</p>
+</div></div></section>
+
+<section class="section section-alt"><div class="container">
+<div class="tours-grid">
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Beijing City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$380</span></div>
+      <h3>Beijing Explorer</h3>
+      <p class="tour-route">📍 Beijing → Great Wall → Forbidden City → Temple of Heaven</p>
+      <p class="tour-desc">Walk the Great Wall at Mutianyu, explore the Forbidden City's 9,999 rooms, and ride a rickshaw through the ancient hutong alleyways. Includes a Peking duck dinner at a legendary local restaurant.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Xi'an City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$350</span></div>
+      <h3>Xi'an Discovery</h3>
+      <p class="tour-route">📍 Xi'an → Terracotta Warriors → City Wall → Muslim Quarter</p>
+      <p class="tour-desc">Stand face-to-face with 8,000 life-sized terracotta soldiers, cycle atop the ancient city wall, and explore the vibrant Muslim Quarter's food street for the best lamb skewers in China.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Shanghai City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$420</span></div>
+      <h3>Shanghai Highlights</h3>
+      <p class="tour-route">📍 Shanghai → Bund → Yu Garden → Shanghai Tower → French Concession</p>
+      <p class="tour-desc">Admire the Bund's colonial-era skyline, ascend 632 meters to the top of Shanghai Tower, and wander the leafy French Concession's art galleries. Finish with a Huangpu River night cruise.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Chengdu City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$520</span></div>
+      <h3>Chengdu &amp; Pandas</h3>
+      <p class="tour-route">📍 Chengdu → Panda Base → Leshan → Jinli Old Street</p>
+      <p class="tour-desc">Get up close with giant pandas at the famous breeding center, visit the world's largest stone Buddha at Leshan, and master the art of Sichuan cuisine in a private cooking class. Hot pot dinner included.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Chongqing City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$380</span></div>
+      <h3>Chongqing Adventure</h3>
+      <p class="tour-route">📍 Chongqing → Hongyadong → Ciqikou → Yangtze Cableway</p>
+      <p class="tour-desc">Ride the Yangtze River cableway for stunning skyline views, explore the stilted wonder of Hongyadong at night, and brave the legendary Chongqing mala hotpot. Gateway to the Three Gorges.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Guangzhou City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$330</span></div>
+      <h3>Guangzhou Experience</h3>
+      <p class="tour-route">📍 Guangzhou → Canton Tower → Shamian Island → Chen Clan Academy</p>
+      <p class="tour-desc">Admire the iconic Canton Tower and Pearl River skyline, stroll the elegant European avenues of Shamian Island, and savor world-famous Cantonese dim sum in its birthplace. A food lover's paradise.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Zhangjiajie City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$580</span></div>
+      <h3>Zhangjiajie Wonders</h3>
+      <p class="tour-route">📍 Zhangjiajie → Avatar Mountains → Glass Bridge → Tianmen Mountain</p>
+      <p class="tour-desc">Walk among the floating peaks that inspired Avatar, brave the world's highest glass-bottomed bridge, and ascend Tianmen Mountain's 999 steps to Heaven's Gate. Nature at its most dramatic.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/desert-dunes.jpg" alt="Guilin City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$490</span></div>
+      <h3>Guilin &amp; Yangshuo</h3>
+      <p class="tour-route">📍 Guilin → Li River Cruise → Yangshuo → Longji Rice Terraces</p>
+      <p class="tour-desc">Cruise the Li River through a landscape of mist-wrapped karst peaks, cycle through Yangshuo's countryside, and climb the dragon's backbone rice terraces. China's most iconic natural scenery.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Kunming City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">3 Days</span><span class="tour-price">$350</span></div>
+      <h3>Kunming Discovery</h3>
+      <p class="tour-route">📍 Kunming → Stone Forest → Dianchi Lake → Western Hills</p>
+      <p class="tour-desc">Explore the otherworldly Stone Forest, a UNESCO-listed karst wonderland, cruise Dianchi Lake with views of the Western Hills, and sample Yunnan's famous across-the-bridge noodles in the City of Eternal Spring.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+  <div class="tour-card reveal">
+    <div class="tour-card-img"><img src="/assets/images/hero-silkroad.jpg" alt="Lhasa City Tour" loading="lazy"></div>
+    <div class="tour-card-body">
+      <div class="tour-card-meta"><span class="tour-duration">4 Days</span><span class="tour-price">$680</span></div>
+      <h3>Lhasa &amp; Tibetan Plateau</h3>
+      <p class="tour-route">📍 Lhasa → Potala Palace → Jokhang Temple → Sera Monastery</p>
+      <p class="tour-desc">Stand in awe before the magnificent Potala Palace, join pilgrims at the sacred Jokhang Temple, and witness the animated debates of Tibetan monks at Sera Monastery. The spiritual heart of Tibet awaits.</p>
+      <a href="/contact.html" class="btn btn-gold">View Details</a>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Plan Your China City Adventure</h2><p>Combine multiple cities into one unforgettable journey. Our travel specialists will design the perfect multi-city itinerary for you.</p><a href="/contact.html" class="btn btn-gold">Contact Us Today</a></div>
+</div></div></section>
+<CtaSection />
+</BaseLayout>

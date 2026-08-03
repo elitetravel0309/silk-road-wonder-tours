@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "garze-tibetan-highlands",
+  "title": "Garze Tibetan Highlands",
+  "duration": "8 Days",
+  "route": "Chengdu → Kangding → Tagong → Danba → Siguniang",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$1,580",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Explore the Garze Tibetan Autonomous Prefecture, a land of snow peaks, alpine lakes, and ancient Tibetan culture at the eastern edge of the Tibetan Plateau.",
+  "highlights": [
+    "Tagong Monastery & Grassland",
+    "Danba Tibetan watchtowers",
+    "Siguniang Mountain",
+    "Kangding",
+    "Yala Snow Mountain"
+  ],
+  "category": "sichuan"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'sichuan'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

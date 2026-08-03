@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Tibet Tours —Lhasa, Everest Base Camp & Mount Kailash" description="Discover Tibet with our expert-guided tours. Explore Lhasa's Potala Palace, stand before Everest at Base Camp, trek around sacred Mount Kailash, and experience ancient Buddhist culture on the Roof of the World." ogImage="/assets/images/hero-mountains.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Tibet" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Tibet Tours",
+    "description": "Expert-guided tours to Tibet's most sacred and spectacular destinations.",
+    "numberOfItems": 6,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Lhasa & Everest Base Camp", "url": "https://silkroadwondertours.com/tour/lhasa-everest-base-camp.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Classic Tibet Discovery", "url": "https://silkroadwondertours.com/tour/classic-tibet-discovery.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Tibet & Silk Road Combo", "url": "https://silkroadwondertours.com/tour/tibet-silk-road-combo.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Mount Kailash Pilgrimage", "url": "https://silkroadwondertours.com/tour/mount-kailash-pilgrimage.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Namtso Lake Retreat", "url": "https://silkroadwondertours.com/tour/namtso-lake-retreat.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Qinghai-Tibet Railway Journey", "url": "https://silkroadwondertours.com/tour/qinghai-tibet-railway.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/hero-mountains.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="tib-hero">Tibet Tours</h1><p data-i18n="tib-hero-sub">Journey to the Roof of the World —Lhasa, Everest Base Camp, Mount Kailash</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Tibet</span></div></nav>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="tib-intro-title">Welcome to Tibet —The Roof of the World</h2>
+        <div class="divider"></div>
+        <p data-i18n="tib-intro-desc">At an average elevation of 4,500 meters, Tibet is unlike anywhere else on Earth. This is the land of snow-capped Himalayan peaks, turquoise sacred lakes, and ancient Buddhist monasteries clinging to mountainsides. For centuries, Tibet has captivated pilgrims, explorers, and travelers with its profound spirituality and breathtaking landscapes.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="tib-intro-desc2">Our Tibet tours take you beyond the postcards —from the bustling pilgrim circuits of Lhasa's Jokhang Temple to the silent majesty of Everest Base Camp, from the turquoise waters of Yamdrok Lake to the sacred slopes of Mount Kailash. Every journey is led by experienced Tibetan guides who share their homeland's stories with genuine passion. All tours include Tibet travel permits (arranged by us), comfortable 4-star accommodation, and private transportation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tibet Highlights -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="tib-highlights-title">Tibet's Must-See Wonders</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px;">
+        <div class="reveal" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+          <div style="height:160px;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="tib-hl-potala">Potala Palace</h3>
+            <p style="color:var(--text-light);font-size:0.9rem;line-height:1.6;">Lhasa's iconic landmark —13 stories of Tibetan architectural mastery, once the winter palace of the Dalai Lama. A UNESCO World Heritage site and the spiritual heart of Tibet.</p>
+          </div>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+          <div style="height:160px;background:url('/assets/images/xinjiang-landscape.jpg') center/cover;"></div>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="tib-hl-everest">Everest Base Camp</h3>
+            <p style="color:var(--text-light);font-size:0.9rem;line-height:1.6;">Stand at 5,200m on the north side of the world's highest peak. Watch the sunrise paint Everest's face golden —a moment that stays with you forever.</p>
+          </div>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+          <div style="height:160px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="tib-hl-kailash">Mount Kailash</h3>
+            <p style="color:var(--text-light);font-size:0.9rem;line-height:1.6;">Sacred to four religions —the 52km kora (circumambulation) around this pyramid-shaped peak is one of the world's greatest pilgrimages.</p>
+          </div>
+        </div>
+        <div class="reveal" style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+          <div style="height:160px;background:url('/assets/images/desert-dunes.jpg') center/cover;"></div>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;" data-i18n="tib-hl-yamdrok">Yamdrok Lake</h3>
+            <p style="color:var(--text-light);font-size:0.9rem;line-height:1.6;">One of Tibet's three sacred lakes —its turquoise waters shimmer like a scattered turquoise necklace when viewed from the Kamba La Pass at 4,794m.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="tib-tips-title">Essential Tibet Travel Information</h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:24px;">
+        <div class="reveal" style="padding:24px;background:var(--cream);border-radius:12px;">
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;">&#128196; <span data-i18n="tib-tip-permit">Permits & Visas</span></h3>
+          <p style="color:var(--text-light);font-size:0.9rem;line-height:1.7;">All foreign visitors need a Tibet Travel Permit (arranged by us with your China visa). Some areas like Mount Kailash require additional permits. We handle all paperwork —just send us your passport and visa copies.</p>
+        </div>
+        <div class="reveal" style="padding:24px;background:var(--cream);border-radius:12px;">
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;">&#127777; <span data-i18n="tib-tip-altitude">Altitude & Acclimatization</span></h3>
+          <p style="color:var(--text-light);font-size:0.9rem;line-height:1.7;">Lhasa sits at 3,650m; Everest Base Camp at 5,200m. All our itineraries build in gradual acclimatization. We recommend arriving 1-2 days early and staying hydrated. Our guides carry oxygen and medical kits.</p>
+        </div>
+        <div class="reveal" style="padding:24px;background:var(--cream);border-radius:12px;">
+          <h3 style="font-family:var(--font-display);color:var(--navy);margin-bottom:8px;">&#128197; <span data-i18n="tib-tip-season">Best Time to Visit</span></h3>
+          <p style="color:var(--text-light);font-size:0.9rem;line-height:1.7;">May to October offers the best weather with clear skies and mild temperatures (15-25掳C). July-August is peak season. November-April is cold but offers spectacular snow scenery and fewer tourists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Grid -->
+  <section class="section section-alt"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="tib-tours-title">Our Tibet Tour Collection</h2><div class="divider"></div><p data-i18n="tib-tours-desc">Sacred temples, snow-capped peaks, and ancient traditions await on the Tibetan Plateau —every tour includes Tibet permits</p></div>
+    <div class="tour-grid">
+      {allTours.tibet.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+  <CtaSection />
+</BaseLayout>

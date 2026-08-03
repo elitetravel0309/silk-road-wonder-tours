@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+
+const tours = [
+  { slug:"13d-silk-road-group", title:"Xinjiang, Gansu & Qinghai Classic", duration:"13 Days", route:"Kashgar → Urumqi → Turpan → Dunhuang → Jiayuguan → Zhangye → Xining → Chaka", image:"/assets/images/hero-silkroad.jpg", price:"$2,070", originalPrice:"$2,280", features:["4-Star Hotels","English Guide","Train Included"] },
+  { slug:"19d-china-uzbekistan", title:"China & Uzbekistan Expedition", duration:"19 Days", route:"Kashgar → Kuqa → Urumqi → Turpan → Tashkent → Samarkand → Bukhara", image:"/assets/images/central-asia-architecture.jpg", price:"$4,390", originalPrice:"$4,890", features:["4-Star Hotels","English Guide"] },
+  { slug:"11d-kashgar-kanas", title:"Xinjiang: Kashgar & Kanas", duration:"11 Days", route:"Kashgar → Taxkorgan → Urumqi → Turpan → Hemu → Kanas Lake", image:"/assets/images/central-asia-architecture.jpg", price:"$1,780", originalPrice:"$1,970", features:["4-Star Hotels","English Guide","Flight Included"] },
+  { slug:"10d-xinjiang-gansu-qinghai", title:"Xinjiang, Gansu & Qinghai Express", duration:"10 Days", route:"Urumqi → Turpan → Dunhuang → Jiayuguan → Zhangye → Xining → Chaka", image:"/assets/images/hero-silkroad.jpg", price:"$1,450", originalPrice:"$1,670", features:["4-Star Hotels","English Guide","Train Included"] },
+  { slug:"7d-gansu-qinghai", title:"Gansu & Qinghai Discovery", duration:"7 Days", route:"Dunhuang → Jiayuguan → Zhangye → Xining → Chaka", image:"/assets/images/hero-mountains.jpg", price:"$980", originalPrice:"$1,080", features:["4-Star Hotels","English Guide"] },
+  { slug:"16d-uzbekistan-china", title:"Uzbekistan & China Grand Silk Road", duration:"16 Days", route:"Beijing → Xi'an → Dunhuang → Turpan → Urumqi → Kashgar → Tashkent → Samarkand → Bukhara", image:"/assets/images/central-asia-architecture.jpg", price:"$4,780", features:["4-Star Hotels","English Guide","Flight Included"] },
+];
+---
+
+<BaseLayout title="China Group Tours — Small Group Silk Road Adventures" description="Small-group Silk Road tours across Xinjiang, Gansu, Qinghai. Max 16 travelers, 4-star hotels, English guides, Saturday departures. 7-19 days from $980." ogImage="/assets/images/hero-silkroad.jpg" canonical="https://silkroadwondertours.com/china-group-tour.html">
+  <section class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+    <div class="container">
+      <h1>China Group Tours</h1>
+      <p>Small Groups &middot; 4-Star Hotels &middot; English Guides &middot; Saturday Departures</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+    { "@type": "ListItem", "position": 3, "name": "Group Tours" }
+  ]
+}`}/>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/index.html">Home</a> <span class="sep">/</span>
+    <a href="/tours.html">Tours</a> <span class="sep">/</span>
+    <span class="current">Group Tours</span>
+  </div></nav>
+
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Small Groups, Big Adventures</h2>
+        <div class="divider"></div>
+        <p>Our small-group Silk Road tours are designed for travelers who want the perfect balance of guided exploration, social camaraderie, and independent discovery. With a maximum of 16 travelers per group, you'll have the intimacy of independent travel with the convenience of having every detail handled.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Group Tours -->
+  <section class="section" style="padding-top:40px;padding-bottom:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Choose Our Group Tours?</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">Small Groups</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Maximum 16 travelers per group — small enough to be flexible, large enough to be social. No giant tour buses or microphone-waving guides.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">4-Star Comfort</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Handpicked 4-star hotels in every destination. After a day of desert exploration or mountain trekking, you deserve a comfortable bed and a hot shower.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">Expert Local Guides</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">English-speaking local guides in every city — not just translators, but storytellers who bring 2,000 years of Silk Road history to life.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">All Logistics Handled</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Trains, flights, transfers, entrance tickets, meals — it's all arranged. You focus on the experience, we handle everything else.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">Saturday Departures</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Most tours depart on Saturdays, making it easy to plan around work schedules. Some tours have additional weekday departures during peak season.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;font-size:1.1rem;">Great Value</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Group pricing means lower costs without compromising quality. Compare our prices with private tours — you'll save 20-40% while enjoying the same experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group Tour Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Current Group Tours</h2>
+        <div class="divider"></div>
+        <p>Max 16 travelers &middot; intimate experiences &middot; 20+ years of refinement &middot; all logistics handled</p>
+      </div>
+      <div class="tour-grid">
+        {tours.map(t => <TourCard tour={t} showFeatures={true} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--bg-alt);padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Group Tour FAQ</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(480px,1fr));">
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">What's the typical group size?</h3>
+          <p style="margin:0;color:var(--text-muted);">Most groups have 8-14 travelers with a maximum of 16. This keeps the experience intimate and allows flexibility in the itinerary.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">What's included in the price?</h3>
+          <p style="margin:0;color:var(--text-muted);">Hotel accommodation, English-speaking guides, all entrance fees, private transportation, breakfast daily, selected meals, and airport transfers. International flights and visa fees are not included.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Can I join as a solo traveler?</h3>
+          <p style="margin:0;color:var(--text-muted);">Absolutely! About 40% of our group travelers are solo. You'll share a twin room with another solo traveler of the same gender, or you can pay a single supplement for your own room.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">What's the age range?</h3>
+          <p style="margin:0;color:var(--text-muted);">Our groups are wonderfully diverse — typically ages 25-70, with most travelers in their 30s-50s. The common thread is curiosity and a love for cultural exploration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "qinghai-tibet-railway",
+  "title": "Qinghai-Tibet Railway Journey",
+  "duration": "10 Days",
+  "route": "Xining → Golmud → Lhasa → Yamdrok → Shigatse",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$2,150",
+  "features": [
+    "World's Highest Railway",
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Experience the engineering marvel of the Qinghai-Tibet Railway — the highest railway on Earth. This journey combines the train adventure with Tibet's cultural treasures.",
+  "highlights": [
+    "Qinghai-Tibet Railway",
+    "Potala Palace",
+    "Yamdrok Lake",
+    "Tashilhunpo Monastery",
+    "Kumbum Monastery"
+  ],
+  "category": "tibet"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'tibet'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

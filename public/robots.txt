@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /mailer.php
+Disallow: /inquiries.log
+Crawl-delay: 10
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://silkroadwondertours.com/sitemap.xml

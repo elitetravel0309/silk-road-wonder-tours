@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaSection from '../components/CtaSection.astro';
+---
+<BaseLayout title="Photo Gallery — Silk Road Wonders" description="Explore stunning photos from the Silk Road — Xinjiang, Gansu, Dunhuang, Kashgar, Central Asia. Breathtaking landscapes, ancient cities, and cultural moments." ogImage="/assets/images/hero-silkroad.jpg">
+<section class="page-hero" style="background: url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+  <div class="container"><h1>Photo Gallery</h1><p>Journey through the Silk Road in pictures — landscapes, culture, and unforgettable moments</p></div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Photo Gallery" }
+  ]
+}
+</script>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <span>Photo Gallery</span></div></nav>
+
+<!-- FILTER -->
+<section class="section" style="padding-bottom:0;"><div class="container">
+<div class="gallery-filter">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="xinjiang">Xinjiang</button>
+  <button data-filter="gansu">Gansu</button>
+  <button data-filter="dunhuang">Dunhuang</button>
+  <button data-filter="kashgar">Kashgar</button>
+  <button data-filter="central-asia">Central Asia</button>
+  <button data-filter="culture">Culture</button>
+  <button data-filter="landscape">Landscapes</button>
+</div></div></section>
+
+<!-- GALLERY GRID -->
+<section class="section"><div class="container">
+<div class="gallery-grid">
+
+<div class="gallery-item reveal" data-cat="xinjiang landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Xinjiang grasslands" loading="lazy">
+  <div class="caption"><h2>Nalati Grasslands</h2><span>Xinjiang · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="dunhuang gansu landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Dunhuang Crescent Lake" loading="lazy">
+  <div class="caption"><h2>Crescent Lake</h2><span>Dunhuang · Gansu</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="kashgar xinjiang culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Kashgar Old City" loading="lazy">
+  <div class="caption"><h2>Kashgar Old City</h2><span>Xinjiang · Culture</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="gansu landscape">
+  <img src="/assets/images/xinjiang-landscape.jpg" alt="Zhangye Danxia" loading="lazy">
+  <div class="caption"><h2>Rainbow Mountains</h2><span>Zhangye · Gansu</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="central-asia">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Samarkand Registan" loading="lazy">
+  <div class="caption"><h2>Registan Square</h2><span>Samarkand · Uzbekistan</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="kashgar culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Silk Road caravan" loading="lazy">
+  <div class="caption"><h2>Silk Road Caravan</h2><span>Kashgar · Culture</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="xinjiang landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Kanas Lake" loading="lazy">
+  <div class="caption"><h2>Kanas Lake</h2><span>Xinjiang · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="gansu culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Yellow River Lanzhou" loading="lazy">
+  <div class="caption"><h2>Yellow River Sunset</h2><span>Lanzhou · Gansu</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="dunhuang culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Mogao Caves" loading="lazy">
+  <div class="caption"><h2>Mogao Caves</h2><span>Dunhuang · Culture</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="xinjiang landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Tianshan Mountains" loading="lazy">
+  <div class="caption"><h2>Tianshan Mountains</h2><span>Xinjiang · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="central-asia landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Pamir Highway" loading="lazy">
+  <div class="caption"><h2>Pamir Highway</h2><span>Tajikistan · Central Asia</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="culture xinjiang">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Uyghur bazaar" loading="lazy">
+  <div class="caption"><h2>Sunday Bazaar</h2><span>Kashgar · Culture</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="gansu landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Jiayuguan Fort" loading="lazy">
+  <div class="caption"><h2>Jiayuguan Fort</h2><span>Gansu · History</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="central-asia">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Issyk-Kul Lake" loading="lazy">
+  <div class="caption"><h2>Issyk-Kul Lake</h2><span>Kyrgyzstan · Central Asia</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="xinjiang culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Flaming Mountains" loading="lazy">
+  <div class="caption"><h2>Flaming Mountains</h2><span>Turpan · Xinjiang</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="dunhuang landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Gobi Desert" loading="lazy">
+  <div class="caption"><h2>Gobi Desert</h2><span>Dunhuang · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="culture central-asia">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Central Asia mountains" loading="lazy">
+  <div class="caption"><h2>Alay Valley</h2><span>Kyrgyzstan · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="xinjiang landscape">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Sayram Lake" loading="lazy">
+  <div class="caption"><h2>Sayram Lake</h2><span>Xinjiang · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="gansu culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Silk Road sunset" loading="lazy">
+  <div class="caption"><h2>Silk Road Sunset</h2><span>Gansu · Landscape</span></div>
+</div>
+<div class="gallery-item reveal" data-cat="kashgar culture">
+  <img src="/assets/images/hero-silkroad.jpg" alt="Id Kah Mosque" loading="lazy">
+  <div class="caption"><h2>Id Kah Mosque</h2><span>Kashgar · Culture</span></div>
+</div>
+
+</div></div></section>
+
+<section class="cta-section"><div class="container"><div class="cta-grid">
+  <div class="cta-text reveal"><h2>Experience It Yourself</h2><p>Let us take you to these breathtaking locations. Your Silk Road adventure awaits.</p><a href="/contact.html" class="btn btn-gold">Plan Your Journey</a></div>
+</div></div></section>
+<CtaSection />
+</BaseLayout>

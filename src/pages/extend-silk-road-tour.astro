@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+
+<BaseLayout title="Extend Your Silk Road Tour | Tibet, Sichuan, Yunnan, Guilin" description="Add legendary destinations to your Silk Road journey — Tibet, Sichuan pandas, Yunnan ancient towns, Zhangjiajie mountains. Combine the ancient route with China's greatest hits." ogImage="/assets/images/hero-silkroad.jpg" canonical="https://silkroadwondertours.com/extend-silk-road-tour.html">
+  <section class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('/assets/images/hero-silkroad.jpg') center/cover;">
+    <div class="container">
+      <h1>Extend Your Silk Road Tour</h1>
+      <p>Combine the Ancient Trade Route with Tibet, Sichuan, Yunnan, Guilin &amp; More</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={`{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+    { "@type": "ListItem", "position": 3, "name": "Extension Tours" }
+  ]
+}`}/>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/index.html">Home</a> <span class="sep">/</span>
+    <a href="/tours.html">Tours</a> <span class="sep">/</span>
+    <span class="current">Extension Tours</span>
+  </div></nav>
+
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Stop at the Silk Road?</h2>
+        <div class="divider"></div>
+        <p>You've come all the way to China — make the most of it. The Silk Road is a journey through history, but China has so much more to offer. Extend your trip to visit the rooftop of the world in Tibet, meet giant pandas in Sichuan, wander ancient towns in Yunnan, or marvel at the otherworldly peaks of Zhangjiajie. These handcrafted extension tours seamlessly connect with your Silk Road itinerary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Extend -->
+  <section class="section" style="padding-top:40px;padding-bottom:0;">
+    <div class="container">
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-bottom:32px;">
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🏔️</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Tibet</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Stand before Everest, explore Lhasa's Potala Palace, ride the world's highest railway. Tibet is a spiritual journey unlike any other.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🐼</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Sichuan</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Meet giant pandas in Chengdu, taste the world's boldest cuisine, explore Jiuzhaigou's turquoise lakes — Sichuan is pure sensory overload.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">🌿</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Yunnan</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Ancient towns, snow-capped mountains, tropical rainforests, and 25 ethnic minorities — Yunnan is China at its most diverse.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg-alt);border-radius:12px;padding:28px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">⛰️</div>
+          <h3 style="margin-top:0;font-size:1.1rem;">Zhangjiajie</h3>
+          <p style="margin:0;color:var(--text-muted);font-size:0.9rem;">Walk the world's longest glass bridge and see the floating mountains that inspired Avatar — the most surreal landscape in China.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extension Tour Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Our Extension Tours</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid">
+        {allTours.extend.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Combine Silk Road with Classic China -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Classic China Extensions</h2>
+        <div class="divider"></div>
+        <p>Already visiting the Silk Road? Add these classic destinations — seamlessly connected by China's high-speed rail and domestic flights.</p>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr));">
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--border);">
+          <h3 style="margin-top:0;">Beijing</h3>
+          <p style="color:var(--text-muted);margin-bottom:12px;">Walk the Great Wall, explore the Forbidden City, and wander the hutongs of China's magnificent 3,000-year-old capital.</p>
+          <a href="/tour/classic-beijing-tour.html" class="btn" style="background:var(--primary);color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;display:inline-block;font-size:0.9rem;">5-Day Beijing Tour →</a>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--border);">
+          <h3 style="margin-top:0;">Shanghai</h3>
+          <p style="color:var(--text-muted);margin-bottom:12px;">Experience China's most cosmopolitan city — the Bund's colonial skyline, futuristic Pudong, and ancient water towns.</p>
+          <a href="/tour/classic-shanghai-tour.html" class="btn" style="background:var(--primary);color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;display:inline-block;font-size:0.9rem;">4-Day Shanghai Tour →</a>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--border);">
+          <h3 style="margin-top:0;">Xinjiang</h3>
+          <p style="color:var(--text-muted);margin-bottom:12px;">Go deeper into China's vast western frontier — Kanas Lake's alpine beauty, Ili's lavender fields, Kashgar's legendary bazaar.</p>
+          <a href="/tour/classic-xinjiang-tour.html" class="btn" style="background:var(--primary);color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;display:inline-block;font-size:0.9rem;">7-Day Xinjiang Tour →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning Tips -->
+  <section class="section" style="background:var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Planning Your Extended Journey</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="tour-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">How It Works</h3>
+          <p style="margin:0;color:var(--text-muted);">Pick your Silk Road tour, choose your extension, and we'll handle all the logistics — flights, trains, guides, hotels. Everything is seamlessly connected with no wasted travel days.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Best Combinations</h3>
+          <p style="margin:0;color:var(--text-muted);">Xinjiang Silk Road + Tibet is our most popular combo. Gansu Silk Road + Sichuan works perfectly. Kashgar to Xi'an + Beijing makes a complete east-west journey across China.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Visa Considerations</h3>
+          <p style="margin:0;color:var(--text-muted);">One Chinese visa covers all destinations within China (including Tibet with our permit). For Central Asia extensions, we'll guide you through additional visa requirements.</p>
+        </div>
+        <div class="info-card" style="background:var(--bg);border-radius:12px;padding:28px;">
+          <h3 style="margin-top:0;">Customize Your Trip</h3>
+          <p style="margin:0;color:var(--text-muted);">Don't see exactly what you want? We specialize in custom itineraries. Tell us your dream combination and we'll design the perfect extended Silk Road journey for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

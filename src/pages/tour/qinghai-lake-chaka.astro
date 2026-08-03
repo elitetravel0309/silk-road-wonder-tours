@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "qinghai-lake-chaka",
+  "title": "Qinghai Lake & Chaka",
+  "duration": "5 Days",
+  "route": "Xining → Qinghai Lake → Chaka → Kumbum",
+  "image": "/assets/images/desert-dunes.jpg",
+  "price": "$780",
+  "features": [
+    "4-Star Hotels",
+    "English Guide"
+  ],
+  "overview": "Discover Qinghai's two iconic sights — the vast turquoise Qinghai Lake and the mirror-like Chaka Salt Lake. A photographer's paradise on the Tibetan Plateau.",
+  "highlights": [
+    "Qinghai Lake — China's largest lake",
+    "Chaka Salt Lake — 'Mirror of the Sky'",
+    "Kumbum Monastery",
+    "Bird Island (seasonal)",
+    "Tibetan grasslands"
+  ],
+  "category": "qinghai"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'qinghai'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>

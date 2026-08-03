@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+.next/
+_site/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# WPS temp
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Astro cache
+.astro/
+
+# WorkBuddy project files
+.workbuddy/
+
+# Pre-built HTML (outdated, Astro sources are the truth)
+public/blog/
+public/destination/
+public/tour/

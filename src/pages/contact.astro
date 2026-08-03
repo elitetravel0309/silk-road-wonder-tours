@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+---
+
+<BaseLayout title="Contact Silk Road Wonders" description="Contact Silk Road Wonders for custom China and Central Asia tours. Free consultation, 24/7 support." ogImage="/assets/images/hero-mountains.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com",
+    "logo": "https://silkroadwondertours.com/assets/favicon.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-153-4772-3823",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Chinese"]
+    },
+    "email": "booking@silkroadwondertours.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Xinjiang", "addressCountry": "CN" }
+  }
+  </script>
+  <section class="page-hero" style="background:linear-gradient(135deg, var(--navy-light), var(--navy));">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Free consultation · Reply within 24 hours · No obligation</p>
+    </div>
+  </section>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container">
+    <a href="/">Home</a> <span class="sep">&rsaquo;</span>
+    <span class="current">Contact</span>
+  </div></nav>
+
+  <section class="section"><div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item"><div class="contact-icon">&#9993;</div><div class="contact-info-text"><h3>Email</h3><p><a href="mailto:booking@silkroadwondertours.com">booking@silkroadwondertours.com</a></p></div></div>
+        <div class="contact-info-item"><div class="contact-icon">&#128222;</div><div class="contact-info-text"><h3>Phone / WhatsApp</h3><p><a href="tel:+8615347723823">+86 153 4772 3823</a></p><p style="font-size:0.85rem;color:var(--text-muted);margin-top:4px;">Available Mon–Sat, 9am–8pm (China Time, UTC+8)</p></div></div>
+        <div class="contact-info-item"><div class="contact-icon">&#128205;</div><div class="contact-info-text"><h3>Office</h3><p>Xinjiang, China</p></div></div>
+
+        <div style="margin-top:32px;padding:24px;background:var(--cream);border-radius:12px;">
+          <h4 style="margin-bottom:8px;color:var(--navy);">Why Book With Us</h4>
+          <ul style="list-style:none;color:var(--text-light);font-size:0.9rem;line-height:2;">
+            <li>&check; Licensed travel agency since 2005</li>
+            <li>&check; 20,000+ happy travelers</li>
+            <li>&check; 99% satisfaction rate</li>
+            <li>&check; No shopping stops or hidden fees</li>
+            <li>&check; 24/7 customer support</li>
+          </ul>
+        </div>
+      </div>
+
+      <InquiryForm />
+    </div>
+  </div></section>
+</BaseLayout>

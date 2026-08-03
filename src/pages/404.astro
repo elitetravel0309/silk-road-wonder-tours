@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="404 —Page Not Found | Silk Road Wonders" description="The page you're looking for doesn't exist. Explore our Silk Road tours, destinations, and travel guides instead." noindex={true}>
+<section class="page-hero" style="background:linear-gradient(135deg, var(--navy-light), var(--navy));">
+  <div class="container" style="text-align:center; padding:60px 0 40px;">
+    <h1 data-i18n="errorTitle">404 —Page Not Found</h1>
+    <p data-i18n="errorDesc">The page you're looking for doesn't exist or has been moved.</p>
+  </div>
+</section>
+
+<section class="section" style="padding:40px 0 80px;">
+  <div class="container" style="max-width:800px; text-align:center;">
+
+    <div style="font-size:6rem; line-height:1; margin-bottom:20px; color:var(--clay); font-family:var(--font-display);">
+      &#x1F3DC;
+    </div>
+
+    <h2 style="font-family:var(--font-display); font-size:1.6rem; color:var(--navy); margin-bottom:12px;" data-i18n="errorHelpTitle">
+      Let Us Help You Find Your Way
+    </h2>
+    <p style="color:var(--text-light); font-size:1rem; max-width:560px; margin:0 auto 32px; line-height:1.7;" data-i18n="errorHelpDesc">
+      Whether you're looking for a Silk Road adventure or travel inspiration, our site has something for every explorer.
+    </p>
+
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:40px;">
+      <a href="/" class="btn btn-primary" data-i18n="errorBtnHome">Back to Home</a>
+      <a href="/tours.html" class="btn btn-gold" data-i18n="errorBtnTours">Browse Tours</a>
+      <a href="/contact.html" class="btn btn-outline" style="color:var(--clay);border-color:var(--clay);" data-i18n="errorBtnContact">Contact Us</a>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--navy); margin-bottom:20px;" data-i18n="errorPopularDest">
+      Popular Silk Road Destinations
+    </h3>
+    <div class="dest-grid" style="margin-bottom:32px;">
+      <a href="/destination/xinjiang" class="dest-card">
+        <div class="img-placeholder">&#x1F3D4;</div>
+        <div class="dest-name" data-i18n="destXinjiang">Xinjiang</div>
+      </a>
+      <a href="/destination/tibet" class="dest-card">
+        <div class="img-placeholder">&#x26F0;</div>
+        <div class="dest-name" data-i18n="destTibet">Tibet</div>
+      </a>
+      <a href="/destination/beijing" class="dest-card">
+        <div class="img-placeholder">&#x1F3AF;</div>
+        <div class="dest-name" data-i18n="destBeijing">Beijing</div>
+      </a>
+      <a href="/destination/xian" class="dest-card">
+        <div class="img-placeholder">&#x1F3DB;</div>
+        <div class="dest-name" data-i18n="destXian">Xi'an</div>
+      </a>
+      <a href="/destination/kashgar" class="dest-card">
+        <div class="img-placeholder">&#x1F3AA;</div>
+        <div class="dest-name" data-i18n="destKashgar">Kashgar</div>
+      </a>
+      <a href="/destination/shanghai" class="dest-card">
+        <div class="img-placeholder">&#x1F3D9;</div>
+        <div class="dest-name" data-i18n="destShanghai">Shanghai</div>
+      </a>
+    </div>
+
+    <p style="color:var(--text-muted); font-size:0.88rem;" data-i18n="errorReassure">
+      If you typed the address, please double-check it. If a link brought you here, <a href="/contact.html" style="color:var(--clay);">let us know</a> and we'll fix it.
+    </p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "404 —Page Not Found",
+  "description": "The page you're looking for doesn't exist on Silk Road Wonders.",
+  "url": "https://silkroadwondertours.com/404.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com"
+  }
+}
+</script>
+</BaseLayout>

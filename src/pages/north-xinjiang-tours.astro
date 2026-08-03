@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TourCard from '../components/TourCard.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { allTours } from '../data/all-tours';
+---
+<BaseLayout title="Northern Xinjiang Tours — Kanas Lake, Altay Mountains, Ili Valley & Hemu Village" description="Explore Northern Xinjiang's pristine wilderness — Kanas Lake, Altay Mountain treks, Ili lavender fields, Kazakh nomad culture. 4–10 day tours." ogImage="/assets/images/xinjiang-landscape.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silkroadwondertours.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": "https://silkroadwondertours.com/tours.html" },
+      { "@type": "ListItem", "position": 3, "name": "Northern Xinjiang" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Northern Xinjiang Tours",
+    "description": "Expert-guided tours through Northern Xinjiang's most spectacular landscapes — Kanas Lake, Altay Mountains, Ili Valley, and Kazakh culture.",
+    "numberOfItems": 7,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "TouristTrip", "name": "Kanas Lake Autumn", "url": "https://silkroadwondertours.com/tour/kanas-lake-autumn.html" } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "TouristTrip", "name": "Altay Mountain Trek", "url": "https://silkroadwondertours.com/tour/altay-mountain-trek.html" } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "TouristTrip", "name": "Ili River Valley", "url": "https://silkroadwondertours.com/tour/ili-river-valley.html" } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "TouristTrip", "name": "Sayram Lake & Naraty", "url": "https://silkroadwondertours.com/tour/sayram-lake-naraty.html" } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "TouristTrip", "name": "Hemu Village Winter", "url": "https://silkroadwondertours.com/tour/hemu-village-winter.html" } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "TouristTrip", "name": "Northern Xinjiang Loop", "url": "https://silkroadwondertours.com/tour/northern-xinjiang-loop.html" } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "TouristTrip", "name": "Urumqi-Northern Grasslands", "url": "https://silkroadwondertours.com/tour/urumqi-northern-grasslands.html" } }
+    ]
+  }
+  </script>
+
+  <section class="page-hero" style="background: linear-gradient(rgba(27,42,74,0.5), rgba(27,42,74,0.3)), url('/assets/images/xinjiang-landscape.jpg') center/cover;">
+    <div class="container"><h1 data-i18n="nx-hero">Northern Xinjiang Tours</h1><p data-i18n="nx-hero-sub">Kanas Lake · Altay Mountains · Ili Valley · Hemu Village — China's Alpine Wonderland</p></div>
+  </section>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="/">Home</a> <span class="sep">/</span> <a href="/tours.html">Tours</a> <span class="sep">/</span> <span class="current">Northern Xinjiang</span></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="nx-intro-title">Welcome to Northern Xinjiang — Where the Tian Shan Meets Siberia</h2>
+        <div class="divider"></div>
+        <p data-i18n="nx-intro-desc">Forget everything you think you know about China. Northern Xinjiang is a different world — alpine lakes the color of turquoise, golden birch forests that could be in Switzerland, endless grasslands where Kazakh horsemen still herd their flocks, and the snow-capped Altay Mountains that mark the border with Siberia. This is China's last great wilderness, spanning an area larger than France.</p>
+        <p style="margin-top:12px;color:var(--text-light);" data-i18n="nx-intro-desc2">Our Northern Xinjiang tours take you deep into this pristine landscape. Cruise across Kanas Lake — rumored home of the legendary 'Kanas Monster' — in autumn when the birch forests explode into gold. Trek through the Altay Mountains with Kazakh guides. Wander through lavender fields in the Ili Valley when they bloom purple in June. Ride horses across Naraty Grassland under the endless blue sky. Every tour includes English-speaking guides, comfortable accommodation (including traditional Kazakh yurt stays), and 4WD transportation for remote areas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="nx-wonders">Northern Xinjiang's Natural Wonders</h2><div class="divider"></div></div>
+      <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/xinjiang-landscape.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="nx-w1-title">Kanas Lake</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="nx-w1-desc">A crescent of impossibly blue water nestled in the Altay Mountains. In autumn, the surrounding birch and pine forests turn gold and crimson — arguably China's most beautiful seasonal landscape. Boat cruises and hiking trails offer perspectives from every angle.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-silkroad.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="nx-w2-title">Hemu Village</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="nx-w2-desc">The most beautiful village in China — wooden cabins of the Tuwa people scattered across a valley surrounded by birch forests. In autumn, morning mist rises from the river as the sun illuminates golden trees. In winter, it becomes a silent fairytale under deep snow.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/xinjiang-landscape.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="nx-w3-title">Ili River Valley</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="nx-w3-desc">Known as 'China's Switzerland,' the Ili Valley is a lush green corridor between the Tian Shan ranges. Lavender fields bloom purple in June, fruit orchards heavy with apples and apricots, and snow-capped peaks frame every view.</p></div>
+        </div>
+        <div class="feature-card reveal" style="background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);">
+          <div style="height:180px;background:url('/assets/images/hero-mountains.jpg') center/cover;"></div>
+          <div style="padding:20px;"><h4 data-i18n="nx-w4-title">Sayram Lake</h4><p style="color:var(--text-light);font-size:0.9rem;" data-i18n="nx-w4-desc">The 'Last Teardrop of the Atlantic' — a sapphire-blue alpine lake at 2,070m, ringed by snow peaks and summer wildflower meadows. Kazakh herders bring their livestock to graze the shores in one of Xinjiang's most photogenic scenes.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="section-header reveal"><h2 data-i18n="nx-tour-title">Northern Xinjiang Tours</h2><div class="divider"></div><p data-i18n="nx-tour-sub">From Kanas Lake to the Ili Valley — discover China's most spectacular wilderness</p></div>
+    <div class="tour-grid">
+      {allTours.northXinjiang.map(t => <TourCard tour={{...t, slug: t.slug}} showFeatures={!!t.features} />)}
+    </div>
+  </div></section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal"><h2 data-i18n="nx-tips-title">Northern Xinjiang Travel Tips</h2><div class="divider"></div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="nx-t1-title">&#127809; Best Time by Season</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="nx-t1-desc">Late September–early October: Kanas autumn peak — golden birches, turquoise water, fewer crowds. June–July: Ili lavender bloom and Sayram wildflowers. December–February: Hemu winter wonderland with frozen lakes and sleigh rides. May & October: shoulder season with lower prices and decent weather.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="nx-t2-title">&#127794; Altitude & Climate</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="nx-t2-desc">Most destinations are between 1,000–2,500m — lower than Tibet, but still pack warm layers. Kanas can drop to freezing at night even in September. The Ili Valley is milder. Summer days are warm (20–28°C) but UV is intense at altitude — bring sunscreen and a hat.</p>
+        </div>
+        <div class="reveal" style="background:var(--white);padding:24px;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">
+          <h4 style="color:var(--clay);" data-i18n="nx-t3-title">&#127951; Kazakh & Tuva Culture</h4>
+          <p style="font-size:0.9rem;color:var(--text-light);" data-i18n="nx-t3-desc">Northern Xinjiang is home to Kazakh nomads and the Tuwa people (believed to be descendants of Genghis Khan's soldiers). Stay in a traditional yurt, drink fermented mare's milk (koumiss), watch eagle hunting demonstrations, and listen to throat singing around the fire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection />
+</BaseLayout>

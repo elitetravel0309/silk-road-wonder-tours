@@ -1,0 +1,42 @@
+---
+import TourPageLayout from '../../components/TourPageLayout.astro';
+
+const tour = {
+  "slug": "zhangye-danxia-photo",
+  "title": "Zhangye Danxia Photography",
+  "duration": "3 Days",
+  "route": "Zhangye → Danxia → Mati Temple",
+  "image": "/assets/images/hero-silkroad.jpg",
+  "price": "$520",
+  "features": [
+    "Photography Focus",
+    "English Guide"
+  ],
+  "overview": "A photographer's dream — capture the rainbow-colored Zhangye Danxia landforms at sunrise and sunset. This short tour is optimized for the best light.",
+  "highlights": [
+    "Sunrise at Danxia",
+    "Sunset at Danxia",
+    "Mati Temple caves",
+    "Giant Buddha Temple",
+    "Photography guidance"
+  ],
+  "category": "gansu"
+};
+---
+
+<TourPageLayout
+  title={tour.title}
+  duration={tour.duration}
+  route={tour.route}
+  image={tour.image}
+  price={tour.price || ''}
+  originalPrice={tour.originalPrice || ''}
+  features={tour.features || []}
+  overview={tour.overview || ''}
+  highlights={tour.highlights || []}
+  category={tour.category || 'gansu'}
+
+  includes={tour.includes || ["Hotel accommodation (twin-share)","English-speaking guide throughout","All entrance fees to attractions","Private vehicle & driver","Daily breakfast + selected meals","Airport transfers on arrival & departure"]}
+  excludes={tour.excludes || ["International flights to/from China","Chinese visa fees","Travel insurance","Personal expenses & tips","Single room supplement"]}
+  stats={tour.stats || [{"label":"Duration","value":"See above"},{"label":"Hotel Level","value":"4-Star"},{"label":"Guide","value":"English-speaking"},{"label":"Best Season","value":"Apr–Oct"}]}
+/>
