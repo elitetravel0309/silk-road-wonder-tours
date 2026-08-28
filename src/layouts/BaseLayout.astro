@@ -41,6 +41,42 @@ if (pathname.startsWith('/tour/')) {
   });
 }
 
+// Auto-generate Article schema for blog posts
+let articleSchema = '';
+if (pathname.startsWith('/blog/') && pathname !== '/blog') {
+  const articleTitle = title.replace(' | Silk Road Wonders', '');
+  const articleUrl = siteUrl + pathname;
+  const articleImage = ogImageUrl;
+  articleSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": articleTitle,
+    "description": description,
+    "image": articleImage,
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-08-28",
+    "author": {
+      "@type": "Organization",
+      "name": "Silk Road Wonders",
+      "url": siteUrl
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Silk Road Wonders",
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteUrl + "/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": articleUrl
+    },
+    "articleSection": "Travel Blog",
+    "keywords": "Silk Road, China travel, Central Asia, Xinjiang, Tibet, Gansu, travel guide"
+  });
+}
+
 // Organization schema (site-wide)
 const organizationSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -115,6 +151,7 @@ const organizationSchema = JSON.stringify({
 </script>
 <script type="application/ld+json" set:html={organizationSchema}></script>
 {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema}></script>}
+{articleSchema && <script type="application/ld+json" set:html={articleSchema}></script>}
 </head>
 <body>
 <a class="skip-to-content" href="#main-content">Skip to content</a>
