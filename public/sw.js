@@ -1,5 +1,5 @@
 /* ===== Silk Road Wonders — Service Worker ===== */
-const CACHE_VERSION = 'srw-v2.4';
+const CACHE_VERSION = 'srw-v2.8';
 const PRE_CACHE = 'srw-precache-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'srw-runtime-' + CACHE_VERSION;
 const IMG_CACHE = 'srw-images-' + CACHE_VERSION;

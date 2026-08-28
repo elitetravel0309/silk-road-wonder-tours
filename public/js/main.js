@@ -101,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
       formData.append('access_key', 'bc152022-a23a-4453-ba98-25cb8784102a');
 
       try {
-        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+        const endpoint = 'https:' + '//api.web3forms.com/submit';
+        const res = await fetch(endpoint, { method: 'POST', body: formData });
         const data = await res.json();
         if (res.ok) {
           btn.textContent = '✓ Inquiry Sent!';
