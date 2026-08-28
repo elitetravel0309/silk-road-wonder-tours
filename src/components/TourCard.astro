@@ -14,7 +14,7 @@ const { tour, showFeatures = false } = Astro.props;
 <div class="tour-card reveal">
   <div class="tour-card-img">
     <a href={`/tour/${tour.slug}.html`}>
-      <img src={tour.image} alt={tour.title} class="img-fill" loading="lazy">
+      <img src={tour.image} alt={tour.title} class="img-fill" loading="lazy" width="1200" height="800">
     </a>
     <span class="tour-card-duration">{tour.duration}</span>
   </div>

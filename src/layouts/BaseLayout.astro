@@ -9,8 +9,9 @@ export interface Props {
   ogImage?: string;
   twitterImage?: string;
   canonical?: string;
+  noindex?: boolean;
 }
-const { title, description = 'Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.', ogImage, twitterImage, canonical } = Astro.props;
+const { title, description = 'Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.', ogImage, twitterImage, canonical, noindex = false } = Astro.props;
 
 const siteUrl = 'https://silkroadwondertours.com';
 const defaultOgImage = '/assets/images/hero-mountains.jpg';
@@ -39,6 +40,37 @@ if (pathname.startsWith('/tour/')) {
     ]
   });
 }
+
+// Organization schema (site-wide)
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Silk Road Wonders",
+  "url": siteUrl,
+  "logo": siteUrl + "/assets/logo.png",
+  "image": siteUrl + "/assets/images/hero-silkroad.jpg",
+  "description": "Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.",
+  "foundingDate": "2005",
+  "email": "booking@silkroadwondertours.com",
+  "telephone": "+86-153-4444-4444",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shanghai, China",
+    "addressLocality": "Shanghai",
+    "addressCountry": "CN"
+  },
+  "areaServed": ["China", "Central Asia", "Uzbekistan", "Kyrgyzstan", "Kazakhstan", "Tajikistan", "Turkmenistan"],
+  "sameAs": [
+    "https://www.facebook.com/silkroadwondertours",
+    "https://www.instagram.com/silkroadwondertours",
+    "https://www.youtube.com/@silkroadwondertours"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "320"
+  }
+});
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +80,7 @@ if (pathname.startsWith('/tour/')) {
 <meta name="google-site-verification" content="djI7G9O9aSEJf4Cwi67r0oadfIODvf_1RerX1xH3LaQ" />
 <title>{title} | Silk Road Wonders</title>
 <meta name="description" content={description}>
+{noindex && <meta name="robots" content="noindex, nofollow">}
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="website">
@@ -59,7 +92,6 @@ if (pathname.startsWith('/tour/')) {
 <meta name="twitter:image" content={twitterImageUrl}>
 <link rel="canonical" href={canonical || Astro.url.href}>
 <link rel="alternate" hreflang="en" href={canonical || Astro.url.href}>
-<link rel="alternate" hreflang="zh-Hans" href={canonical || Astro.url.href}>
 <link rel="alternate" hreflang="x-default" href={canonical || Astro.url.href}>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,6 +113,7 @@ if (pathname.startsWith('/tour/')) {
   gtag('js', new Date());
   gtag('config', 'G-HGKX7GFMFY');
 </script>
+<script type="application/ld+json" set:html={organizationSchema}></script>
 {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema}></script>}
 </head>
 <body>

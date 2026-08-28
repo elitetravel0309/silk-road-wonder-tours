@@ -1,0 +1,61 @@
+---
+export interface Props {
+  name: string;
+  description: string;
+  price: string;
+  priceCurrency?: string;
+  duration?: string;
+  image?: string;
+  ratingValue?: string;
+  reviewCount?: string;
+  destinations?: string;
+}
+
+const {
+  name,
+  description,
+  price,
+  priceCurrency = 'USD',
+  duration,
+  image = '/assets/images/hero-silkroad.jpg',
+  ratingValue = '4.9',
+  reviewCount = '20000',
+  destinations
+} = Astro.props;
+
+const siteUrl = 'https://silkroadwondertours.com';
+const absoluteImage = image.startsWith('http') ? image : siteUrl + image;
+const absoluteUrl = siteUrl + Astro.url.pathname;
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{name}",
+  "description": "{description}",
+  "image": "{absoluteImage}",
+  "url": "{absoluteUrl}",
+  "brand": {
+    "@type": "TravelAgency",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{price}",
+    "priceCurrency": "{priceCurrency}",
+    "availability": "https://schema.org/InStock",
+    "url": "{absoluteUrl}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{ratingValue}",
+    "reviewCount": "{reviewCount}"
+  }
+  {duration ? `,
+  "duration": "${duration}"` : ''}
+  {destinations ? `,
+  "areaServed": "${destinations}"` : ''}
+}
+</script>

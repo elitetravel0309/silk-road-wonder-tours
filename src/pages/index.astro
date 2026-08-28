@@ -240,7 +240,7 @@ const blogPosts = [
   <section class="section section-alt"><div class="container">
     <div class="section-header reveal"><h2>Latest Silk Road Travel Information</h2><div class="divider"></div></div>
     <div class="blog-grid">
-      {blogPosts.map(b => <a href={b.url} class="blog-card reveal"><div class="blog-card-img"><img src={b.image} class="img-fill" loading="lazy" style="height:100%" alt={b.title} /></div><div class="blog-card-body"><h3>{b.title}</h3><span class="date">{b.date}</span></div></a>)}
+      {blogPosts.map(b => <a href={b.url} class="blog-card reveal"><div class="blog-card-img"><img src={b.image} class="img-fill" loading="lazy" style="height:100%" alt={b.title} / width="1200" height="800"></div><div class="blog-card-body"><h3>{b.title}</h3><span class="date">{b.date}</span></div></a>)}
     </div>
     <div class="view-more reveal"><a href="/blog.html" class="btn btn-gold">Read More Articles &rarr;</a></div>
   </div></section>
