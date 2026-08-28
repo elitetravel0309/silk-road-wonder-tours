@@ -50,10 +50,113 @@ const blogPosts = [
 >
   <link rel="preload" as="image" href="/assets/home-banner.jpg" fetchpriority="high">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"Silk Road Wonders","url":"https://silkroadwondertours.com","description":"Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005."}
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com",
+    "description": "Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://silkroadwondertours.com/search.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"TravelAgency","name":"Silk Road Wonders","url":"https://silkroadwondertours.com","telephone":"+8615347723823","email":"booking@silkroadwondertours.com","address":{"@type":"PostalAddress","addressLocality":"Xinjiang","addressCountry":"CN"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"20000"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Silk Road Wonders",
+    "alternateName": "Silk Road Wonder Tours",
+    "url": "https://silkroadwondertours.com",
+    "logo": "https://silkroadwondertours.com/assets/logo.png",
+    "image": "https://silkroadwondertours.com/assets/images/hero-silkroad.jpg",
+    "telephone": "+8615347723823",
+    "email": "booking@silkroadwondertours.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Xinjiang Uyghur Autonomous Region",
+      "addressLocality": "Urumqi",
+      "addressRegion": "Xinjiang",
+      "postalCode": "830000",
+      "addressCountry": "CN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.8256,
+      "longitude": 87.6168
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "areaServed": ["China","Xinjiang","Gansu","Qinghai","Tibet","Uzbekistan","Kazakhstan","Kyrgyzstan","Tajikistan","Turkmenistan"],
+    "sameAs": [
+      "https://www.facebook.com/silkroadwonders",
+      "https://www.instagram.com/silkroadwonders",
+      "https://www.youtube.com/@silkroadwonders",
+      "https://www.tripadvisor.com/Attraction_Review-silkroadwonders"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "20000",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Paola", "address": {"@type": "PostalAddress", "addressCountry": "Italy"}},
+        "datePublished": "2026-05-15",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Thanks to the team for making our journey safe and unforgettable. Every detail was perfectly arranged — from the desert camps to the ancient cities. Truly a once-in-a-lifetime experience."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Jenny Tang", "address": {"@type": "PostalAddress", "addressCountry": "Malaysia"}},
+        "datePublished": "2026-05-10",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Special thanks to Alice for her professional arrangements. Our guides Harry and Jane were incredibly knowledgeable and friendly. The drivers Zhou and Huang provided excellent service throughout."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Amy", "address": {"@type": "PostalAddress", "addressCountry": "Canada"}},
+        "datePublished": "2025-10-20",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Amazing 13-day Xinjiang + Silk Road tour! Our guide Ali was exceptional — his knowledge of history and genuine care for every traveler made this journey extraordinary."
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Silk Road Wonders",
+    "url": "https://silkroadwondertours.com",
+    "logo": "https://silkroadwondertours.com/assets/logo.png",
+    "description": "Leading China travel agency specializing in customized Silk Road tours since 2005. Private and group tours across China and Central Asia.",
+    "foundingDate": "2005",
+    "numberOfEmployees": "50",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+8615347723823",
+      "contactType": "customer service",
+      "email": "booking@silkroadwondertours.com",
+      "availableLanguage": ["English","Chinese","Spanish","French","German"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/silkroadwonders",
+      "https://www.instagram.com/silkroadwonders",
+      "https://www.youtube.com/@silkroadwonders"
+    ]
+  }
   </script>
 
   <section class="hero" id="main-content" style="background-image:url('/assets/home-banner.jpg')">
@@ -102,7 +205,9 @@ const blogPosts = [
     <div class="view-more reveal"><a href="/extend-silk-road-tour" class="btn btn-gold">View Extension Tours &rarr;</a></div>
   </div></section>
 
-  <section class="section" id="reviews"><div class="container">
+  <section class="section section-alt section-bg-reviews" id="reviews" style="background-image:url('/assets/images/desert-dunes.jpg');background-size:cover;background-position:center;background-attachment:fixed;position:relative">
+    <div style="position:absolute;inset:0;background:rgba(255,255,255,0.92)"></div>
+    <div class="container" style="position:relative;z-index:1">
     <div class="section-header reveal"><h2>What Our Customers Are Saying</h2><div class="divider"></div><p>Over 20,000 travelers have trusted us with their Silk Road dream.</p></div>
     <div class="reviews-grid">
       {reviews.map(r => (
@@ -112,13 +217,15 @@ const blogPosts = [
     <div class="view-more reveal"><a href="/review.html" class="btn btn-gold">Read All Reviews &rarr;</a></div>
   </div></section>
 
-  <section class="section section-alt"><div class="container">
+  <section class="section section-alt section-bg-why" style="background-image:url('/assets/images/hero-silkroad.jpg');background-size:cover;background-position:center;background-attachment:fixed;position:relative">
+    <div style="position:absolute;inset:0;background:rgba(255,255,255,0.94)"></div>
+    <div class="container" style="position:relative;z-index:1">
     <div class="section-header reveal"><h2>Why Choose Us</h2><div class="divider"></div></div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon tailor">鉁?/div><h3>100% Tailor Made</h3><p>Your entire holiday is designed around your requirements.</p></div>
-      <div class="why-card reveal"><div class="why-icon expert">馃�</div><h3>Expert Knowledge</h3><p>All our specialists have traveled extensively or lived in their specialist regions.</p></div>
-      <div class="why-card reveal"><div class="why-icon professional">鈿?/div><h3>Professional Arrangements</h3><p>Friendly guides and drivers. No shopping stops or hidden fees.</p></div>
-      <div class="why-card reveal"><div class="why-icon trusted">馃洝</div><h3>Trusted Service</h3><p>Licensed travel agency since 2005. Free cancellation up to 30 days.</p></div>
+      <div class="why-card reveal"><div class="why-icon tailor"><i class="fas fa-sliders-h"></i></div><h3>100% Tailor Made</h3><p>Your entire holiday is designed around your requirements.</p></div>
+      <div class="why-card reveal"><div class="why-icon expert"><i class="fas fa-user-graduate"></i></div><h3>Expert Knowledge</h3><p>All our specialists have traveled extensively or lived in their specialist regions.</p></div>
+      <div class="why-card reveal"><div class="why-icon professional"><i class="fas fa-star"></i></div><h3>Professional Arrangements</h3><p>Friendly guides and drivers. No shopping stops or hidden fees.</p></div>
+      <div class="why-card reveal"><div class="why-icon trusted"><i class="fas fa-award"></i></div><h3>Trusted Service</h3><p>Licensed travel agency since 2005. Free cancellation up to 30 days.</p></div>
     </div>
   </div></section>
 
