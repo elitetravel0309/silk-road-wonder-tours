@@ -1,5 +1,5 @@
 /* ===== Silk Road Wonders — Service Worker ===== */
-const CACHE_VERSION = 'srw-v2.8';
+const CACHE_VERSION = 'srw-v3.0';
 const PRE_CACHE = 'srw-precache-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'srw-runtime-' + CACHE_VERSION;
 const IMG_CACHE = 'srw-images-' + CACHE_VERSION;
@@ -7,20 +7,18 @@ const IMG_CACHE = 'srw-images-' + CACHE_VERSION;
 /* Critical assets to pre-cache on install */
 const PRECACHE_URLS = [
   '/',
-  'css/style.css',
-  'js/main.js',
-  'assets/favicon.svg',
-  'assets/logo.png',
-  'assets/home-banner.jpg',
-  'manifest.json',
-  '404.html',
-  'index.html',
-  'tours.html',
-  'destinations.html',
-  'about.html',
-  'contact.html',
-  'blog.html',
-  'search.html'
+  '/index.html',
+  '/css/style.css',
+  '/js/main.js',
+  '/assets/favicon.svg',
+  '/assets/logo.png',
+  '/manifest.json',
+  '/404.html',
+  '/tours.html',
+  '/destinations.html',
+  '/about.html',
+  '/contact.html',
+  '/blog.html'
 ];
 
 /* === INSTALL === */
@@ -37,16 +35,16 @@ self.addEventListener('install', event => {
   );
 });
 
-/* === ACTIVATE === */
+/* === ACTIVATE — clear all old caches === */
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => {
       return Promise.all(
-        keys.filter(k => k.startsWith('srw-') && k !== PRE_CACHE && k !== RUNTIME_CACHE && k !== IMG_CACHE)
+        keys.filter(k => k.startsWith('srw-') && !k.includes(CACHE_VERSION))
           .map(k => caches.delete(k))
       );
     }).then(() => {
-      console.log('[SW] Activated v' + CACHE_VERSION);
+      console.log('[SW] Activated', CACHE_VERSION);
       return self.clients.claim();
     })
   );
@@ -57,33 +55,33 @@ self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
 
-  /* Skip non-GET and cross-origin (except fonts/images) */
+  /* Skip non-GET */
   if (request.method !== 'GET') return;
 
-  /* Google Fonts: stale-while-revalidate via cache-first */
+  /* Google Fonts: cache-first */
   if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
     event.respondWith(cacheFirst(request));
     return;
   }
 
-  /* External images: cache-first with expiry */
-  if (url.hostname === 'images.unsplash.com') {
-    event.respondWith(imageCache(request));
-    return;
-  }
-
-  /* Navigation (HTML pages): network-first, fallback to cache, then offline */
+  /* Navigation (HTML pages): network-first, fallback to cache */
   if (request.mode === 'navigate') {
     event.respondWith(networkFirst(request));
     return;
   }
 
-  /* Local static assets (CSS, JS, local images): cache-first */
+  /* Local CSS/JS: stale-while-revalidate (serve cache, update in background) */
   if (url.origin === self.location.origin) {
-    if (request.destination === 'style' || request.destination === 'script' || request.destination === 'image' || request.destination === 'font') {
-      event.respondWith(cacheFirst(request));
+    if (request.destination === 'style' || request.destination === 'script') {
+      event.respondWith(staleWhileRevalidate(request));
       return;
     }
+  }
+
+  /* Local images: cache-first with background refresh */
+  if (url.origin === self.location.origin && request.destination === 'image') {
+    event.respondWith(cacheFirst(request));
+    return;
   }
 
   /* Everything else: network-first */
@@ -92,11 +90,23 @@ self.addEventListener('fetch', event => {
 
 /* === Strategies === */
 
-/* Cache first — serve from cache, update cache in background */
+/* Stale-while-revalidate — serve cache immediately, update in background */
+async function staleWhileRevalidate(request) {
+  const cached = await caches.match(request);
+  const networkFetch = fetch(request).then(response => {
+    if (response.ok) {
+      const clone = response.clone();
+      caches.open(RUNTIME_CACHE).then(cache => cache.put(request, clone));
+    }
+    return response;
+  }).catch(() => cached);
+  return cached || networkFetch;
+}
+
+/* Cache first — serve from cache, update in background */
 async function cacheFirst(request) {
   const cached = await caches.match(request);
   if (cached) {
-    /* Background refresh */
     fetch(request).then(resp => {
       if (resp.ok) {
         caches.open(RUNTIME_CACHE).then(cache => cache.put(request, resp));
@@ -116,7 +126,7 @@ async function cacheFirst(request) {
   }
 }
 
-/* Network first — try network, fall back to cache, then offline */
+/* Network first — try network, fall back to cache */
 async function networkFirst(request) {
   try {
     const response = await fetch(request);
@@ -128,35 +138,10 @@ async function networkFirst(request) {
   } catch (e) {
     const cached = await caches.match(request);
     if (cached) return cached;
-    /* Fallback to cached offline page */
-    const offline = await caches.match('404.html');
-    return offline || new Response('You are offline and this page is not cached.', {
+    const offline = await caches.match('/404.html');
+    return offline || new Response('You are offline.', {
       status: 503,
       headers: { 'Content-Type': 'text/plain' }
     });
-  }
-}
-
-/* Image cache — cache-first with LRU max 200 entries */
-async function imageCache(request) {
-  const cached = await caches.match(request);
-  if (cached) return cached;
-  try {
-    const response = await fetch(request);
-    if (response.ok) {
-      const clone = response.clone();
-      const cache = await caches.open(IMG_CACHE);
-      cache.put(request, clone);
-      /* Trim cache to 200 entries */
-      const keys = await cache.keys();
-      if (keys.length > 200) {
-        for (let i = 0; i < keys.length - 200; i++) {
-          cache.delete(keys[i]);
-        }
-      }
-    }
-    return response;
-  } catch (e) {
-    return new Response('', { status: 408, statusText: 'Image offline' });
   }
 }
