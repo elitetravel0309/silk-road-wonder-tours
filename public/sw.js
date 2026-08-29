@@ -1,5 +1,5 @@
 /* ===== Silk Road Wonders — Service Worker ===== */
-const CACHE_VERSION = 'srw-v3.0';
+const CACHE_VERSION = 'srw-v3.1';
 const PRE_CACHE = 'srw-precache-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'srw-runtime-' + CACHE_VERSION;
 const IMG_CACHE = 'srw-images-' + CACHE_VERSION;
@@ -78,9 +78,9 @@ self.addEventListener('fetch', event => {
     }
   }
 
-  /* Local images: cache-first with background refresh */
+  /* Local images: cache-first with WebP support */
   if (url.origin === self.location.origin && request.destination === 'image') {
-    event.respondWith(cacheFirst(request));
+    event.respondWith(imageWithWebp(request));
     return;
   }
 
@@ -101,6 +101,46 @@ async function staleWhileRevalidate(request) {
     return response;
   }).catch(() => cached);
   return cached || networkFetch;
+}
+
+/* Image with WebP fallback — serve WebP if browser supports it */
+async function imageWithWebp(request) {
+  const url = new URL(request.url);
+  const acceptsWebp = request.headers.get('accept')?.includes('image/webp');
+  
+  if (acceptsWebp && /\.(jpg|jpeg|png)$/i.test(url.pathname)) {
+    // Construct WebP path
+    let webpPath;
+    if (url.pathname.startsWith('/assets/images/')) {
+      webpPath = url.pathname.replace('/assets/images/', '/assets/images/webp/').replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    } else if (url.pathname.startsWith('/assets/')) {
+      const filename = url.pathname.split('/').pop().replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      webpPath = '/assets/images/webp/' + filename;
+    } else {
+      return cacheFirst(request);
+    }
+    
+    const webpUrl = self.location.origin + webpPath;
+    
+    // Try cache first for WebP
+    const cachedWebp = await caches.match(webpUrl);
+    if (cachedWebp) return cachedWebp;
+    
+    // Try network for WebP
+    try {
+      const webpResponse = await fetch(webpUrl);
+      if (webpResponse.ok) {
+        const clone = webpResponse.clone();
+        caches.open(IMG_CACHE).then(cache => cache.put(webpUrl, clone));
+        return webpResponse;
+      }
+    } catch (e) {
+      // WebP not available, fall through to original
+    }
+  }
+  
+  // Fallback to original image with cache-first
+  return cacheFirst(request);
 }
 
 /* Cache first — serve from cache, update in background */
