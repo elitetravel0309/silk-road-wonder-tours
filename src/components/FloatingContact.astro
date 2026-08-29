@@ -1,0 +1,364 @@
+<!-- Floating Contact Buttons -->
+<div class="floating-contact" id="floatingContact">
+  <!-- Main toggle button -->
+  <button class="fc-toggle" id="fcToggle" aria-label="Contact us">
+    <span class="fc-icon-chat">💬</span>
+    <span class="fc-icon-close">✕</span>
+  </button>
+
+  <!-- Expanded options -->
+  <div class="fc-options" id="fcOptions">
+    <button class="fc-option fc-wechat" id="fcWechat" aria-label="Contact via WeChat">
+      <span class="fc-option-icon">💚</span>
+      <span class="fc-option-label">WeChat</span>
+    </button>
+    <button class="fc-option fc-whatsapp" id="fcWhatsapp" aria-label="Contact via WhatsApp">
+      <span class="fc-option-icon">💬</span>
+      <span class="fc-option-label">WhatsApp</span>
+    </button>
+  </div>
+</div>
+
+<!-- WeChat QR Modal -->
+<div class="fc-modal" id="wechatModal">
+  <div class="fc-modal-overlay" data-close="wechatModal"></div>
+  <div class="fc-modal-content">
+    <button class="fc-modal-close" data-close="wechatModal" aria-label="Close">✕</button>
+    <h3>Add us on WeChat</h3>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">Scan the QR code to add our customer service</p>
+    <div class="fc-qr-wrapper">
+      <img src="/assets/images/wechat-qr.png" alt="WeChat QR Code" class="fc-qr-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fc-qr-placeholder" style="display:none;">
+        <p>WeChat QR Code</p>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Replace /assets/images/wechat-qr.png with your QR code</p>
+      </div>
+    </div>
+    <div class="fc-contact-info">
+      <p><strong>WeChat ID:</strong> SilkRoadWonders</p>
+      <p><strong>Phone:</strong> +86 153 4772 3823</p>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp QR Modal -->
+<div class="fc-modal" id="whatsappModal">
+  <div class="fc-modal-overlay" data-close="whatsappModal"></div>
+  <div class="fc-modal-content">
+    <button class="fc-modal-close" data-close="whatsappModal" aria-label="Close">✕</button>
+    <h3>Chat on WhatsApp</h3>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">Scan the QR code or click the button to chat with us</p>
+    <div class="fc-qr-wrapper">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https://wa.me/8615347723823" alt="WhatsApp QR Code" class="fc-qr-image">
+    </div>
+    <a href="https://wa.me/8615347723823" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;margin-top:16px;justify-content:center;">
+      💬 Open WhatsApp Chat
+    </a>
+    <div class="fc-contact-info" style="margin-top:16px;">
+      <p><strong>WhatsApp:</strong> +86 153 4772 3823</p>
+      <p><strong>Hours:</strong> Mon–Sat, 9am–8pm (China Time UTC+8)</p>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Floating Contact Container */
+.floating-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* Toggle Button */
+.fc-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.fc-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.fc-toggle .fc-icon-close {
+  display: none;
+}
+
+.floating-contact.active .fc-toggle .fc-icon-chat {
+  display: none;
+}
+
+.floating-contact.active .fc-toggle .fc-icon-close {
+  display: block;
+}
+
+/* Options */
+.fc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.floating-contact.active .fc-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fc-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.fc-option:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.fc-wechat {
+  background: linear-gradient(135deg, #07C160, #06AD56);
+}
+
+.fc-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.fc-option-icon {
+  font-size: 1.2rem;
+}
+
+/* Modal */
+.fc-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-modal.active {
+  display: flex;
+}
+
+.fc-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.fc-modal-content {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: fcModalIn 0.3s ease;
+}
+
+@keyframes fcModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.fc-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.fc-modal-close:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.fc-modal-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--navy);
+  font-family: var(--font-display);
+}
+
+.fc-qr-wrapper {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+.fc-qr-image {
+  width: 220px;
+  height: 220px;
+  display: block;
+}
+
+.fc-qr-placeholder {
+  width: 220px;
+  height: 220px;
+  background: #f8f8f8;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.fc-contact-info {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  text-align: left;
+}
+
+.fc-contact-info p {
+  margin: 6px 0;
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .fc-toggle {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  .fc-option {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .fc-modal-content {
+    padding: 24px;
+    max-width: 340px;
+  }
+
+  .fc-qr-image, .fc-qr-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+}
+</style>
+
+<script>
+  // Floating contact toggle
+  const fcToggle = document.getElementById('fcToggle');
+  const floatingContact = document.getElementById('floatingContact');
+
+  if (fcToggle && floatingContact) {
+    fcToggle.addEventListener('click', () => {
+      floatingContact.classList.toggle('active');
+    });
+  }
+
+  // Modal handling
+  const fcWechat = document.getElementById('fcWechat');
+  const fcWhatsapp = document.getElementById('fcWhatsapp');
+  const wechatModal = document.getElementById('wechatModal');
+  const whatsappModal = document.getElementById('whatsappModal');
+
+  function openModal(modal) {
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Close floating contact options
+      if (floatingContact) floatingContact.classList.remove('active');
+    }
+  }
+
+  function closeModal(modal) {
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (fcWechat) fcWechat.addEventListener('click', () => openModal(wechatModal));
+  if (fcWhatsapp) fcWhatsapp.addEventListener('click', () => openModal(whatsappModal));
+
+  // Close buttons and overlays
+  document.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const modalId = e.target.getAttribute('data-close');
+      const modal = document.getElementById(modalId);
+      closeModal(modal);
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal(wechatModal);
+      closeModal(whatsappModal);
+      if (floatingContact) floatingContact.classList.remove('active');
+    }
+  });
+</script>
