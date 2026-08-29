@@ -1176,36 +1176,3 @@
 .why-icon.expert i { color: #2D4068; }
 .why-icon.professional i { color: #3A7D44; }
 .why-icon.trusted i { color: #7B4B94; }
-
-/* ============================================
-   SUPPLEMENTARY RESPONSIVE STYLES
-   (additive only, no !important, follows existing patterns)
-   ============================================ */
-
-/* Tablet (769px - 1024px) */
-@media (max-width: 1024px) {
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-  .steps-grid { grid-template-columns: repeat(2, 1fr); }
-  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Mobile (481px - 768px) */
-@media (max-width: 768px) {
-  .tours-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .payment-grid { grid-template-columns: 1fr; }
-  .security-grid { grid-template-columns: 1fr; }
-  .partner-types { grid-template-columns: 1fr; }
-  .cta-features { grid-template-columns: 1fr; }
-}
-
-/* Small Mobile (up to 480px) */
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .footer-grid { grid-template-columns: 1fr; }
-}
