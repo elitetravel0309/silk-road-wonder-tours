@@ -108,6 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.ok) {
           btn.textContent = '✓ Inquiry Sent!';
           btn.style.background = '#2D8B4E';
+          // Track form submission in GA4
+          if (typeof gtag === 'function') {
+            const formId = this.id || 'unknown_form';
+            gtag('event', 'generate_lead', {
+              form_id: formId,
+              form_name: formId.replace(/([A-Z])/g, ' $1').trim(),
+              page_location: window.location.href,
+              page_title: document.title
+            });
+          }
         } else {
           btn.textContent = '⚠ ' + (data.message || 'Try Again');
           btn.style.background = '#C67B4B';
@@ -123,6 +133,52 @@ document.addEventListener('DOMContentLoaded', () => {
           if (btn.textContent.includes('Sent')) this.reset();
         }, 3000);
       }
+    });
+  });
+
+  // Conversion tracking: phone, WhatsApp, email clicks
+  document.querySelectorAll('a[href^="tel:"], a[href^="whatsapp:"], a[href*="wa.me"], a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'function') return;
+      const href = this.getAttribute('href') || '';
+      let eventName, linkType;
+      
+      if (href.startsWith('tel:')) {
+        eventName = 'phone_click';
+        linkType = 'phone';
+      } else if (href.startsWith('whatsapp:') || href.includes('wa.me')) {
+        eventName = 'whatsapp_click';
+        linkType = 'whatsapp';
+      } else if (href.startsWith('mailto:')) {
+        eventName = 'email_click';
+        linkType = 'email';
+      } else {
+        return;
+      }
+      
+      gtag('event', eventName, {
+        link_type: linkType,
+        link_url: href,
+        link_text: this.textContent.trim().substring(0, 50),
+        page_location: window.location.href,
+        page_title: document.title
+      });
+    });
+  });
+
+  // Track outbound link clicks
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'function') return;
+      const href = this.getAttribute('href') || '';
+      // Skip internal links and Google Analytics domains
+      if (href.includes(window.location.hostname) || href.includes('google.com')) return;
+      
+      gtag('event', 'outbound_click', {
+        outbound_url: href,
+        link_text: this.textContent.trim().substring(0, 50),
+        page_location: window.location.href
+      });
     });
   });
 
