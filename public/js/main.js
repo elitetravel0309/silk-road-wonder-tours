@@ -14,6 +14,7 @@ if ('serviceWorker' in navigator) {
 function debounce(fn, delay) { let timer; return function(...args) { clearTimeout(timer); timer = setTimeout(() => fn.apply(this, args), delay); }; }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('js-loaded');
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

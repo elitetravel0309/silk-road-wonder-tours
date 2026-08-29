@@ -1,9 +1,9 @@
-/* Silk Road Travel — v3.4 */
-/* CSS Architecture: @layer base → layout → components → pages → utilities */
+/* Silk Road Travel 鈥?v3.4 */
+/* CSS Architecture: @layer base 鈫?layout 鈫?components 鈫?pages 鈫?utilities */
 
-/* ═══════════════════════════════════════════
-   LAYER 1: BASE — Variables, Reset, Typography
-   ═══════════════════════════════════════════ */
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 1: BASE 鈥?Variables, Reset, Typography
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer base {
   :root {
     --clay: #C67B4B;
@@ -45,7 +45,9 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  .reveal { opacity: 0; }
+  .reveal {
+  opacity: 1;
+}
   .reveal.visible { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
   /* Accessibility */
@@ -81,9 +83,9 @@
   }
 }
 
-/* ═══════════════════════════════════════════
-   LAYER 2: LAYOUT — Grid, Sections, Header, Footer, Hero, Breadcrumb, Mobile Nav
-   ═══════════════════════════════════════════ */
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 2: LAYOUT 鈥?Grid, Sections, Header, Footer, Hero, Breadcrumb, Mobile Nav
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer layout {
   .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
   .section { padding: 80px 0; }
@@ -226,9 +228,9 @@
   .cta-text p { color: var(--sand); margin-bottom: 24px; font-size: 1rem; }
 }
 
-/* ═══════════════════════════════════════════
-   LAYER 3: COMPONENTS — Buttons, Cards, Forms, FAQ, etc.
-   ═══════════════════════════════════════════ */
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 3: COMPONENTS 鈥?Buttons, Cards, Forms, FAQ, etc.
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer components {
   /* Buttons */
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 100px; font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-decoration: none; cursor: pointer; border: none; transition: all var(--transition); white-space: nowrap; }
@@ -399,7 +401,7 @@
   }
   .faq-q:hover { background: var(--cream); }
   .faq-q::after { content: '+'; font-size: 1.3rem; color: var(--clay); transition: var(--transition); }
-  .faq-q.open::after { content: '−'; }
+  .faq-q.open::after { content: '鈭?; }
   .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
   .faq-a.open { padding: 0 20px 16px; max-height: 300px; }
   .faq-a p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
@@ -460,7 +462,7 @@
   .highlight-box h3 { font-family: var(--font-display); color: var(--gold); margin-bottom: 12px; }
   .highlight-box ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .highlight-box ul li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
-  .highlight-box ul li::before { content: '✦'; color: var(--gold); }
+  .highlight-box ul li::before { content: '鉁?; color: var(--gold); }
 
   /* Image Placeholder */
   .img-placeholder {
@@ -473,9 +475,9 @@
   }
 }
 
-/* ═══════════════════════════════════════════
-   LAYER 4: PAGES — Page-specific styles
-   ═══════════════════════════════════════════ */
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 4: PAGES 鈥?Page-specific styles
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer pages {
   /* === Tour Detail === */
   .tour-detail-hero {
@@ -689,9 +691,9 @@
   .lightbox-nav.next { right: 24px; }
 }
 
-/* ═══════════════════════════════════════════
-   LAYER 5: UTILITIES — Performance, Print, Responsive
-   ═══════════════════════════════════════════ */
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 5: UTILITIES 鈥?Performance, Print, Responsive
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer utilities {
   /* Performance Optimizations */
   .section, .section-alt { content-visibility: auto; contain-intrinsic-size: 500px; }
@@ -764,13 +766,13 @@
   }
 }
 
-/* ═══════════════════════════════════════════
-   LAYER 6: PREMIUM ENHANCEMENTS — v4.0
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+   LAYER 6: PREMIUM ENHANCEMENTS 鈥?v4.0
    Design system upgrade, micro-interactions,
    typography refinement, mobile optimization
-   ═══════════════════════════════════════════ */
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @layer premium {
-  /* ─── 1. Enhanced Design Tokens ─── */
+  /* 鈹€鈹€鈹€ 1. Enhanced Design Tokens 鈹€鈹€鈹€ */
   :root {
     /* Semantic colors */
     --success: #2E7D52;
@@ -827,7 +829,7 @@
     --line-height-relaxed: 1.8;
   }
 
-  /* ─── 2. Typography Refinement ─── */
+  /* 鈹€鈹€鈹€ 2. Typography Refinement 鈹€鈹€鈹€ */
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -869,7 +871,7 @@
     color: var(--navy);
   }
 
-  /* ─── 3. Premium Micro-Interactions ─── */
+  /* 鈹€鈹€鈹€ 3. Premium Micro-Interactions 鈹€鈹€鈹€ */
 
   /* Button press effect */
   .btn {
@@ -963,7 +965,7 @@
     transition: transform var(--transition-bounce);
   }
 
-  /* ─── 4. Visual Enhancements ─── */
+  /* 鈹€鈹€鈹€ 4. Visual Enhancements 鈹€鈹€鈹€ */
 
   /* Gradient text for headings */
   .section-header h2 {
@@ -1021,7 +1023,7 @@
     font-size: 0.9em;
   }
 
-  /* ─── 5. Mobile Optimization ─── */
+  /* 鈹€鈹€鈹€ 5. Mobile Optimization 鈹€鈹€鈹€ */
 
   /* Remove tap highlight on mobile */
   * {
@@ -1088,7 +1090,7 @@
     .section { padding: 96px 0; }
   }
 
-  /* ─── 6. Accessibility Enhancements ─── */
+  /* 鈹€鈹€鈹€ 6. Accessibility Enhancements 鈹€鈹€鈹€ */
 
   /* Reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
@@ -1123,7 +1125,7 @@
     background: var(--clay);
   }
 
-  /* ─── 7. Loading States ─── */
+  /* 鈹€鈹€鈹€ 7. Loading States 鈹€鈹€鈹€ */
 
   /* Skeleton loading for images */
   img {
@@ -1140,7 +1142,7 @@
     100% { background-position: -200% 0; }
   }
 
-  /* ─── 8. Print Styles ─── */
+  /* 鈹€鈹€鈹€ 8. Print Styles 鈹€鈹€鈹€ */
   @media print {
     .header, .footer, .mobile-nav, .hero-controls, .back-to-top, .cookie-banner {
       display: none !important;
@@ -1155,10 +1157,10 @@
   }
 }
 
-/* ═══════════════════════════════════════════
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
    MOBILE BACKGROUND IMAGE COMPATIBILITY
    background-attachment: fixed causes issues on iOS
-   ═══════════════════════════════════════════ */
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?*/
 @media (max-width: 768px) {
   section[style*="background-attachment: fixed"],
   .section-bg-reviews,
@@ -1176,3 +1178,7 @@
 .why-icon.expert i { color: #2D4068; }
 .why-icon.professional i { color: #3A7D44; }
 .why-icon.trusted i { color: #7B4B94; }
+
+
+/* JS-loaded state: hide reveal elements for animation (fallback: visible without JS) */
+.js-loaded .reveal { opacity: 0; }
