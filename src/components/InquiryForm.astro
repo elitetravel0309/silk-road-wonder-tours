@@ -1,19 +1,39 @@
 <div class="contact-form-wrap">
-  <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--navy);margin-bottom:20px;">Send Your Inquiry</h3>
+  <div style="text-align:center;margin-bottom:24px;">
+    <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--navy);margin-bottom:8px;">Get Your Free Custom Quote</h3>
+    <p style="color:var(--text-muted);font-size:0.95rem;margin:0;">Tell us about your dream trip — we'll craft a personalized itinerary within <strong>24 hours</strong>. No obligation, just inspiration.</p>
+  </div>
+
+  <div style="display:flex;justify-content:center;gap:24px;margin-bottom:24px;padding:12px 16px;background:var(--cream);border-radius:8px;font-size:0.85rem;color:var(--text-light);">
+    <span>⭐ <strong>4.9/5</strong> from 320+ reviews</span>
+    <span>✓ 20,000+ happy travelers</span>
+    <span>🔒 Your info is safe</span>
+  </div>
+
   <form id="inquiryFormMain">
     <div class="form-row">
-      <div class="form-group"><label for="ctaName">Full Name *</label><input type="text" id="ctaName" name="name" placeholder="Your name" required></div>
+      <div class="form-group"><label for="ctaName">Full Name *</label><input type="text" id="ctaName" name="name" placeholder="Your full name" required></div>
       <div class="form-group"><label for="ctaEmail">Email *</label><input type="email" id="ctaEmail" name="email" placeholder="your@email.com" required></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label for="ctaPhone">Phone / WhatsApp</label><input type="tel" id="ctaPhone" name="phone" placeholder="+Country code"></div>
-      <div class="form-group"><label for="ctaNationality">Nationality</label><input type="text" id="ctaNationality" name="nationality" placeholder="Your nationality"></div>
+      <div class="form-group"><label for="ctaPhone">Phone / WhatsApp</label><input type="tel" id="ctaPhone" name="phone" placeholder="+1 555 123 4567"></div>
+      <div class="form-group"><label for="ctaNationality">Nationality</label><input type="text" id="ctaNationality" name="nationality" placeholder="e.g. American, German, Australian"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label for="ctaDate">Travel Date</label><input type="date" id="ctaDate" name="date"></div>
+      <div class="form-group"><label for="ctaDate">Planned Travel Date</label><input type="date" id="ctaDate" name="date"></div>
       <div class="form-group"><label for="ctaTravelers">Number of Travelers</label><select id="ctaTravelers" name="travelers"><option>Select...</option><option>1 person</option><option>2 people</option><option>3-5 people</option><option>6-10 people</option><option>10+ people</option></select></div>
     </div>
-    <div class="form-group"><label for="ctaMessage">Your Message</label><textarea id="ctaMessage" name="message" placeholder="Tell us about your dream trip — destinations, budget, preferred travel style..."></textarea></div>
-    <button type="submit" class="btn btn-primary form-submit">&#9993; Send My Inquiry</button>
+    <div class="form-group"><label for="ctaMessage">Tell Us About Your Trip</label><textarea id="ctaMessage" name="message" placeholder="Which destinations interest you? What's your budget? Any special requests or occasions? (e.g. anniversary, family trip, photography tour)"></textarea></div>
+
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:0.8rem;color:var(--text-muted);">
+      <input type="checkbox" id="ctaPrivacy" name="privacy" required style="margin:0;">
+      <label for="ctaPrivacy" style="margin:0;font-weight:normal;">I agree to the <a href="/privacy-policy.html" style="color:var(--navy);text-decoration:underline;">Privacy Policy</a> and consent to being contacted about my inquiry.</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary form-submit" style="width:100%;font-size:1.1rem;padding:14px 24px;">✈️ Get My Free Quote — Reply in 24 Hours</button>
   </form>
+
+  <div style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--text-muted);">
+    <p style="margin:0;">💬 Prefer to chat? <a href="https://wa.me/8615347723823" style="color:var(--navy);text-decoration:underline;">WhatsApp us</a> or call <a href="tel:+8615347723823" style="color:var(--navy);text-decoration:underline;">+86 153 4772 3823</a></p>
+  </div>
 </div>
