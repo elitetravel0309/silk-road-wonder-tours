@@ -2,13 +2,14 @@
   "name": "silkroad-travel",
   "version": "3.0.0",
   "private": true,
-  "description": "Silk Road Wonders — China & Central Asia travel agency website",
+  "description": "Silk Road Wonders 鈥?China & Central Asia travel agency website",
   "type": "module",
   "scripts": {
     "build": "astro build && node scripts/minify-assets.js",
     "dev": "astro dev",
     "start": "npm run dev",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "performance:check": "node scripts/performance-check.js"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.3",
