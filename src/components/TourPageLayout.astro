@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from './CtaSection.astro';
+import ReviewsSection from './ReviewsSection.astro';
 import TourCard from './TourCard.astro';
 import { allTours } from '../data/all-tours';
 
@@ -219,6 +220,8 @@ const stats = (tour.stats && tour.stats.length > 0) ? tour.stats : defaultStats;
       <a href="/contact.html" class="btn btn-primary btn-book">Inquire About This Tour</a>
     </aside>
   </div></div></section>
+
+  <ReviewsSection />
 
   <CtaSection />
 </BaseLayout>
