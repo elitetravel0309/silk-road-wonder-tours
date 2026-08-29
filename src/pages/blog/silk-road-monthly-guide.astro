@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import RelatedTours from '../../components/RelatedTours.astro';
 ---
 <BaseLayout title="Best Time to Visit the Silk Road: A Month-by-Month Guide" description="Complete month-by-month guide to visiting the Silk Road. Weather, festivals, crowds, and travel tips for China's legendary route — from Kashgar to Xi'an." ogImage="/assets/images/great-wall.jpg">
 <section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url('/assets/images/hero-silkroad.jpg) center/cover;">
@@ -80,5 +81,7 @@ import CtaSection from '../../components/CtaSection.astro';
 </div></div></section>
 
 <section class="cta-section"><div class="container"><div class="cta-grid"><div class="cta-text reveal"><h2>Ready to Plan Your Silk Road Journey?</h2><p>Tell us your preferred season and we'll craft the perfect itinerary.</p><a href="/contact.html" class="btn btn-gold">Plan Your Trip</a></div></div></div></section>
+<RelatedTours />
+
 <CtaSection />
 </BaseLayout>

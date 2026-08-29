@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaSection from '../../components/CtaSection.astro';
+import RelatedTours from '../../components/RelatedTours.astro';
 ---
 <BaseLayout title="Top 10 Intangible Cultural Heritage in Gansu" description="Discover Gansu's UNESCO-recognized intangible cultural heritage: Hua'er folk songs, Tibetan Thangka painting, paper-cutting, dough sculpture, and more." ogImage="/assets/images/hero-silkroad.jpg">
 <section class="page-hero" style="background: url('/assets/images/hero-silkroad.jpg) center/cover;">
@@ -95,5 +96,7 @@ import CtaSection from '../../components/CtaSection.astro';
 <section class="cta-section"><div class="container"><div class="cta-grid">
   <div class="cta-text reveal"><h2>Inspired? Plan Your Trip</h2><p>Experience Gansu's living traditions firsthand on a Silk Road journey.</p><a href="/contact.html" class="btn btn-gold">Plan Your Trip</a></div>
 </div></div></section>
+<RelatedTours />
+
 <CtaSection />
 </BaseLayout>
