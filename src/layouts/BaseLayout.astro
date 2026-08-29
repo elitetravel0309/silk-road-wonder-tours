@@ -47,14 +47,33 @@ if (pathname.startsWith('/blog/') && pathname !== '/blog') {
   const articleTitle = title.replace(' | Silk Road Wonders', '');
   const articleUrl = siteUrl + pathname;
   const articleImage = ogImageUrl;
+  
+  // Real publication dates mapped by blog slug
+  const blogDates: Record<string, string> = {
+    'central-asia-travel-guide': '2026-05-31',
+    'china-diverse-destinations': '2026-01-29',
+    'china-train-travel-guide': '2026-05-31',
+    'gansu-heritage': '2026-02-24',
+    'gansu-may-travel': '2021-10-22',
+    'karakoram-highway': '2026-05-31',
+    'silk-road-food-guide': '2026-05-31',
+    'silk-road-monthly-guide': '2026-05-31',
+    'silk-road-photography-tips': '2026-05-31',
+    'sven-hedin-xinjiang': '2022-03-17'
+  };
+  
+  const blogSlug = pathname.replace('/blog/', '').replace('.html', '').replace('/', '');
+  const datePublished = blogDates[blogSlug] || '2026-01-01';
+  const dateModified = '2026-08-28';
+  
   articleSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": articleTitle,
     "description": description,
     "image": articleImage,
-    "datePublished": "2026-01-01",
-    "dateModified": "2026-08-28",
+    "datePublished": datePublished,
+    "dateModified": dateModified,
     "author": {
       "@type": "Organization",
       "name": "Silk Road Wonders",
