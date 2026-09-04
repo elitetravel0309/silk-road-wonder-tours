@@ -1,7 +1,5 @@
----
-
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 ---
 
 <BaseLayout title="404 - Page Not Found" description="The page you're looking for doesn't exist. Explore our Silk Road tours, destinations, and travel guides instead." noindex={true}>
@@ -10,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div class="container" style="text-align:center; padding:60px 0 40px;">
 
-    <h1 data-i18n="errorTitle">404 —Page Not Found</h1>
+    <h1 data-i18n="errorTitle">404 鈥擯age Not Found</h1>
 
     <p data-i18n="errorDesc" style="color:rgba(255,255,255,0.9)">The page you're looking for doesn't exist or has been moved.</p>
 
@@ -18,35 +16,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 </section>
 
-
-
 <section class="section" style="padding:40px 0 80px;">
 
   <div class="container" style="max-width:800px; text-align:center;">
 
-
-
     <div style="font-size:6rem; line-height:1; margin-bottom:20px; color:var(--clay); font-family:var(--font-display);">
-
       &#x1F3DC;
-
     </div>
 
-
-
     <h2 style="font-family:var(--font-display); font-size:1.6rem; color:var(--navy); margin-bottom:12px;" data-i18n="errorHelpTitle">
-
       Let Us Help You Find Your Way
-
     </h2>
 
     <p style="color:var(--text-light); font-size:1rem; max-width:560px; margin:0 auto 32px; line-height:1.7;" data-i18n="errorHelpDesc">
-
       Whether you're looking for a Silk Road adventure or travel inspiration, our site has something for every explorer.
-
     </p>
 
-
+    <!-- Search Box -->
+    <form action="/search.html" method="get" style="max-width:520px;margin:0 auto 36px;display:flex;gap:10px;">
+      <input type="search" name="q" placeholder="Search tours, destinations, guides..." aria-label="Search our website" style="flex:1;padding:14px 20px;border:2px solid var(--sand);border-radius:30px;font-size:1rem;outline:none;background:white;color:var(--text);">
+      <button type="submit" class="btn btn-primary" style="padding:14px 24px;border-radius:30px;white-space:nowrap;">馃攳 Search</button>
+    </form>
 
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:40px;">
 
@@ -57,8 +47,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="/contact.html" class="btn btn-outline" style="color:var(--clay);border-color:var(--clay);" data-i18n="errorBtnContact">Contact Us</a>
 
     </div>
-
-
 
     <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--navy); margin-bottom:20px;" data-i18n="errorPopularDest">
 
@@ -118,7 +106,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     </div>
 
+    <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--navy); margin-bottom:20px;">
+      Popular Silk Road Tours
+    </h3>
 
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:32px;text-align:left;">
+      <a href="/tour/12d-silk-road-train" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃彌锔?12-Day Silk Road Train Tour</div>
+<div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Xi&#39;an → Gansu → Qinghai → Xinjiang · From $2,967</div>
+      </a>
+      <a href="/tour/8d-lanzhou-urumqi" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃彅锔?8-Day Lanzhou to Urumqi</div>
+<div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Lanzhou → Zhangye → Jiayuguan → Urumqi · From $1,633</div>
+      </a>
+      <a href="/tour/15d-kashgar-tashkent" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃惈 15-Day Kashgar to Tashkent</div>
+<div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Kashgar → Kyrgyzstan → Uzbekistan · From $3,738</div>
+      </a>
+      <a href="/china-group-tour" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃懃 Small Group Tours</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">4-star hotels 路 English-speaking guides 路 99% satisfaction</div>
+      </a>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--navy); margin-bottom:20px;">
+      Travel Guides & Blog
+    </h3>
+
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;">
+      <a href="/blog/best-time-to-visit-silk-road" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃尋锔?Best Time to Visit</a>
+      <a href="/blog/silk-road-tour-cost" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃挵 Tour Cost Guide</a>
+      <a href="/blog/china-travel-visa-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃泜 China Visa Guide</a>
+      <a href="/blog/xinjiang-travel-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃椇锔?Xinjiang Guide</a>
+      <a href="/blog/silk-road-itinerary-planning" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃搵 Itinerary Planning</a>
+    </div>
 
     <p style="color:var(--text-muted); font-size:0.88rem;" data-i18n="errorReassure">
 
@@ -130,8 +151,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 </section>
 
-
-
 <script type="application/ld+json">
 
 {
@@ -140,7 +159,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   "@type": "WebPage",
 
-  "name": "404 —Page Not Found",
+  "name": "404 鈥擯age Not Found",
 
   "description": "The page you're looking for doesn't exist on Silk Road Wonders.",
 
@@ -161,4 +180,3 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </script>
 
 </BaseLayout>
-
