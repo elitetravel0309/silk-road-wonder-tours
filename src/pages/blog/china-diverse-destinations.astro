@@ -2,7 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedTours from '../../components/RelatedTours.astro';
 import TourCard from '../../components/TourCard.astro';
----
+import InlineCta from '../../components/InlineCta.astro';
+
+---
+
 
 <BaseLayout
   title="Why China Is a Diverse Travel Destination"
@@ -117,7 +120,8 @@ import TourCard from '../../components/TourCard.astro';
 
   <section class="cta-section"><div class="container"><div class="cta-grid">
     <div class="cta-text reveal">
-      <h2>Discover China's Diversity</h2>
+      <InlineCta />
+<h2>Discover China's Diversity</h2>
       <p>Let us craft a journey that shows you the many faces of China.</p>
       <a href="/contact.html" class="btn btn-gold">Plan Your Trip</a>
     </div>
