@@ -36,25 +36,27 @@ const pageUrl = (canonical || siteUrl + pathname).replace(/\.html$/, '');
 const isBlogPage = pathname.startsWith('/blog/') && pathname !== '/blog';
 const ogType = isBlogPage ? 'article' : 'website';
 
-// Blog publication dates for article meta tags
+// Blog publication dates for article meta tags (single source of truth)
 const blogDates: Record<string, string> = {
+  'best-time-to-visit-silk-road': '2026-08-29',
   'central-asia-travel-guide': '2026-05-31',
   'china-diverse-destinations': '2026-01-29',
   'china-train-travel-guide': '2026-05-31',
+  'china-travel-visa-guide': '2026-08-29',
   'gansu-heritage': '2026-02-24',
   'gansu-may-travel': '2021-10-22',
   'karakoram-highway': '2026-05-31',
+  'kashgar-travel-guide': '2026-01-01',
   'silk-road-food-guide': '2026-05-31',
-  'silk-road-monthly-guide': '2026-05-31',
-  'silk-road-packing-guide': '2026-05-31',
-  'silk-road-tour-cost': '2026-08-29',
-  'sven-hedin-xinjiang': '2026-05-31',
-  'xinjiang-travel-guide': '2026-08-29',
-  'best-time-to-visit-silk-road': '2026-08-29',
-  'china-travel-visa-guide': '2026-08-29',
   'silk-road-itinerary-planning': '2026-08-29',
+  'silk-road-monthly-guide': '2026-05-31',
+  'silk-road-photography-tips': '2026-05-31',
+  'silk-road-tour-cost': '2026-08-29',
+  'sven-hedin-xinjiang': '2022-03-17',
+  'xinjiang-packing-list': '2026-01-01',
+  'xinjiang-travel-guide': '2026-08-29',
 };
-const blogSlug = pathname.replace('/blog/', '').replace('/', '');
+const blogSlug = pathname.replace('/blog/', '').replace(/\.html$/, '').replace('/index', '').replace('/', '');
 const articlePublishedTime = blogDates[blogSlug] || '2026-01-01';
 
 // Auto-generate BreadcrumbList schema for tour detail pages
@@ -78,22 +80,7 @@ if (pathname.startsWith('/blog/') && pathname !== '/blog') {
   const articleTitle = title.replace(' | Silk Road Wonders', '');
   const articleUrl = siteUrl + pathname;
   const articleImage = ogImageUrl;
-  
-  // Real publication dates mapped by blog slug
-  const blogDates: Record<string, string> = {
-    'central-asia-travel-guide': '2026-05-31',
-    'china-diverse-destinations': '2026-01-29',
-    'china-train-travel-guide': '2026-05-31',
-    'gansu-heritage': '2026-02-24',
-    'gansu-may-travel': '2021-10-22',
-    'karakoram-highway': '2026-05-31',
-    'silk-road-food-guide': '2026-05-31',
-    'silk-road-monthly-guide': '2026-05-31',
-    'silk-road-photography-tips': '2026-05-31',
-    'sven-hedin-xinjiang': '2022-03-17'
-  };
-  
-  const blogSlug = pathname.replace('/blog/', '').replace('.html', '').replace('/', '');
+  const blogSlug = pathname.replace('/blog/', '').replace(/\.html$/, '').replace('/index', '').replace('/', '');
   const datePublished = blogDates[blogSlug] || '2026-01-01';
   const dateModified = '2026-08-28';
   
@@ -131,6 +118,7 @@ if (pathname.startsWith('/blog/') && pathname !== '/blog') {
 const organizationSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "TravelAgency",
+  "@id": siteUrl + "/#organization",
   "name": "Silk Road Wonders",
   "url": siteUrl,
   "logo": siteUrl + "/assets/logo.png",
@@ -138,7 +126,16 @@ const organizationSchema = JSON.stringify({
   "description": "Top China travel agency specializing in Silk Road tours across China and Central Asia since 2005.",
   "foundingDate": "2005",
   "email": "booking@silkroadwondertours.com",
-  "telephone": "+86-153-4444-4444",
+  "telephone": "+86-153-4772-3823",
+  "priceRange": "$$",
+  "currenciesAccepted": "USD, EUR, CNY, GBP, AUD",
+  "paymentAccepted": "Credit Card, Bank Transfer, PayPal, Alipay, WeChat Pay",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Shanghai, China",
@@ -154,7 +151,7 @@ const organizationSchema = JSON.stringify({
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "320"
+    "reviewCount": "8"
   }
 });
 ---

@@ -210,7 +210,7 @@ const blogPosts = [
   </div></div></section>
 
   <section class="section section-alt" id="group"><div class="container">
-    <div class="section-header reveal"><h2>Most Popular Small Group Silk Road Journeys</h2><div class="divider"></div><p>4-star hotels 路 English-speaking guides 路 Saturday departures 路 99% satisfaction</p></div>
+    <div class="section-header reveal"><h2>Most Popular Small Group Silk Road Journeys</h2><div class="divider"></div><p>4-star hotels · English-speaking guides · Saturday departures · 99% satisfaction</p></div>
     <div class="tour-grid">
       {featured.map(t => <TourCard tour={t} showFeatures={true} />)}
     </div>
@@ -239,7 +239,7 @@ const blogPosts = [
     <div class="section-header reveal"><h2>What Our Customers Are Saying</h2><div class="divider"></div><p>Over 20,000 travelers have trusted us with their Silk Road dream.</p></div>
     <div class="reviews-grid">
       {reviews.map(r => (
-        <div class="review-card reveal"><div class="review-stars">{r.stars}</div><div class="review-body">"{r.body}"</div><div class="review-author"><div class="review-avatar">{r.initial}</div><div class="review-author-info"><strong>{r.name}</strong><span>{r.country} 路 {r.date}</span></div></div></div>
+        <div class="review-card reveal"><div class="review-stars">{r.stars}</div><div class="review-body">"{r.body}"</div><div class="review-author"><div class="review-avatar">{r.initial}</div><div class="review-author-info"><strong>{r.name}</strong><span>{r.country} · {r.date}</span></div></div></div>
       ))}
     </div>
     <div class="view-more reveal"><a href="/review" class="btn btn-gold">Read All Reviews &rarr;</a></div>
