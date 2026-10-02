@@ -29,8 +29,8 @@ const twitterImageUrl = absoluteUrl(twitterImage || ogImage || defaultOgImage);
 // Current page path (must be defined before use below)
 const pathname = Astro.url.pathname;
 
-// Full page URL for og:url and canonical
-const pageUrl = canonical || siteUrl + pathname;
+// Full page URL for og:url and canonical (strip .html so canonical matches the pretty-URL served by Cloudflare)
+const pageUrl = (canonical || siteUrl + pathname).replace(/\.html$/, '');
 
 // Determine if this is a blog article page
 const isBlogPage = pathname.startsWith('/blog/') && pathname !== '/blog';
@@ -186,8 +186,8 @@ const organizationSchema = JSON.stringify({
 <meta name="twitter:description" content={description}>
 <meta name="twitter:image" content={twitterImageUrl}>
 <link rel="canonical" href={pageUrl}>
-<link rel="alternate" hreflang="en" href={canonical || Astro.url.href}>
-<link rel="alternate" hreflang="x-default" href={canonical || Astro.url.href}>
+<link rel="alternate" hreflang="en" href={pageUrl}>
+<link rel="alternate" hreflang="x-default" href={pageUrl}>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
