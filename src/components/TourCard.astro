@@ -13,7 +13,7 @@ const { tour, showFeatures = false } = Astro.props;
 ---
 <div class="tour-card reveal">
   <div class="tour-card-img">
-    <a href={`/tour/${tour.slug}.html`}>
+    <a href={`/tour/${tour.slug}`}>
       <img src={tour.image} alt={tour.title} class="img-fill" loading="lazy" width="1200" height="800">
     </a>
     <span class="tour-card-duration">{tour.duration}</span>
@@ -32,7 +32,7 @@ const { tour, showFeatures = false } = Astro.props;
         <span class="current">{tour.price || 'Inquire'}</span>
         {tour.originalPrice && <span class="original">{tour.originalPrice}</span>}
       </div>
-      <a href={`/tour/${tour.slug}.html`} class="btn btn-gold btn-sm">View Details</a>
+      <a href={`/tour/${tour.slug}`} class="btn btn-gold btn-sm">View Details</a>
     </div>
   </div>
 </div>

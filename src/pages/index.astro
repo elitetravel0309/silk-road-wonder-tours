@@ -44,7 +44,7 @@ const blogPosts = [
 ];
 ---
 <BaseLayout
-  title="Journey Through Legends | China & Central Asia Tours"
+  title="Silk Road Tours in China & Central Asia | Silk Road Wonders"
   description="Silk Road Wonders is the top China travel agency, offering private and group Silk Route trips to China, Xinjiang, Tibet, and Central Asia. 5-25 days Silk Road tours."
   canonical="https://silkroadwondertours.com/"
 >
@@ -59,7 +59,7 @@ const blogPosts = [
     "inLanguage": "en",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://silkroadwondertours.com/search.html?q={search_term_string}",
+      "target": "https://silkroadwondertours.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -165,8 +165,8 @@ const blogPosts = [
       <h1>Journey Through Legends</h1>
       <p>Discover the ancient Silk Road —from the vibrant bazaars of Kashgar to the rainbow mountains of Zhangye</p>
       <div>
-        <a href="/tours.html" class="btn btn-primary">Explore Our Tours</a>
-        <a href="/contact.html" class="btn btn-outline" style="margin-left:12px;">Tailor My Trip</a>
+        <a href="/tours" class="btn btn-primary">Explore Our Tours</a>
+        <a href="/contact" class="btn btn-outline" style="margin-left:12px;">Tailor My Trip</a>
       </div>
     </div>
   </section>
@@ -222,7 +222,7 @@ const blogPosts = [
     <div class="tour-grid">
       {popular.map(t => <TourCard tour={t} showFeatures={false} />)}
     </div>
-    <div class="view-more reveal"><a href="/tours.html" class="btn btn-gold">View All Tours &rarr;</a></div>
+    <div class="view-more reveal"><a href="/tours" class="btn btn-gold">View All Tours &rarr;</a></div>
   </div></section>
 
   <section class="section section-alt"><div class="container">
@@ -242,7 +242,7 @@ const blogPosts = [
         <div class="review-card reveal"><div class="review-stars">{r.stars}</div><div class="review-body">"{r.body}"</div><div class="review-author"><div class="review-avatar">{r.initial}</div><div class="review-author-info"><strong>{r.name}</strong><span>{r.country} 路 {r.date}</span></div></div></div>
       ))}
     </div>
-    <div class="view-more reveal"><a href="/review.html" class="btn btn-gold">Read All Reviews &rarr;</a></div>
+    <div class="view-more reveal"><a href="/review" class="btn btn-gold">Read All Reviews &rarr;</a></div>
   </div></section>
 
   <section class="section section-alt section-bg-why" style="background-image:url('/assets/images/hero-silkroad.jpg');background-size:cover;background-position:center;background-attachment:fixed;position:relative">
@@ -262,7 +262,7 @@ const blogPosts = [
     <div class="dest-grid">
       {destinations.map(d => <a href={d.url} class="dest-card reveal"><div class="img-placeholder" style={`background-image:url('${d.image}');background-size:cover;`}></div><span class="dest-name">{d.name}</span></a>)}
     </div>
-    <div class="view-more reveal"><a href="/destinations.html" class="btn btn-gold">View All Destinations &rarr;</a></div>
+    <div class="view-more reveal"><a href="/destinations" class="btn btn-gold">View All Destinations &rarr;</a></div>
   </div></section>
 
   <section class="section section-alt"><div class="container">
@@ -270,7 +270,7 @@ const blogPosts = [
     <div class="blog-grid">
       {blogPosts.map(b => <a href={b.url} class="blog-card reveal"><div class="blog-card-img"><img src={b.image} class="img-fill" loading="lazy" style="height:100%" alt={b.title} / width="1200" height="800"></div><div class="blog-card-body"><h3>{b.title}</h3><span class="date">{b.date}</span></div></a>)}
     </div>
-    <div class="view-more reveal"><a href="/blog.html" class="btn btn-gold">Read More Articles &rarr;</a></div>
+    <div class="view-more reveal"><a href="/blog" class="btn btn-gold">Read More Articles &rarr;</a></div>
   </div></section>
 
   <CtaSection />

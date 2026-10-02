@@ -66,7 +66,7 @@ if (pathname.startsWith('/tour/')) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl + "/" },
-      { "@type": "ListItem", "position": 2, "name": "Tours", "item": siteUrl + "/tours.html" },
+      { "@type": "ListItem", "position": 2, "name": "Tours", "item": siteUrl + "/tours" },
       { "@type": "ListItem", "position": 3, "name": pageTitle }
     ]
   });
@@ -164,7 +164,7 @@ const organizationSchema = JSON.stringify({
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="djI7G9O9aSEJf4Cwi67r0oadfIODvf_1RerX1xH3LaQ" />
-<title>{title} | Silk Road Wonders</title>
+<title>{title.replace(' | Silk Road Wonders', '')} | Silk Road Wonders</title>
 <meta name="description" content={description}>
 {noindex && <meta name="robots" content="noindex, nofollow">}
 <meta property="og:title" content={title}>

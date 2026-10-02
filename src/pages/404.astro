@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div class="container" style="text-align:center; padding:60px 0 40px;">
 
-    <h1 data-i18n="errorTitle">404 鈥擯age Not Found</h1>
+    <h1 data-i18n="errorTitle">404 —Page Not Found</h1>
 
     <p data-i18n="errorDesc" style="color:rgba(255,255,255,0.9)">The page you're looking for doesn't exist or has been moved.</p>
 
@@ -33,18 +33,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
 
     <!-- Search Box -->
-    <form action="/search.html" method="get" style="max-width:520px;margin:0 auto 36px;display:flex;gap:10px;">
+    <form action="/search" method="get" style="max-width:520px;margin:0 auto 36px;display:flex;gap:10px;">
       <input type="search" name="q" placeholder="Search tours, destinations, guides..." aria-label="Search our website" style="flex:1;padding:14px 20px;border:2px solid var(--sand);border-radius:30px;font-size:1rem;outline:none;background:white;color:var(--text);">
-      <button type="submit" class="btn btn-primary" style="padding:14px 24px;border-radius:30px;white-space:nowrap;">馃攳 Search</button>
+      <button type="submit" class="btn btn-primary" style="padding:14px 24px;border-radius:30px;white-space:nowrap;">🔍 Search</button>
     </form>
 
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:40px;">
 
       <a href="/" class="btn btn-primary" data-i18n="errorBtnHome">Back to Home</a>
 
-      <a href="/tours.html" class="btn btn-gold" data-i18n="errorBtnTours">Browse Tours</a>
+      <a href="/tours" class="btn btn-gold" data-i18n="errorBtnTours">Browse Tours</a>
 
-      <a href="/contact.html" class="btn btn-outline" style="color:var(--clay);border-color:var(--clay);" data-i18n="errorBtnContact">Contact Us</a>
+      <a href="/contact" class="btn btn-outline" style="color:var(--clay);border-color:var(--clay);" data-i18n="errorBtnContact">Contact Us</a>
 
     </div>
 
@@ -112,20 +112,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:32px;text-align:left;">
       <a href="/tour/12d-silk-road-train" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
-        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃彌锔?12-Day Silk Road Train Tour</div>
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">🏛️ 12-Day Silk Road Train Tour</div>
 <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Xi&#39;an → Gansu → Qinghai → Xinjiang · From $2,967</div>
       </a>
       <a href="/tour/8d-lanzhou-urumqi" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
-        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃彅锔?8-Day Lanzhou to Urumqi</div>
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">🏔️ 8-Day Lanzhou to Urumqi</div>
 <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Lanzhou → Zhangye → Jiayuguan → Urumqi · From $1,633</div>
       </a>
       <a href="/tour/15d-kashgar-tashkent" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
-        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃惈 15-Day Kashgar to Tashkent</div>
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">🐫 15-Day Kashgar to Tashkent</div>
 <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">Kashgar → Kyrgyzstan → Uzbekistan · From $3,738</div>
       </a>
       <a href="/china-group-tour" style="display:block;padding:16px 20px;background:var(--cream);border-radius:12px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;">
-        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">馃懃 Small Group Tours</div>
-        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">4-star hotels 路 English-speaking guides 路 99% satisfaction</div>
+        <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">👥 Small Group Tours</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">4-star hotels · English-speaking guides · 99% satisfaction</div>
       </a>
     </div>
 
@@ -134,16 +134,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </h3>
 
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;">
-      <a href="/blog/best-time-to-visit-silk-road" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃尋锔?Best Time to Visit</a>
-      <a href="/blog/silk-road-tour-cost" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃挵 Tour Cost Guide</a>
-      <a href="/blog/china-travel-visa-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃泜 China Visa Guide</a>
-      <a href="/blog/xinjiang-travel-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃椇锔?Xinjiang Guide</a>
-      <a href="/blog/silk-road-itinerary-planning" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">馃搵 Itinerary Planning</a>
+      <a href="/blog/best-time-to-visit-silk-road" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">🌤️ Best Time to Visit</a>
+      <a href="/blog/silk-road-tour-cost" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">💰 Tour Cost Guide</a>
+      <a href="/blog/china-travel-visa-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">🛂 China Visa Guide</a>
+      <a href="/blog/xinjiang-travel-guide" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">🗺️ Xinjiang Guide</a>
+      <a href="/blog/silk-road-itinerary-planning" style="padding:8px 18px;background:white;border:1px solid var(--sand);border-radius:20px;text-decoration:none;color:var(--navy);font-size:0.85rem;">📋 Itinerary Planning</a>
     </div>
 
     <p style="color:var(--text-muted); font-size:0.88rem;" data-i18n="errorReassure">
 
-      If you typed the address, please double-check it. If a link brought you here, <a href="/contact.html" style="color:var(--clay);">let us know</a> and we'll fix it.
+      If you typed the address, please double-check it. If a link brought you here, <a href="/contact" style="color:var(--clay);">let us know</a> and we'll fix it.
 
     </p>
 
@@ -159,11 +159,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   "@type": "WebPage",
 
-  "name": "404 鈥擯age Not Found",
+  "name": "404 —Page Not Found",
 
   "description": "The page you're looking for doesn't exist on Silk Road Wonders.",
 
-  "url": "https://silkroadwondertours.com/404.html",
+  "url": "https://silkroadwondertours.com/404",
 
   "isPartOf": {
 
